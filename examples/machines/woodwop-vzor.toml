@@ -1,0 +1,143 @@
+# Profil stroja – VZOR. Hodnoty treba nahradiť údajmi skutočného stroja (otázka O1).
+# Kap. 7.3 a 8 špecifikácie.
+
+[machine]
+name = "Weeke (vzor)"
+
+[work_area]
+max_length = 3050.0     # smer X stroja
+max_width = 1300.0      # smer Y stroja
+
+[min_part]
+length = 200.0
+width = 70.0
+
+[drills]
+diameters = [5.0, 8.0, 10.0, 15.0, 20.0, 35.0]
+
+# ---------------------------------------------------------------------------
+# WoodWOP .mpr (M4)
+#
+# Každé pole je [meno, šablóna]. V šablóne sú premenné v {zložených zátvorkách};
+# povolené premenné sú uvedené pri každom bloku. Čísla sa zapisujú v mm, s bodkou,
+# bez núl na konci.
+#
+# verified = true  → polia zodpovedajú formátu pozorovanému v analýze (CV, sekcia 8.3)
+# verified = false → NA OVERENIE v editore woodWOP alebo na stroji (otázka O2);
+#                    CLI pri ich použití vypíše upozornenie.
+# ---------------------------------------------------------------------------
+[mpr]
+decimals = 3
+line_ending = "crlf"
+inch_converter_var = true   # [001 i="25.4" KM="converter"
+
+# Hlavička [H. Premenné: {l} {w} {t}. Hodnoty podľa analýzy (8.3); overiť na stroji.
+header = [
+    ["VERSION", "4.0 Alpha"],
+    ["HP", "1"],
+    ["GX", "0"],
+    ["BFS", "1"],
+    ["GY", "0"],
+    ["GXY", "0"],
+    ["UP", "0"],
+    ["FM", "2"],
+    ["FW", "3500"],
+    ["HS", "0"],
+    ["OP", "1"],
+    ["MAT", "WEEKE"],
+    ["INCH", "0"],
+    ["VIEW", "NOMIRROR"],
+]
+
+# Obrobok <100 \WerkStck\. Premenné: {l} {w} {t} (tu sa odkazuje na premenné [001).
+workpiece = [
+    ["LA", "l"],
+    ["BR", "w"],
+    ["DI", "t"],
+    ["FNX", "0"],
+    ["FNY", "0"],
+    ["RNX", "0"],
+    ["RNY", "0"],
+    ["RNZ", "0"],
+    ["AX", "0"],
+    ["AY", "0"],
+]
+
+# Komentár <101 \Kommentar\. Premenné: {part_id} {project} {cabinet} {l} {w} {t}.
+comment = [
+    ["KM", "CabinetCRAFT: {project}"],
+    ["KM", "DIEL: {part_id}  SKRINKA: {cabinet}  ROZMER: {l} x {w} x {t}"],
+    ["KAT", "Kommentar"],
+    ["MNM", "Kommentar"],
+]
+
+# <102 \BohrVert\ – diera do plochy. Premenné: {x} {y} {d} {depth}.
+[mpr.bohr_vert]
+verified = true
+fields = [
+    ["XA", "{x}"],
+    ["YA", "{y}"],
+    ["BM", "LS"],
+    ["TI", "{depth}"],
+    ["DU", "{d}"],
+    ["AN", "1"],
+    ["MI", "0"],
+    ["S_", "1"],
+    ["AB", "0"],
+    ["WI", "180"],
+    ["MX", "0"],
+    ["MY", "0"],
+    ["MZ", "0"],
+]
+
+# <103 \BohrHoriz\ – diera do hrany. Premenné: {x} {y} {z} {d} {depth} {dir}.
+# NA OVERENIE (O2): polia podľa AlphaCAM postu z analýzy, nie podľa natívneho výstupu.
+# {z} = výška stredu diery od plochy B (spodnej pri obrábaní lícom F hore).
+[mpr.bohr_horiz]
+verified = false
+fields = [
+    ["MI", "0"],
+    ["S_", "1"],
+    ["XA", "{x}"],
+    ["YA", "{y}"],
+    ["ZA", "{z}"],
+    ["DU", "{d}"],
+    ["TI", "{depth}"],
+    ["BM", "{dir}"],
+    ["AN", "1"],
+    ["AB", "0"],
+    ["MX", "0"],
+    ["MY", "0"],
+    ["MZ", "0"],
+]
+
+# Smer vŕtania {dir} podľa hrany dielu. NA OVERENIE (O1): X0 = hrana x = 0 → vŕtanie v +X.
+[mpr.bohr_horiz.dir]
+X0 = "XP"
+X1 = "XM"
+Y0 = "YP"
+Y1 = "YM"
+
+# <109 \Nuten\ – drážka. Premenné: {xs} {ys} {xe} {ye} {width} {depth}.
+# NA OVERENIE (O2): v AlphaCAM poste sa Nuten robí pílou (RK/EM/MV/MN); šírka drážky
+# „NB“ a spôsob obrábania drážky širšej ako pílový kotúč treba potvrdiť.
+[mpr.nuten]
+verified = false
+through_extension = 0.0      # napr. 35 mm nábeh píly pri drážke cez celý diel
+fields = [
+    ["XA", "{xs}"],
+    ["YA", "{ys}"],
+    ["XE", "{xe}"],
+    ["YE", "{ye}"],
+    ["NB", "{width}"],
+    ["TI", "{depth}"],
+    ["RK", "WRKL"],
+    ["EM", "MOD1"],
+    ["TV", "0"],
+    ["MV", "GL"],
+    ["MN", "GL"],
+    ["OP", "0"],
+    ["MX", "0"],
+    ["MY", "0"],
+    ["MZ", "0"],
+]

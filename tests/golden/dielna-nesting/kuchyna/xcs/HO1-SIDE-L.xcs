@@ -1,0 +1,12 @@
+//--PROJEKT: Dielna - kuchyna s miestnostou
+//--DIEL: HO1-SIDE-L  SKRINKA: HO1
+//--Generovane z CabinetCRAFT
+SetMachiningParameters("J",1,70,84869121,false);
+CreateFinishedWorkpieceBox("Dilec",644,309.5,18);
+SetWorkpieceSetupPosition(0,0, 0, 0);
+SetPreserveWorkingSequence(true);
+SelectWorkplane("Left");
+CreateDrill("Vrtani Leva 1 DIA=8 Z=26",277.5,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani Leva 2 DIA=8 Z=26",213.5,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani Leva 3 DIA=8 Z=26",96,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani Leva 4 DIA=8 Z=26",32,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);

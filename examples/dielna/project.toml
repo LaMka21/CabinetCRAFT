@@ -1,0 +1,25 @@
+# Vzorový projekt dielne: spodná a horná skrinka v rozmeroch zo zákazky REF2026.
+[project]
+name = "Dielna – vzor kuchyne"
+units = "mm"
+
+[defaults]
+panel_material = "DTDL_18_W960_biela"
+back_material  = "HDF_3_biela"
+construction   = "dielna-cx100"
+
+[[cabinet]]
+id = "SP1"
+type = "base"
+w = 600
+h = 762
+d = 510
+adjustable_shelves = 1
+
+[[cabinet]]
+id = "HO1"
+type = "wall"
+w = 600
+h = 663
+d = 330
+adjustable_shelves = 2

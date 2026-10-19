@@ -1,0 +1,17 @@
+# Vzorový projekt zo špecifikácie MVP, kap. 10 (akceptačný test).
+[project]
+name = "Vzor S1"
+units = "mm"
+
+[defaults]
+panel_material = "DTD_18_biela"
+back_material  = "HDF_8_biela"
+construction   = "frameless32"
+
+[[cabinet]]
+id = "S1"
+type = "base"
+w = 600
+h = 720
+d = 560
+adjustable_shelves = 1

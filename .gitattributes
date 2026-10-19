@@ -1,0 +1,11 @@
+# Golden súbory a zdrojáky držíme s LF, aby testy porovnávali bajtovo presne.
+* text=auto eol=lf
+# Programy pre stroje a dávky: presne bajt po bajte (CRLF, ASCII)
+*.mpr -text
+*.xcs -text
+*.bat -text
+*.plp -text
+# Súpis behu pre nesting: UTF-16 LE, CRLF
+CncRun*.txt -text
+# PDF (štítky) bajtovo
+*.pdf -text

@@ -1,0 +1,384 @@
+# Konštrukčný štandard dielne – korpus bez rámu na kolíky, výroba na SCM CX100.
+#
+# Zdroj hodnôt (2026-10-16):
+#   [P] = z programov CX100, ktoré vyrábal CABINET VISION (zákazka REF2026)
+#   [U] = potvrdené používateľom
+#   [?] = odhad, overiť v dielni
+#
+# Pozn.: v programoch CV robil zvislé vŕtanie bokov často nesting stroj;
+# CabinetCRAFT dáva všetko obrábanie dielu do programu CX100.
+
+[carcass]
+top_style = "stretchers"             # [P] spodné skrinky: 2 vlysy vrchu (horné/vysoké vždy celý vrch)
+stretcher_width = 128.0              # [P] „Vlys vrchu pozdlzny“ 564 × 128
+shelf_side_clearance = 0.5           # [P] REF: polica o 1 kratšia ako svetlá šírka (535 pri 536, 539,5 pri 540,5)
+shelf_front_setback = 3.0            # [P] polica o 3 plytšia (STD_AdjShelfDepthMinus)
+shelf_spacing = "equal_openings"     # [P] rovnaké otvory medzi policami (S_KUCH_D: polica na 372)
+base_end_inset = 0.5                 # [P] REF: dno spodnej 0,5 nad spodkom bokov, vrch/vlysy 0,5 pod vrchom (kolíky 9,5 / 752,5)
+# [P] horné skrinky: vrch TO 19 (program CV 966b0039: 626,5 × 330 × 19; police 221/442 pri 682)
+wall_top_material = "MDF_19_W1000_biela"
+wall_top_on_sides = true             # [P] REF: vrch TO 19 na bokoch cez celú šírku a hĺbku, boky 663 (findings 12 §3)
+wall_back_behind_sides = true        # [P] REF: boky 309,5 končia pred chrbtom, chrbát W − 2 v drážkach dna a vrchu
+
+[back]
+mount = "groove"                     # [P] horné skrinky: chrbát v drážke
+mount_base = "applied"               # [P] spodné: chrbát 4 mm naložený zozadu, boky D − 4 (findings 10 §2.4)
+applied_depth = 4.0                  # [P] boky a dno D − 4 (506 pri 510; chrbát v CV 4 mm)
+applied_inset_side = 1.0             # [P] chrbát 598 pri šírke 600
+applied_inset_top = 1.5              # [P] chrbát 759 pri výške 762: 1,5 hore aj dole (findings 12 §1)
+applied_inset_bottom = 1.5           # [P] Y 101,5 … 860,5 pri sokli 100
+# [P] drážka jedným prechodom pílky 4 mm, os 18,5 mm od zadnej hrany (REF: LAMA šírka 4):
+#     gw = 3 (HDF) + 1 = 4 → e = 18,5 − 4/2 = 16,5; boky hornej 330 − 20,5 = 309,5
+groove_offset_from_rear = 16.5
+groove_width_clearance = 1.0
+groove_depth = 9.0                   # [P] hĺbka drážky 9
+fit_clearance = 1.0                  # [?] vôľa zadnej steny v drážke (na stranu) a hore
+groove_through = true                # [P] drážka cez celý diel (−60 … L+60)
+
+[dowel]
+diameter = 8.0                       # [P]
+face_depth = 13.0                    # [P] Ø8 hĺbka 13 do plochy
+edge_depth = 26.0                    # [P] Ø8 hĺbka 26 do hrany
+layout = "cv333"                     # [P] vzor CV „spoj 3/3/3“: kolíky aj konfirmáty podľa dĺžky hrany (findings 11 §1.3)
+end_offset = 32.0                    # [P] prvá dvojica 32 / 96 od kraja
+pair_pitch = 64.0                    # [P]
+max_pair_spacing = 250.0             # [P] odvodené: 351 → 2 dvojice, 388 → 3 dvojice
+short_end_offset = 18.0              # [P] krátky spoj (vlys 128): 18 / 110
+group_spacing = [160.0, 256.0]       # [P] vzor 3/3/3: skupiny po 160, pri dlhej hrane po 256
+stop_at_back = false                 # [P] dvojice po celej hĺbke dielu (330 → 32/96 … 234/298)
+confirmat_diameter = 5.0             # [P] konfirmát/vrut medzi kolíkmi: Ø5 × 13 iba v boku (findings 11 §1.3)
+confirmat_depth = 13.0
+# konfirmát/vrut „podľa zákazky“ (vlastník 2026-10-16): vrut = iba Ø5 × 13 do boku; konfirmát
+# navyše diera do hrany – rozmer [?] doplniť (confirmat_edge = [priemer, hĺbka])
+max_spacing = 128.0                  # nepoužíva sa pri layout = "pairs"
+snap_32 = false
+
+[line_bore]
+diameter = 5.0                       # [P]
+depth = 10.0                         # [P]
+layout = "per_shelf"                 # [U] 3 diery pri každej polici
+holes_per_shelf = 3                  # [P]
+center_below_shelf = 6.0             # [P] Sekura 7: stredná diera 6 pod spodnou plochou police
+shelf_pin_holes = [5.0, 10.0, 9.5]   # [P] REF: polica Ø5 × 10 zospodu, 9,5 od konca, v radoch 50 od čela/zadu police
+pitch = 32.0                         # [P]
+front_offset = 53.0                  # [P] predný rad 53 od čela (CNC REF; štandard 50 + 3)
+rear_offset = 50.0                   # [P] zadný rad 50 od zadu (pred chrbtom / drážkou)
+start_above_bottom = 64.0            # [?] najnižšia diera nad dnom
+end_below_top = 64.0                 # [?] najvyššia diera pod vrchom
+
+[[joint_rule]]
+a = "side"
+b = ["bottom", "top", "stretcher_front", "stretcher_rear", "fixed_shelf"]
+connection = "dowel"
+
+[[joint_rule]]
+a = "bottom"
+b = "stretcher_rear"                 # [P] drez: zadný zvislý vlys na dne (findings 12 §4)
+connection = "dowel"
+end_offset = 64.0                    # [P] D-K-D 64-96-128, 250-282-314, 436-468-500 (564)
+
+[[joint_rule]]
+a = ["side", "bottom", "top"]
+b = "back"
+connection = "back_groove"
+
+[[joint_rule]]
+a = "side"
+b = "adjustable_shelf"
+connection = "line_bore"
+
+[[joint_rule]]
+a = "finished_back"                  # [P] šikmá REF (0029 FB): dno, bok a vrch na kolíkoch 3/3/3 + konfirmáty
+b = ["bottom", "side", "top"]
+connection = "dowel"
+
+# ---------------------------------------------------------------------------
+# Čelá a kovanie (F5/F6, ADR 0006). Pánt, montáž čiel a zásuvky sa volia pri každej
+# skrinke (vlastník 2026-10-16); tu sú predvolené hodnoty a knižnica pántov.
+# Plochu dvierok aj bokov vŕta nesting, CX100 iba hrany (vlastník).
+# [P] = z programov nestingu a .cvj zákazky REF2026 (findings 09-kovanie.md)
+# ---------------------------------------------------------------------------
+[fronts]
+material = "MDF_19_W1000_biela"      # [P] čelá MDF 19
+mount = "overlay"                    # [P] v zákazke iba naložené čelá; vložené: front_mount = "inset"
+reveal_side = 1.0                    # [P] REVL/REVR: 1 + 1 = škára 2 medzi skrinkami
+pair_gap = 2.0                       # [?] škára medzi dvojitými dvierkami (1 + 1)
+gap_to_carcass = 3.0                 # [P] DOPEN: čelo 3 mm pred lícom korpusu
+inset_gap = 2.0                      # [?] vložené čelá (v zákazke nie sú)
+hinge = "blum-110-inserta"           # predvolený pánt; skrinka: hinge = "…"
+drawer = "merivobox"                 # predvolená zásuvka; skrinka: drawer = "…"
+blind_hinge = "blum-slepy"           # dvierka vedľa pevného panelu (slepý roh)
+hinge_end_offset = 100.0             # [P] os misky 100 od spodnej aj hornej hrany dvierok (MDETH)
+# [P] počet pántov ako v CV (findings 10 §5): max(2, ⌈L / 609,6⌉ + 1), L = výška − 2 × odsadenie
+# → 2 pánty do 809,6 mm, 3 do 1419,2, 4 do 2028,8
+hinge_max_spacing = 609.6
+
+[fronts.base]                        # spodné skrinky s úchytkovým profilom UK16
+top = 32.0                           # [P] REVT 2 + OLT 30: čelo 762 → 730
+bottom = 0.0                         # [P] spodok čela lícuje so spodkom korpusu
+gap = 32.0                           # [P] škára 2 + 30 pre úchytku medzi čelami nad sebou
+panel_top = 2.0                      # [P] pevný panel slepého rohu 762 − 2 = 760 (bez úchytky)
+
+[fronts.wall]                        # horné skrinky
+top = 0.0                            # [P] REVT 0: vrch lícuje
+bottom = -19.0                       # [P] OLB 19: čelo presahuje 19 pod dno (blenda LED)
+gap = 2.0                            # [?]
+panel_top = 0.0                      # [?]
+
+[fronts.tall]                        # vysoké skrinky (v zákazke nie sú)
+top = 2.0                            # [?]
+bottom = 0.0                         # [?]
+gap = 32.0                           # [?] ako spodné, úchytka UK16
+panel_top = 2.0                      # [?]
+
+[[hinge]]
+id = "blum-110-inserta"
+name = "Blum 110° naložený, Blumotion, INSERTA (71B3590)"
+cup_diameter = 35.0                  # [P] Ø35 × 13,5
+cup_depth = 13.5                     # [P]
+cup_center = 22.5                    # [P] stred misky od hrany (K = 5)
+# [P] kolíky INSERTA Ø8 × 12: ±22,5 pozdĺž hrany, 9,5 od stredu misky dovnútra dvierok
+cup_holes = [
+    { x = 9.5, z = -22.5, diameter = 8.0, depth = 12.0 },
+    { x = 9.5, z = 22.5, diameter = 8.0, depth = 12.0 },
+]
+plate_setback = 20.0                 # [P] priama podložka 0 mm 177H3100E: diery 20 a 52 od prednej hrany boku
+plate_holes = [                      # [P] Ø5 × 12 vo výške osi misky
+    { diameter = 5.0, depth = 12.0 },
+    { x = 32.0, diameter = 5.0, depth = 12.0 },
+]
+
+[[hinge]]
+id = "blum-110-vlozeny"
+name = "Blum 110° pre vložené dvierka"
+cup_diameter = 35.0                  # [P]
+cup_depth = 13.5                     # [P]
+cup_center = 22.5                    # [?] vložené dvierka v zákazke nie sú
+cup_holes = [
+    { x = 9.5, z = -22.5, diameter = 8.0, depth = 12.0 },
+    { x = 9.5, z = 22.5, diameter = 8.0, depth = 12.0 },
+]
+plate_setback = 20.0                 # [?] + hrúbka dvierok (generátor pripočíta)
+plate_holes = [
+    { diameter = 5.0, depth = 12.0 },
+    { x = 32.0, diameter = 5.0, depth = 12.0 },
+]
+
+[[hinge]]
+id = "blum-slepy"
+name = "Blum slepý záves 79B9550, krížová podložka +3 174H7130E"
+cup_diameter = 35.0                  # [P] Ø35 × 13,5 (findings 09 §1, 11 §5.2)
+cup_depth = 13.5                     # [P]
+cup_center = 22.5                    # [P]
+end_offset = 80.0                    # [P] misky 80 od hrán dvierok (MDETH 80)
+# [P] CV robí pri miske 4 značky Ø4 × 2 hrotom; vynechané, kým nie je overený nástroj Ø4
+plate_setback = 22.5                 # [P] krížová podložka na paneli 22,5 od čiary delenia
+plate_holes = [                      # [P] Ø5 × 12 zvisle ±16 okolo osi pántu
+    { z = -16.0, diameter = 5.0, depth = 12.0 },
+    { z = 16.0, diameter = 5.0, depth = 12.0 },
+]
+
+[[drawer]]
+id = "merivobox"
+name = "Blum Merivobox TOB 40 kg, INSERTA"
+lengths = [270.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0]   # [P] NL Merivobox TOB
+depth_reserve = 3.0                  # [P] NL ≤ hĺbka korpusu − 3 (STD_DepthClearance; 506 → 500)
+heights = [80.5, 103.0, 141.0, 204.0]   # [P] výška N / M / K / E (BOXH)
+top_reserve = 20.0                   # [?] korpus aspoň 20 pod vrchom čela (čelo 130 → M, 268 → E)
+side_clearance = 20.5                # [P] bočnica 20,5 od boku (svetlá šírka − 41)
+above_front = 2.0                    # [P] spodok korpusu 2 nad spodkom čela (deliaca čiara + 3)
+above_bottom = 3.0                   # [P] najnižšia zásuvka 3 nad dnom skrinky
+# [P] výsuv: Ø5 × 12 v 37/69/261/293 od prednej hrany boku, 54 nad spodkom korpusu
+runner_holes = [
+    { x = 37.0, z = 54.0, diameter = 5.0, depth = 12.0 },
+    { x = 69.0, z = 54.0, diameter = 5.0, depth = 12.0 },
+    { x = 261.0, z = 54.0, diameter = 5.0, depth = 12.0 },
+    { x = 293.0, z = 54.0, diameter = 5.0, depth = 12.0 },
+]
+# [P] príchytky čela INSERTA Ø10 × 12 v rovine bočnice, 33,5 a 65,5 nad spodkom korpusu,
+# pri výške E (204) aj príchytka relingu 193,5
+front_holes = [
+    { z = 33.5, diameter = 10.0, depth = 12.0 },
+    { z = 65.5, diameter = 10.0, depth = 12.0 },
+    { z = 193.5, diameter = 10.0, depth = 12.0, min_box_height = 204.0 },
+]
+box_material = "DTDL_16_W960_biela"  # [P] dno a zadok 16 mm
+bottom_shorter = 26.0                # [P] dno NL − 26 (500 → 474)
+bottom_narrower = 51.0               # [P] dno svetlá šírka − 51 (564 → 513)
+bottom_top = 20.0                    # [P] dno 20 nad spodkom korpusu
+back_lower = 20.0                    # [P] zadok výška − 20 (103 → 83, 204 → 184)
+
+# [P] pri NL 270–350 sú zadné diery bližšie: 37/69/197/229
+[[drawer.runner_variants]]
+max_length = 350.0
+holes = [
+    { x = 37.0, z = 54.0, diameter = 5.0, depth = 12.0 },
+    { x = 69.0, z = 54.0, diameter = 5.0, depth = 12.0 },
+    { x = 197.0, z = 54.0, diameter = 5.0, depth = 12.0 },
+    { x = 229.0, z = 54.0, diameter = 5.0, depth = 12.0 },
+]
+
+# ---------------------------------------------------------------------------
+# Atribúty skriniek (ako panel Attributes v CV, findings 11 §1). Predvolené hodnoty;
+# skrinka a položka katalógu ich prepíše v [cabinet.options].
+# ---------------------------------------------------------------------------
+[cabinet_options]
+joints = true                        # [P] 1) Spoje skrinka: Áno
+# [P] CV dielne: „1-K+Konfirmat“ (od 2026-07-03 namapovaný na „Vrut 3.5x50mm“); kým vlastník
+# nepotvrdí konfirmát alebo vrut, sú predvolené iba kolíky (katalóg Kuchyne_CASTEL má konfirmát)
+joint_type = "dowels"
+shelf_support = "sekura7"            # [P] Policové kovanie: 1, Sekura 7
+bumpers = false                      # [P] Zapnúť tl. čočky: False
+legs = true                          # [P] nožičky pod spodnými skrinkami (D_Zmazať nohu: False)
+plinth = true                        # [P] sokel SOKEL 97 × šírka na každej spodnej položke
+tip_on = "off"                       # [P] F00 TIP-ON: Vypnutý
+tip_on_color = "white"               # [P] F01 Bílý
+tip_on_kind = "stop"                 # [P] F01 S dorazem
+# [P] spojovacie kovanie skriniek (Ø5 × 16 s ľavou susedou) zapína projektant pri skrinke (findings 12 §8);
+# zatiaľ iba atribút, diery generátor nerobí
+link_left = false
+
+[bumpers]                            # [P] tlmiace čočky Ø8 × 12 (findings 09 §5.1, 11 §1.8)
+diameter = 8.0
+depth = 12.0
+edge = 9.0                           # [P] 9 od hrany oproti pántom
+small_front = 150.0                  # [P] čelo zásuvky ≤ 150: 2 diery v strede výšky
+
+[bumpers.base]                       # [P] pod úchytkou UK16: 9 + 30 od vrchu
+top = 39.0
+bottom = 9.0
+
+[bumpers.wall]                       # [P] dvierka presahujú 19 pod dno: 9 + 19 od spodku
+top = 9.0
+bottom = 28.0
+
+[bumpers.tall]
+top = 9.0
+bottom = 9.0
+
+[legs]                               # [P] štandard 33 (findings 11 §1.5)
+from_side = 50.0                     # [P] 50 od nepohľadového boku (pohľadový 67,5)
+from_front = 108.0
+from_back = 50.0
+max_span = 800.0                     # [P] roh 1000 → 6 nožičiek
+
+[cabinet_link]                       # [P] spojovacie kovanie susedných skriniek (findings 12 §8)
+diameter = 5.0
+depth = 16.0                         # [P] v boku 18 ostane 2 mm
+from_edge = 100.0                    # [P] od čela a zadu boku (horná: stred hĺbky)
+from_end = 80.0                      # [P] od spodku a vrchu boku (vysoká aj v strede)
+
+# [P] slepý roh S_KUC_ROH_P/_L (findings 11 §5.2, 12 §1; REF skr. 10): pevný panel v krajnom
+# stĺpci čiel; bok na jeho strane vystupuje k panelu a panel je s ním a s dnom spojený
+[blind_corner]
+side_extend = 3.0                    # [P] LU 391 = D − 4 + 3 na Z = CAB.DZ + 3 (po zadnú plochu panelu)
+panel_side_joint = true              # [P] hrana boku 32/96/349/413/666/730 Ø8 × 26, panel Ø8 × 13 + K Ø5 × 13 64/381/698
+# [P] dno ↔ panel cez medzeru 3: Ø8 × 26 do prednej hrany dna, Ø8 × 13 do panelu 9,5 nad spodkom
+# (CV „na dlhej hrane 550/614/868/932“ = 32/96/350/414 od boku pri paneli); pravidlo za polohami
+# nepoznáme [N] – zrejme ručne zadané v katalógovej položke, nie vzor 3/3/3
+panel_bottom_dowels = [32.0, 96.0, 350.0, 414.0]
+[filler]                             # [P] blenda: lišta za čelom blendy, čelo s presahom (findings 11 §5.3, 12 §2)
+front_gap = 2.0                      # [P] REF skr. 9: čelo blendy Z 332 … 351 pri korpuse 330 (2 pred korpusom, dvierka 3)
+standalone_front_gap = 0.0           # [P] REF skr. 5: čelo BLENDY priamo na lište (Z 100 = predná hrana lišty)
+strip_top_gap = 2.0                  # [P] REF skr. 9: lišta 661 pri boku 663
+front_overhang = 10.0                # [P] REF skr. 9: čelo blendy 60 pri šírke blendy 50 (iba predvolené)
+standalone_front_overhang = 60.0     # [P] BLENDA 2177 / REF skr. 5: OLR 60 (čelo 78 = lišta 18 + 60)
+extend_top = true                    # [P] REF skr. 9: vrch 626,5 = korpus 576,5 + blenda 50
+
+[filler.dowels]                      # [P] REF skr. 9 (CX100 966f0041): Ø8 × 26 do hrany lišty, Ø8 × 13 do čela a dna blendy
+end = 50.0                           # [P] 50 od koncov (50/154,75/259,5 a 50/237/424/611)
+count = 0                            # podľa max_spacing
+max_spacing = 200.0                  # [?] odvodené: 309,5 → 3 kolíky, 661 → 4 kolíky
+
+[filler.standalone_dowels]           # [P] BLENDA 2177 (UCS_3DHWpart 3 = 1/1/1), CX100 966f0034: 32/381/730
+end = 32.0
+count = 3
+max_spacing = 0.0
+
+[plinth]                             # [P] SOKEL: výška = dno − 3,5 (100 → 97), 68 za čelom (findings 11 §5.5)
+gap_top = 3.0
+setback = 68.0                       # [P] zadná plocha 68 za čelom korpusu (Z = hĺbka − 68), predná 49
+min_height = 20.0
+material = "MDF_19_W1000_biela"      # [P] 19 MDF W1000 PM/ST9 (tabule 9660501N/9660502N, findings 12 §6)
+runs = true                          # [P] REF: jeden sokel pod celou zostavou (2680 / 1944), nie pod každou skrinkou
+max_length = 2780.0                  # [?] tabuľa MDF 2800 − 2 × okraj 10; dlhšia zostava sa delí na styku skriniek
+side = true                          # [P] bočný sokel SOKEL BOCNY na odkrytom konci zostavy (REF skr. 1)
+side_back_gap = 0.0                  # [?] REF skr. 1: bočný sokel ide po zadnú hranu korpusu
+
+[plinth.side_dowel]                  # [P] 966f0031: 2 × Ø8 × 26 do čela na 18 / 79; 9660501N: Ø8 × 13 v zadnej ploche
+diameter = 8.0
+face_depth = 13.0
+edge_depth = 26.0
+from_edge = 18.0
+
+[cover_side]                         # [P] KRYCI BOK REF skr. 13: 899 × 500 × 38 (pracovná doska), Z −80…420 pri D 392
+material = "PD_38_H1385_dub"
+top = 37.0                           # [P] 862 + 37 = 899 od podlahy (pod hranou pracovnej dosky)
+front = 28.0                         # [P] pred čelom korpusu
+back = 80.0                          # [P] za zadnou hranou korpusu
+
+[fittings]                           # mená v súpise kovania (knižnica dielne)
+dowel = "Kolík 8x35"
+confirmat = "Konfirmát 5x50"
+screw = "Vrut 3.5x50mm"
+leg = "Nožička AXILO 100mm 637.76.353"
+shelf_support = "Häfele podperka police Sekura 7 282.24.726"
+bumper = "Dorazová čočka závrtná sivá 993.706"
+tip_on_stop = "Blum TIP-ON s dorazom 956A1006"
+tip_on_magnet = "Blum TIP-ON s magnetom 956A1004"
+
+# ---------------------------------------------------------------------------
+# Šikmá skrinka (S_KUCH_D SIKMA, S_KUCH_NASTENNA SIKMA v REF; skrinka `slant = {…}`).
+# [P] z dielov .cvj zákazky REF2026 (tests/fixtures/cv-ref, skrinky 1 a 6)
+# ---------------------------------------------------------------------------
+[slanted]
+side_material = "MDF_19_W1000_biela" # [P] „Lavy BOK B“ 0028 a 0056: DZ 19 (0056 je v CncRun na tabuli DTDL 18 – overiť)
+end_inset = 0.0                      # [P] 0025 DE Y 100 … 118 a 0027 TO Y 844 … 862 lícujú s koncami boku (rovná spodná 0,5)
+back_insert_bottom = 7.5             # [P] 0057 UB od Y 10,5 nad dnom 0 … 18
+back_insert_side = 8.0               # [P] 0057 UB `_EDG3OFF` 8: šikmá hrana 8 v drážke boku (X 18,98 pri Y 10,5)
+min_top = 50.0                       # [?] kratší vrch sa nedá: bok končí v rohu pri rovnom boku (0056)
+max_angle = 75.0                     # [?]
+# Otvorená nika a LED rampa horných skriniek (zákazka REF2026, findings 12 §2–3,
+# dataset tests/fixtures/cv-ref: skr. 7 „S_KUCH_NASTENNA NIKA“, diely 0058 a 0065).
+# ---------------------------------------------------------------------------
+[niche]                              # skrinka niche = true
+material = "MDF_19_W1000_biela"      # [P] všetky diely niky 19 MDF W1000 (NES_*, pohľadový chrbát, police)
+back_from_rear = 19.0                # [P] chrbát 0049 na Z 0…19, boky od Z −19: medzera 19 pre záves
+led_groove = true                    # [P] 966b0051: dno NES_Dno má drážku pre LED ako LED rampa
+hanger_holes = [                     # [P] 966b0047/48: Ø10 × 13 v oboch bokoch, 14 od zadnej hrany
+    { from_top = 56.0, from_edge = 14.0, diameter = 10.0, depth = 13.0 },
+    { from_top = 88.0, from_edge = 14.0, diameter = 10.0, depth = 13.0 },
+    { from_top = 120.0, from_edge = 14.0, diameter = 10.0, depth = 13.0 },
+]
+# [P] 9660502N (E008): Ø12 cez chrbát 18 od bokov, 60 a 110 od jeho vrchu (prístup k závesu).
+#     Vypnuté: vrták Ø12 nie je v [drills] profilov stroja (nesting ho robí frézou E008), kontrola
+#     by hlásila ToolMissing a import by niku vynechal – rozhodne vlastník (doplniť Ø12 do profilu)
+# back_holes = [
+#     { from_top = 60.0, from_edge = 18.0, diameter = 12.0 },
+#     { from_top = 110.0, from_edge = 18.0, diameter = 12.0 },
+# ]
+
+[led_rail]                           # skrinka led_rail = { … }: doska pod hornou skrinkou
+material = "MDF_19_W1000_biela"      # [P] 0058 „LED RAMPA“, 0065 „NES_LED RAMPA“: 19 MDF W1000
+depth_minus = 20.0                   # [P] 0065: hĺbka 310 pri skrinke 330, zadnou hranou pri stene
+# [P] 966b0065: 4 rezy LAMA (spolu šírka 14) hĺbky 13 zospodu na Z 266…280 od steny; 0058 frézou
+#     FRESA2 Ø14 × 13 na Z 273; NES_Dno 71…85 od čela niky 351 – drážky sú v jednej línii
+groove = { from_rear = 266.0, width = 14.0, depth = 13.0 }
+
+[[joint_rule]]
+a = ["top", "bottom"]
+b = "finished_back"
+connection = "dowel"                 # [P] REF nika: vrch a dno s chrbtom 3/3/3 (447: 32/96/191,5/255,5/351/415)
+
+[[joint_rule]]
+a = "side"
+b = "finished_back"
+connection = "dowel"
+# [P] 966b0047/48, 966f0049: zvislé hrany chrbta niky nesú 2 skupiny kolík–vrut–kolík
+#     64/96/128 od spodku a 150/182/214 od vrchu (vzor 3/3/3 by dal 4 skupiny)
+end_groups = { edge = "finished_back", from_start = 64.0, from_end = 150.0, cabinet = "wall" }
+
+[[joint_rule]]
+a = "adjustable_shelf"
+b = "finished_back"
+connection = "touch"                 # [P] polica niky siaha po pohľadový chrbát (310 = 313 − 3)

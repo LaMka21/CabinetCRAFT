@@ -1,0 +1,25 @@
+[package]
+name = "cc-cli"
+description = "CabinetCRAFT: príkazový riadok"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "cabinetcraft"
+path = "src/main.rs"
+
+[dependencies]
+cc-config.workspace = true
+cc-i18n.workspace = true
+cc-control.workspace = true
+cc-engine.workspace = true
+cc-model.workspace = true
+cc-pipeline.workspace = true
+cc-scene.workspace = true
+clap.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

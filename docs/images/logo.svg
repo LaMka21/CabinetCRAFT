@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 128" width="520" height="128" role="img" aria-label="CabinetCRAFT">
+  <!-- ikona programu: modrý štvorec, korpus a dvoje dvierka s úchytkami (ako ikona okna) -->
+  <g transform="translate(0,0)">
+    <rect x="0" y="0" width="128" height="128" rx="20" fill="#2b5d7a"/>
+    <rect x="28" y="20" width="72" height="88" fill="#cd8232"/>
+    <rect x="34" y="26" width="28" height="76" fill="#f4f0e8"/>
+    <rect x="66" y="26" width="28" height="76" fill="#f4f0e8"/>
+    <rect x="54" y="56" width="4" height="20" fill="#2b5d7a"/>
+    <rect x="70" y="56" width="4" height="20" fill="#2b5d7a"/>
+  </g>
+  <text x="152" y="80" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="56" font-weight="600" fill="#2b5d7a">Cabinet<tspan fill="#cd8232">CRAFT</tspan></text>
+  <text x="154" y="110" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#6e6e6e">cabinets → parts → CNC</text>
+</svg>

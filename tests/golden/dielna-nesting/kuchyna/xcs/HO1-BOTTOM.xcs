@@ -1,0 +1,22 @@
+//--PROJEKT: Dielna - kuchyna s miestnostou
+//--DIEL: HO1-BOTTOM  SKRINKA: HO1
+//--Generovane z CabinetCRAFT
+SetMachiningParameters("J",1,70,84869121,false);
+CreateFinishedWorkpieceBox("Dilec",564,330,18);
+SetWorkpieceSetupPosition(0,0, 0, 0);
+SetPreserveWorkingSequence(true);
+SelectWorkplane("Left");
+CreateDrill("Vrtani Leva 1 DIA=8 Z=26",298,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani Leva 2 DIA=8 Z=26",234,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani Leva 3 DIA=8 Z=26",96,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani Leva 4 DIA=8 Z=26",32,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+SelectWorkplane("Right");
+CreateDrill("Vrtani Prava 5 DIA=8 Z=26",32,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani Prava 6 DIA=8 Z=26",96,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani Prava 7 DIA=8 Z=26",234,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani Prava 8 DIA=8 Z=26",298,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+SelectWorkplane("Top");
+CreateSegment("",-60,311.5,624,311.5);
+ResetPneumaticHood();
+ResetAuxiliaryHood();
+CreateSlot("Pilka 1001",9,"", TypeOfProcess.GeneralRouting ,"LAMA","-1",3,4,0,0,0,90);

@@ -1,0 +1,15 @@
+[package]
+name = "cc-room"
+description = "CabinetCRAFT: miestnosť – steny, poloha skriniek, kontrola umiestnenia, vypĺňanie, kóty"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-model.workspace = true
+cc-i18n.workspace = true
+glam.workspace = true
+
+[lints]
+workspace = true

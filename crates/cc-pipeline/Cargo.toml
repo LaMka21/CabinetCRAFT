@@ -1,0 +1,29 @@
+[package]
+name = "cc-pipeline"
+description = "CabinetCRAFT: celý beh projekt → model → kontrola → výstupy (spoločné pre CLI a aplikáciu)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-i18n.workspace = true
+cc-model.workspace = true
+cc-config.workspace = true
+cc-generate.workspace = true
+cc-joints.workspace = true
+cc-room.workspace = true
+cc-out-csv.workspace = true
+cc-out-mpr.workspace = true
+cc-out-pdf.workspace = true
+cc-out-xcs.workspace = true
+cc-validate.workspace = true
+glam.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+cc-config.workspace = true
+
+[lints]
+workspace = true

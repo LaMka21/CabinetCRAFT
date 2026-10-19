@@ -1,0 +1,33 @@
+@Echo Off
+Echo Vytvorenie PGMX suborov pre SCM
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\VY1-SIDE-L.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\VY1-SIDE-L.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\VY1-SIDE-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\VY1-SIDE-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\VY1-BOTTOM.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\VY1-BOTTOM.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\VY1-TOP.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\VY1-TOP.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP1-BOTTOM.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP1-BOTTOM.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP1-STR-F.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP1-STR-F.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP1-STR-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP1-STR-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP2-BOTTOM.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP2-BOTTOM.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP2-STR-F.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP2-STR-F.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP2-STR-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP2-STR-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP3-BOTTOM.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP3-BOTTOM.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP3-STR-F.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP3-STR-F.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP3-STR-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP3-STR-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP3-SOKEL-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP3-SOKEL-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP4-BOTTOM.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP4-BOTTOM.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP4-STR-F.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP4-STR-F.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP4-STR-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP4-STR-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP4-SOKEL-L.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP4-SOKEL-L.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\SP4-SOKEL-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\SP4-SOKEL-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO1-SIDE-L.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO1-SIDE-L.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO1-SIDE-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO1-SIDE-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO1-BOTTOM.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO1-BOTTOM.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO1-TOP.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO1-TOP.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO2-SIDE-L.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO2-SIDE-L.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO2-SIDE-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO2-SIDE-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO2-BOTTOM.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO2-BOTTOM.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO2-TOP.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO2-TOP.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO3-SIDE-L.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO3-SIDE-L.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO3-SIDE-R.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO3-SIDE-R.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO3-BOTTOM.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO3-BOTTOM.pgmx" -report
+call "C:\Program Files (x86)\Scm Group\Maestro\XConverter.exe" -s -ow -m 0 -i "C:\Vyroba\CX100\HO3-TOP.xcs" -t "C:\Program Files (x86)\Scm Group\Maestro\Tlgx\COLL.tlgx" -o "C:\Vyroba\CX100\HO3-TOP.pgmx" -report

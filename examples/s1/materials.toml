@@ -1,0 +1,14 @@
+[[material]]
+id = "DTD_18_biela"
+thickness = 18.0
+grain = "none"
+edge_band = "ABS_2_biela"
+
+[[material]]
+id = "HDF_8_biela"
+thickness = 8.0
+grain = "none"
+
+[[edge_band]]
+id = "ABS_2_biela"
+thickness = 2.0

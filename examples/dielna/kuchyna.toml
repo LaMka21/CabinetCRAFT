@@ -1,0 +1,146 @@
+# Vzorová kuchyňa s miestnosťou (kap. 13): steny, okno, dvere a skrinky pri stenách.
+# Steny sú kreslené v smere hodinových ručičiek, miestnosť je napravo od smeru steny.
+[project]
+name = "Dielna – kuchyňa s miestnosťou"
+units = "mm"
+
+[defaults]
+panel_material = "DTDL_18_W960_biela"
+back_material  = "HDF_3_biela"
+construction   = "dielna-cx100"
+
+[room]
+wall_height = 2600
+wall_thickness = 120
+toe_height = 100        # nožičky: 100 + korpus 762 + doska 38 = 900
+upper_top = 2200        # horná hrana horných skriniek = vrch vysokej skrinky
+
+[[wall]]
+id = "W1"               # zadná stena kuchyne
+x = 0
+y = 2800
+length = 3600
+angle = 0
+
+[[wall]]
+id = "W2"               # pravá stena
+x = 3600
+y = 2800
+length = 2800
+angle = -90
+
+[[wall]]
+id = "W3"
+x = 3600
+y = 0
+length = 3600
+angle = 180
+
+[[wall]]
+id = "W4"               # ľavá stena s dverami
+x = 0
+y = 0
+length = 2800
+angle = 90
+
+[[opening]]
+wall = "W1"
+kind = "window"
+at = 1250
+width = 900
+height = 1200
+elevation = 1000
+
+[[opening]]
+wall = "W4"
+kind = "door"
+at = 1500
+width = 900
+height = 2000
+
+[[cabinet]]
+id = "VY1"
+type = "tall"
+w = 600
+h = 2100
+d = 510
+adjustable_shelves = 4
+wall = "W1"
+at = 0
+fronts = [{ kind = "door" }, { kind = "door" }]   # dvoje dvierka nad sebou, pánty vľavo
+
+[[cabinet]]
+id = "SP1"
+type = "base"
+w = 650
+h = 762
+d = 510
+adjustable_shelves = 0          # zásuvka + dvierka: polica by sa zrazila s podložkou pántu
+wall = "W1"
+at = 600
+fronts = [{ kind = "drawer", height = 200 }, { kind = "door", hinge_side = "right" }]
+
+[[cabinet]]
+id = "SP2"              # drez pod oknom
+type = "base"
+w = 900
+h = 762
+d = 510
+wall = "W1"
+at = 1250
+fronts = [{ kind = "pair" }]                       # drez: dvojité dvierka
+
+[[cabinet]]
+id = "SP3"
+type = "base"
+w = 600
+h = 762
+d = 510
+adjustable_shelves = 0          # zásuvky, bez police
+wall = "W1"
+at = 2150
+fronts = [{ kind = "drawer" }, { kind = "drawer" }, { kind = "drawer" }]
+
+[[cabinet]]
+id = "SP4"
+type = "base"
+w = 600
+h = 762
+d = 510
+adjustable_shelves = 1
+wall = "W2"
+at = 510
+fronts = [{ kind = "door", hinge_side = "right" }]
+
+[[cabinet]]
+id = "HO1"
+type = "wall"
+w = 600
+h = 663
+d = 330
+adjustable_shelves = 2
+wall = "W1"
+at = 600
+fronts = [{ kind = "door" }]
+
+[[cabinet]]
+id = "HO2"
+type = "wall"
+w = 600
+h = 663
+d = 330
+adjustable_shelves = 2
+wall = "W1"
+at = 2150
+fronts = [{ kind = "door", hinge_side = "right" }]
+
+[[cabinet]]
+id = "HO3"
+type = "wall"
+w = 600
+h = 663
+d = 330
+adjustable_shelves = 2
+wall = "W2"
+at = 330
+fronts = [{ kind = "door" }]

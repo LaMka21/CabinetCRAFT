@@ -1,0 +1,22 @@
+[package]
+name = "cc-out-xcs"
+description = "CabinetCRAFT: programy SCM Maestro .xcs pre CX100 (špecifikácia MVP, kap. 7.4)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-model.workspace = true
+cc-out-util.workspace = true
+cc-nest.workspace = true
+
+[dev-dependencies]
+cc-config.workspace = true
+cc-generate.workspace = true
+cc-joints.workspace = true
+cc-validate.workspace = true
+glam.workspace = true
+
+[lints]
+workspace = true

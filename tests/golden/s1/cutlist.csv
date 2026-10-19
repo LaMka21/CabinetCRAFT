@@ -1,0 +1,8 @@
+part_id;cabinet;role;material;length;width;thickness;qty;grain;edge_X0;edge_X1;edge_Y0;edge_Y1;program
+S1-SIDE-L;S1;side_left;DTD_18_biela;720.0;560.0;18.0;1;none;;;ABS_2_biela;;
+S1-SIDE-R;S1;side_right;DTD_18_biela;720.0;560.0;18.0;1;none;;;ABS_2_biela;;
+S1-BOTTOM;S1;bottom;DTD_18_biela;564.0;560.0;18.0;1;none;;;ABS_2_biela;;
+S1-STR-F;S1;stretcher_front;DTD_18_biela;564.0;100.0;18.0;1;none;;;ABS_2_biela;;
+S1-STR-R;S1;stretcher_rear;DTD_18_biela;564.0;100.0;18.0;1;none;;;ABS_2_biela;;
+S1-BACK;S1;back;HDF_8_biela;578.0;709.0;8.0;1;none;;;;;
+S1-ASHELF-1;S1;adjustable_shelf;DTD_18_biela;562.0;521.5;18.0;1;none;;;ABS_2_biela;;

@@ -1,0 +1,13 @@
+[package]
+name = "cc-i18n"
+description = "CabinetCRAFT: preklady textov (locales/*.toml, parametre, množné číslo, záloha en → sk)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+toml.workspace = true
+
+[lints]
+workspace = true

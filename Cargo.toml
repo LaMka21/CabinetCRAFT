@@ -1,0 +1,72 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/cc-i18n",
+    "crates/cc-model",
+    "crates/cc-config",
+    "crates/cc-generate",
+    "crates/cc-joints",
+    "crates/cc-validate",
+    "crates/cc-out-util",
+    "crates/cc-out-csv",
+    "crates/cc-out-cvj",
+    "crates/cc-out-mpr",
+    "crates/cc-out-xcs",
+    "crates/cc-out-pdf",
+    "crates/cc-room",
+    "crates/cc-scene",
+    "crates/cc-nest",
+    "crates/cc-pipeline",
+    "crates/cc-engine",
+    "crates/cc-control",
+    "crates/cc-import-cvj",
+    "crates/cc-cli",
+    "crates/cc-app",
+    "xtask",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[workspace.dependencies]
+cc-i18n = { path = "crates/cc-i18n" }
+cc-model = { path = "crates/cc-model" }
+cc-config = { path = "crates/cc-config" }
+cc-generate = { path = "crates/cc-generate" }
+cc-joints = { path = "crates/cc-joints" }
+cc-validate = { path = "crates/cc-validate" }
+cc-out-csv = { path = "crates/cc-out-csv" }
+cc-out-cvj = { path = "crates/cc-out-cvj" }
+cc-out-mpr = { path = "crates/cc-out-mpr" }
+cc-out-xcs = { path = "crates/cc-out-xcs" }
+cc-out-pdf = { path = "crates/cc-out-pdf" }
+cc-out-util = { path = "crates/cc-out-util" }
+cc-pipeline = { path = "crates/cc-pipeline" }
+cc-engine = { path = "crates/cc-engine" }
+cc-control = { path = "crates/cc-control" }
+cc-room = { path = "crates/cc-room" }
+cc-scene = { path = "crates/cc-scene" }
+cc-nest = { path = "crates/cc-nest" }
+cc-import-cvj = { path = "crates/cc-import-cvj" }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+thiserror = "1"
+clap = { version = "4", features = ["derive"] }
+glam = { version = "0.29", features = ["serde"] }
+approx = "0.5"
+serde_json = "1"
+miniz_oxide = "0.8"
+toml_edit = "0.22"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+dbg_macro = "warn"
+todo = "warn"
+too_many_arguments = "allow"
+type_complexity = "allow"

@@ -1,0 +1,17 @@
+[package]
+name = "cc-out-csv"
+description = "CabinetCRAFT: rozpis dielov ako CSV (špecifikácia MVP, kap. 7.1)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-model.workspace = true
+
+[dev-dependencies]
+cc-config.workspace = true
+cc-generate.workspace = true
+
+[lints]
+workspace = true

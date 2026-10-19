@@ -1,0 +1,38 @@
+[package]
+name = "cc-app"
+description = "CabinetCRAFT: okenná aplikácia (zadanie skriniek, 3D náhľad, diely, kontrola, export pre CX100)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "cabinetcraft-app"
+path = "src/main.rs"
+
+[dependencies]
+cc-i18n.workspace = true
+cc-model.workspace = true
+cc-config.workspace = true
+cc-pipeline.workspace = true
+cc-joints.workspace = true
+cc-engine.workspace = true
+cc-control.workspace = true
+cc-room.workspace = true
+cc-scene.workspace = true
+cc-out-xcs.workspace = true
+glam.workspace = true
+serde.workspace = true
+toml.workspace = true
+serde_json.workspace = true
+# glow ostáva ako záloha, keď wgpu nenájde GPU (ADR 0001)
+eframe = { version = "0.31", features = ["wgpu"] }
+# eframe/egui-wgpu zapínajú wgpu bez backendov; na Windows DirectX 12
+wgpu = { version = "24", default-features = false, features = ["dx12", "wgsl"] }
+rfd = "0.15"
+
+[dev-dependencies]
+naga = { version = "24", features = ["wgsl-in"] }
+
+[lints]
+workspace = true

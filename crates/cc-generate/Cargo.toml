@@ -1,0 +1,20 @@
+[package]
+name = "cc-generate"
+description = "CabinetCRAFT: generovanie dielov zo zadania skriniek (špecifikácia MVP, kap. 5)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-model.workspace = true
+cc-i18n.workspace = true
+glam.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+cc-config.workspace = true
+approx.workspace = true
+
+[lints]
+workspace = true

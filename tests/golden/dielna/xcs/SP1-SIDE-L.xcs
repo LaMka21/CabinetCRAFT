@@ -1,0 +1,24 @@
+//--PROJEKT: Dielna - vzor kuchyne
+//--DIEL: SP1-SIDE-L  SKRINKA: SP1
+//--Generovane z CabinetCRAFT
+SetMachiningParameters("J",1,70,84869121,false);
+CreateFinishedWorkpieceBox("Dilec",762,506,18);
+SetWorkpieceSetupPosition(0,0, 0, 0);
+SetPreserveWorkingSequence(true);
+SelectWorkplane("Top");
+CreateDrill("Vrtani 1 DIA=8 Z=13",752.5,32,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 2 DIA=8 Z=13",752.5,96,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 3 DIA=8 Z=13",752.5,221,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 4 DIA=8 Z=13",752.5,285,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 5 DIA=8 Z=13",752.5,410,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 6 DIA=8 Z=13",752.5,474,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 7 DIA=8 Z=13",9.5,18,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 8 DIA=8 Z=13",9.5,110,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 9 DIA=8 Z=13",9.5,396,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 10 DIA=8 Z=13",9.5,488,13,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 11 DIA=5 Z=10",428,53,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 12 DIA=5 Z=10",428,456,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 13 DIA=5 Z=10",396,53,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 14 DIA=5 Z=10",396,456,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 15 DIA=5 Z=10",364,53,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 16 DIA=5 Z=10",364,456,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);

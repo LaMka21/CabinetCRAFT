@@ -1,0 +1,12 @@
+[package]
+name = "cc-out-util"
+description = "CabinetCRAFT: spoločné pomôcky výstupov (formát čísel, šablóny, ASCII, názvy súborov)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

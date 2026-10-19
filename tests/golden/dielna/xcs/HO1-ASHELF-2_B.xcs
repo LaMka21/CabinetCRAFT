@@ -1,0 +1,12 @@
+//--PROJEKT: Dielna - vzor kuchyne
+//--DIEL: HO1-ASHELF-2  SKRINKA: HO1
+//--Generovane z CabinetCRAFT
+SetMachiningParameters("J",1,70,84869121,false);
+CreateFinishedWorkpieceBox("Dilec",563,306.5,18);
+SetWorkpieceSetupPosition(0,0, 0, 0);
+SetPreserveWorkingSequence(true);
+SelectWorkplane("Top");
+CreateDrill("Vrtani 1 DIA=5 Z=10",553.5,50,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 2 DIA=5 Z=10",553.5,256.5,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 3 DIA=5 Z=10",9.5,50,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateDrill("Vrtani 4 DIA=5 Z=10",9.5,256.5,10,5,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);

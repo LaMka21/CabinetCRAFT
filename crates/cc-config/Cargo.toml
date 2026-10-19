@@ -1,0 +1,17 @@
+[package]
+name = "cc-config"
+description = "CabinetCRAFT: načítanie a kontrola konfigurácie (project.toml, materials.toml, standards/*.toml)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-model.workspace = true
+cc-i18n.workspace = true
+serde.workspace = true
+toml.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

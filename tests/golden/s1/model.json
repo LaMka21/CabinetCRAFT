@@ -1,0 +1,1633 @@
+{
+  "project": "Vzor S1",
+  "cabinets": [
+    {
+      "id": "S1",
+      "cabinet_type": "base",
+      "w": 600.0,
+      "h": 720.0,
+      "d": 560.0,
+      "parts": [
+        {
+          "id": "S1-SIDE-L",
+          "cabinet": "S1",
+          "role": "side_left",
+          "material": "DTD_18_biela",
+          "length": 720.0,
+          "width": 560.0,
+          "thickness": 18.0,
+          "grain": "none",
+          "edges": {
+            "x0": null,
+            "x1": null,
+            "y0": "ABS_2_biela",
+            "y1": null
+          },
+          "transform": {
+            "x_axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "y_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "origin": [
+              0.0,
+              0.0,
+              720.0
+            ]
+          },
+          "operations": [
+            {
+              "Hole": {
+                "face": "F",
+                "x": 711.0,
+                "y": 32.0,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 711.0,
+                "y": 151.375,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 711.0,
+                "y": 270.75,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 711.0,
+                "y": 390.125,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 711.0,
+                "y": 509.5,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 9.0,
+                "y": 32.0,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 9.0,
+                "y": 68.0,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 9.0,
+                "y": 473.5,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 9.0,
+                "y": 509.5,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Groove": {
+                "face": "F",
+                "start": {
+                  "x": 0.0,
+                  "y": 545.75
+                },
+                "end": {
+                  "x": 720.0,
+                  "y": 545.75
+                },
+                "width": 8.5,
+                "depth": 8.0
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 638.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 638.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 606.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 606.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 574.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 574.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 542.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 542.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 510.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 510.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 478.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 478.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 446.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 446.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 414.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 414.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 382.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 382.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 350.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 350.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 318.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 318.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 286.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 286.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 254.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 254.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 222.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 222.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 190.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 190.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 158.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 158.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 126.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 126.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 94.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 94.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "S1-SIDE-R",
+          "cabinet": "S1",
+          "role": "side_right",
+          "material": "DTD_18_biela",
+          "length": 720.0,
+          "width": 560.0,
+          "thickness": 18.0,
+          "grain": "none",
+          "edges": {
+            "x0": null,
+            "x1": null,
+            "y0": "ABS_2_biela",
+            "y1": null
+          },
+          "transform": {
+            "x_axis": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "y_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z_axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "origin": [
+              600.0,
+              0.0,
+              0.0
+            ]
+          },
+          "operations": [
+            {
+              "Hole": {
+                "face": "F",
+                "x": 9.0,
+                "y": 32.0,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 9.0,
+                "y": 151.375,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 9.0,
+                "y": 270.75,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 9.0,
+                "y": 390.125,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 9.0,
+                "y": 509.5,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 711.0,
+                "y": 32.0,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 711.0,
+                "y": 68.0,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 711.0,
+                "y": 473.5,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 711.0,
+                "y": 509.5,
+                "z": 18.0,
+                "diameter": 8.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Groove": {
+                "face": "F",
+                "start": {
+                  "x": 0.0,
+                  "y": 545.75
+                },
+                "end": {
+                  "x": 720.0,
+                  "y": 545.75
+                },
+                "width": 8.5,
+                "depth": 8.0
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 82.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 82.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 114.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 114.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 146.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 146.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 178.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 178.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 210.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 210.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 242.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 242.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 274.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 274.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 306.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 306.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 338.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 338.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 370.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 370.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 402.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 402.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 434.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 434.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 466.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 466.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 498.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 498.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 530.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 530.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 562.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 562.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 594.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 594.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 626.0,
+                "y": 37.0,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            },
+            {
+              "Hole": {
+                "face": "F",
+                "x": 626.0,
+                "y": 504.5,
+                "z": 18.0,
+                "diameter": 5.0,
+                "depth": 12.0,
+                "through": false,
+                "dowel": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "S1-BOTTOM",
+          "cabinet": "S1",
+          "role": "bottom",
+          "material": "DTD_18_biela",
+          "length": 564.0,
+          "width": 560.0,
+          "thickness": 18.0,
+          "grain": "none",
+          "edges": {
+            "x0": null,
+            "x1": null,
+            "y0": "ABS_2_biela",
+            "y1": null
+          },
+          "transform": {
+            "x_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z_axis": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "origin": [
+              18.0,
+              0.0,
+              0.0
+            ]
+          },
+          "operations": [
+            {
+              "Hole": {
+                "face": "X0",
+                "x": 0.0,
+                "y": 32.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X0",
+                "x": 0.0,
+                "y": 151.375,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X0",
+                "x": 0.0,
+                "y": 270.75,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X0",
+                "x": 0.0,
+                "y": 390.125,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X0",
+                "x": 0.0,
+                "y": 509.5,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X1",
+                "x": 564.0,
+                "y": 32.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X1",
+                "x": 564.0,
+                "y": 151.375,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X1",
+                "x": 564.0,
+                "y": 270.75,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X1",
+                "x": 564.0,
+                "y": 390.125,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X1",
+                "x": 564.0,
+                "y": 509.5,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Groove": {
+                "face": "F",
+                "start": {
+                  "x": 0.0,
+                  "y": 545.75
+                },
+                "end": {
+                  "x": 564.0,
+                  "y": 545.75
+                },
+                "width": 8.5,
+                "depth": 8.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "S1-STR-F",
+          "cabinet": "S1",
+          "role": "stretcher_front",
+          "material": "DTD_18_biela",
+          "length": 564.0,
+          "width": 100.0,
+          "thickness": 18.0,
+          "grain": "none",
+          "edges": {
+            "x0": null,
+            "x1": null,
+            "y0": "ABS_2_biela",
+            "y1": null
+          },
+          "transform": {
+            "x_axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "y_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z_axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "origin": [
+              582.0,
+              0.0,
+              720.0
+            ]
+          },
+          "operations": [
+            {
+              "Hole": {
+                "face": "X1",
+                "x": 564.0,
+                "y": 32.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X1",
+                "x": 564.0,
+                "y": 68.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X0",
+                "x": 0.0,
+                "y": 32.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X0",
+                "x": 0.0,
+                "y": 68.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "S1-STR-R",
+          "cabinet": "S1",
+          "role": "stretcher_rear",
+          "material": "DTD_18_biela",
+          "length": 564.0,
+          "width": 100.0,
+          "thickness": 18.0,
+          "grain": "none",
+          "edges": {
+            "x0": null,
+            "x1": null,
+            "y0": "ABS_2_biela",
+            "y1": null
+          },
+          "transform": {
+            "x_axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "y_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z_axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "origin": [
+              582.0,
+              441.5,
+              720.0
+            ]
+          },
+          "operations": [
+            {
+              "Hole": {
+                "face": "X1",
+                "x": 564.0,
+                "y": 32.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X1",
+                "x": 564.0,
+                "y": 68.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X0",
+                "x": 0.0,
+                "y": 32.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            },
+            {
+              "Hole": {
+                "face": "X0",
+                "x": 0.0,
+                "y": 68.0,
+                "z": 9.0,
+                "diameter": 8.0,
+                "depth": 25.0,
+                "through": false,
+                "dowel": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "S1-BACK",
+          "cabinet": "S1",
+          "role": "back",
+          "material": "HDF_8_biela",
+          "length": 578.0,
+          "width": 709.0,
+          "thickness": 8.0,
+          "grain": "none",
+          "edges": {
+            "x0": null,
+            "x1": null,
+            "y0": null,
+            "y1": null
+          },
+          "transform": {
+            "x_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y_axis": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "z_axis": [
+              0.0,
+              -1.0,
+              0.0
+            ],
+            "origin": [
+              11.0,
+              549.75,
+              10.0
+            ]
+          },
+          "operations": []
+        },
+        {
+          "id": "S1-ASHELF-1",
+          "cabinet": "S1",
+          "role": "adjustable_shelf",
+          "material": "DTD_18_biela",
+          "length": 562.0,
+          "width": 521.5,
+          "thickness": 18.0,
+          "grain": "none",
+          "edges": {
+            "x0": null,
+            "x1": null,
+            "y0": "ABS_2_biela",
+            "y1": null
+          },
+          "transform": {
+            "x_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z_axis": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "origin": [
+              19.0,
+              20.0,
+              342.0
+            ]
+          },
+          "operations": []
+        }
+      ]
+    }
+  ]
+}

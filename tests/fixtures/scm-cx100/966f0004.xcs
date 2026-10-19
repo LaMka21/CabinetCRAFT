@@ -1,0 +1,14 @@
+SetMachiningParameters("J",1,70,84869121,false);
+CreateFinishedWorkpieceBox("Dilec",564,128,18);
+SetWorkpieceSetupPosition(0,0, 0, 0);
+SetPreserveWorkingSequence(true);
+CreateWorkplane("Plan1",564,0,18,564,1,18,564,0,19);
+SelectWorkplane("Right");
+CreateDrill("Vrtani Prava 1 DIA=8 Z=26",18,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+SelectWorkplane("Right");
+CreateDrill("Vrtani Prava 2 DIA=8 Z=26",110,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+CreateWorkplane("Plan2",0,0,18,0,-1,18,0,0,19);
+SelectWorkplane("Left");
+CreateDrill("Vrtani Leva 3  DIA=8 Z=26",18,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+SelectWorkplane("Left");
+CreateDrill("Vrtani Leva 4  DIA=8 Z=26",110,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);

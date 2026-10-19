@@ -1,0 +1,225 @@
+# Katalóg „Kuchyne_CASTEL“ – skrinky dielne na pridanie jedným klikom (okno: Skrinky → Katalóg,
+# ľavý panel Katalóg, príkaz `cabinet.add {"catalog": "S_KUCH_D", "from": "Kuchyne_CASTEL"}`).
+# Vlastné katalógy: v ľavom paneli Katalóg „+ nový“, skrinku zo zákazky ulož tlačidlom
+# „Uložiť do katalógu“ (príkazy catalog.create, catalog.save_item).
+#
+# Označenia a rozmery podľa katalógu dielne v CABINET VISION (Kuchyne_CASTEL) a skriniek,
+# ktoré dielňa použila v zákazkách REF2026 a test_1 (findings/10-katalog.md).
+#   [P] = zo zákaziek, [K] = z prehľadu katalógu (členenie čiel neoverené), [?] = odhad
+# Výška `h` je korpus bez sokla (v CV 862 = 762 + sokel 100). Čelá zhora nadol; čelo bez
+# výšky si delí zvyšok. Pánt a zásuvky podľa štandardu dielne, ak tu nie sú.
+#
+# Zatiaľ chýbajú (CabinetCRAFT ich ešte nevie): BLENDA (čelo s presahom 60 a lišta), DOSKA
+# DNO/VRCH, S_RURA_MIKROVLNKA, KRYCI BOK, S_KUCH_RURA; pri VARNA_D kratší chrbát a nižšie vlysy.
+
+# ---------------------------------------------------------------- spodné
+[[item]]
+id = "S_KUCH"
+name = "Spodná – korpus bez čiel"
+group = "Spodné"
+type = "base"
+w = 600
+h = 762
+d = 510
+top_style = "panel"                  # [P] vrch TO 18 (dvierková; zásuvkové a drez majú 2 vlysy)
+options = { joint_type = "confirmat" }   # [P] A-SPOJE TYP: 1-K+Konfirmat
+
+[[item]]
+id = "S_KUCH_D"
+name = "Spodná – dvierka"
+group = "Spodné"
+type = "base"
+w = 600
+h = 762
+d = 510
+top_style = "panel"                  # [P] vrch TO 18 (dvierková; zásuvkové a drez majú 2 vlysy)
+fronts = [{ kind = "door" }]         # [P] pánty vľavo; vpravo vo vlastnostiach skrinky
+options = { joint_type = "confirmat" }   # [P] A-SPOJE TYP: 1-K+Konfirmat
+
+[[item]]
+id = "S_KUCH_1_SUP"
+name = "Spodná – 1 zásuvka"
+group = "Spodné"
+type = "base"
+w = 600
+h = 762
+d = 510
+fronts = [{ kind = "drawer" }]       # [K]
+options = { joint_type = "confirmat" }   # [P] A-SPOJE TYP: 1-K+Konfirmat
+
+[[item]]
+id = "S_KUCH_2_SUP"
+name = "Spodná – 2 zásuvky"
+group = "Spodné"
+type = "base"
+w = 600
+h = 762
+d = 510
+fronts = [{ kind = "drawer" }, { kind = "drawer" }]   # [K] delenie [?] rovnaké
+options = { joint_type = "confirmat" }   # [P] A-SPOJE TYP: 1-K+Konfirmat
+
+[[item]]
+id = "S_KUCH_3_SUP"
+name = "Spodná – 3 zásuvky"
+group = "Spodné"
+type = "base"
+w = 600
+h = 762
+d = 510
+# [P] čelá 130 / 268 / 268 (korpusy M / E / E), ako S_KUCH_VARNA_D
+fronts = [{ kind = "drawer", height = 130 }, { kind = "drawer", height = 268 }, { kind = "drawer" }]
+options = { joint_type = "confirmat" }   # [P] A-SPOJE TYP: 1-K+Konfirmat
+
+[[item]]
+id = "S_KUCH_4_SUP"
+name = "Spodná – 4 zásuvky"
+group = "Spodné"
+type = "base"
+w = 600
+h = 762
+d = 510
+# [P] 4 rovnaké otvory (v CV okolo 190, korpusy K 141); s úchytkou UK16 vychádza korpus M
+fronts = [{ kind = "drawer" }, { kind = "drawer" }, { kind = "drawer" }, { kind = "drawer" }]
+options = { joint_type = "confirmat" }   # [P] A-SPOJE TYP: 1-K+Konfirmat
+
+[[item]]
+id = "S_KUCH_VARNA_D"
+name = "Spodná pod varnú dosku – 3 zásuvky"
+group = "Spodné"
+type = "base"
+w = 600
+h = 762
+d = 510
+# [P] čelá 130 / 268 / 268, korpusy N / E / E (pod varnou doskou nízky; findings 10 §8)
+fronts = [
+    { kind = "drawer", height = 130, box_height = 80.5 },
+    { kind = "drawer", height = 268 },
+    { kind = "drawer" },
+]
+stretcher_drop = 154.5               # [P] vlysy 154,5 pod vrch bokov (miesto pre varnú dosku, findings 12 §5)
+options = { joint_type = "confirmat" }   # [P] A-SPOJE TYP: 1-K+Konfirmat
+
+[[item]]
+id = "S_KUCH_DREZ"
+name = "Spodná drezová – 1 zásuvka"
+group = "Spodné"
+type = "base"
+w = 600
+h = 762
+d = 510
+fronts = [{ kind = "drawer" }]       # [P] jedna zásuvka na celú výšku (korpus E)
+drawer_length = 450                  # [P] NL 450 kvôli drezu (BDC 60)
+back = false                         # [P] drezová skrinka bez zadnej steny
+top_style = "sink"                   # [P] vlysy na výšku: predný hore, zadný „CHRBAT“ na dne (findings 12 §4)
+options = { joint_type = "confirmat" }   # [P] A-SPOJE TYP: 1-K+Konfirmat
+
+[[item]]
+id = "S_UMYVACKA"
+name = "Umývačka riadu – iba čelo"
+group = "Spodné"
+type = "base"
+w = 600
+h = 762
+d = 510
+carcass = false                      # [P] iba čelo bez korpusu a bez pántov
+fronts = [{ kind = "false_front" }]
+
+[[item]]
+id = "S_KUC_ROH_P"
+name = "Spodná rohová – slepý roh vľavo, dvierka vpravo"
+group = "Spodné"
+type = "base"
+w = 1000
+h = 762
+d = 510
+top_style = "panel"                  # [P] vrch TO 18 (dvierková; zásuvkové a drez majú 2 vlysy)
+adjustable_shelves = 1               # [P]
+# [P] pevný panel 0–500 (slepý), čiara delenia na 500, dvierka 500–1000 so slepým pántom
+# pri paneli (79B9550, 80 od hrán; krížová podložka na paneli 22,5 od čiary)
+fronts = [{ kind = "door", columns = [{ kind = "panel", width = 500 }, { kind = "door" }] }]
+options = { joint_type = "confirmat" }   # [P]
+# chýba: značky Ø4 × 2 slepého pántu (bok na slepej strane o 3 vpred robí [blind_corner] v štandarde)
+
+[[item]]
+id = "S_KUC_ROH_L"
+name = "Spodná rohová – dvierka vľavo, slepý roh vpravo"
+group = "Spodné"
+type = "base"
+w = 1000
+h = 762
+d = 510
+top_style = "panel"                  # [P] vrch TO 18 (dvierková; zásuvkové a drez majú 2 vlysy)
+adjustable_shelves = 1               # [P]
+fronts = [{ kind = "door", columns = [{ kind = "door", width = 500 }, { kind = "panel" }] }]   # [P] zrkadlovo
+options = { joint_type = "confirmat" }   # [P]
+
+# ---------------------------------------------------------------- horné
+[[item]]
+id = "S_KUCH_NASTENNA"
+name = "Horná – dvojité dvierka"
+group = "Horné"
+type = "wall"
+w = 762
+h = 700
+d = 330
+adjustable_shelves = 2               # [P]
+fronts = [{ kind = "pair" }]         # [P] 2 krídla (v zákazke aj zúžené na 1)
+lock_width = true                    # [P] v CV Stretch 0/0/0 (Lock Width, findings 11 §4.2)
+placement = { above_elevation = 1518.0 }  # [P] v CV „Above Elevation“ _RECELE 1518 (findings 11 §4.1)
+
+[[item]]
+id = "S_KUCH_PODHMAT"
+name = "Horná na podhmat – dvojité dvierka"
+group = "Horné"
+type = "wall"
+w = 762
+h = 700
+d = 330
+adjustable_shelves = 2
+fronts = [{ kind = "pair" }]         # [K]
+
+[[item]]
+id = "S_KUCH_DIG"
+name = "Horná nad digestor"
+group = "Horné"
+type = "wall"
+w = 600
+h = 900                              # [P] findings 10 §8
+d = 330
+adjustable_shelves = 2
+fronts = [{ kind = "pair" }]         # [K] 2 krídla
+
+[[item]]
+id = "S_KUCH_NASTENNA NIKA"          # [P] REF skr. 7: upravená S_KUCH_NASTENNA (findings 10 §1, 12 §3)
+name = "Horná – otvorená nika MDF 19"
+group = "Horné"
+type = "wall"
+w = 485                              # [P] REF
+h = 701                              # [P] 682 + 19: dno niky v rovine LED rampy susedov
+d = 351                              # [P] 332 + 19 (boky až po stenu, chrbát 19 pred stenou)
+adjustable_shelves = 2               # [P]
+niche = true                         # [P] stavba podľa [niche] štandardu dielne
+placement = { above_elevation = 1499.0 }  # [P] spodok 19 pod hornými skrinkami (1518)
+
+# ---------------------------------------------------------------- vysoké
+[[item]]
+id = "S_CHLADNICKKOVA"
+name = "Vysoká na chladničku – dvoje dvierka"
+group = "Vysoké"
+type = "tall"
+w = 600
+h = 1815                             # [K] 1915 so soklom 100
+d = 517
+fronts = [{ kind = "door", height = 763.5 }, { kind = "door" }]   # [P] dvierka 763,5 hore a zvyšok (v CV 1051,5)
+
+# ---------------------------------------------------------------- blendy
+[[item]]
+id = "BLENDA"
+name = "Blenda – lišta 18 a slepé čelo s presahom 60"
+group = "Blendy"
+type = "base"
+w = 18                               # [P] BLENDA 2177: lišta LF 18 (findings 11 §5.3)
+h = 762                              # [P] REF skr. 5 (v katalógu CV 2500)
+d = 100                              # [P] lišta 100
+carcass = false                      # [P] iba lišta a čelo (DWR_OPEN STYPE 5)
+filler = { side = "right" }          # [P] čelo 18 + OLR 60 = 78, 3 kolíky 32/381/730 ([filler] v štandarde)

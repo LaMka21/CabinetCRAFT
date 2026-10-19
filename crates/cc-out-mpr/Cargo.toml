@@ -1,0 +1,20 @@
+[package]
+name = "cc-out-mpr"
+description = "CabinetCRAFT: programy WoodWOP .mpr (špecifikácia MVP, kap. 7.3)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-model.workspace = true
+cc-out-util.workspace = true
+
+[dev-dependencies]
+cc-config.workspace = true
+cc-generate.workspace = true
+cc-joints.workspace = true
+glam.workspace = true
+
+[lints]
+workspace = true

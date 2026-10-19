@@ -1,0 +1,48 @@
+# Konštrukčný štandard „frameless32“ – špecifikácia MVP, kap. 4.3.
+# Hodnoty sú návrh; potvrdiť v dielni (otázka O4).
+
+[carcass]
+top_style = "stretchers"             # base: stretchers | panel  (wall/tall: vždy panel)
+stretcher_width = 100.0
+shelf_side_clearance = 1.0           # vôľa police na každej strane
+shelf_front_setback = 20.0           # polica je kratšia spredu
+
+[back]
+mount = "groove"
+groove_offset_from_rear = 10.0       # e: zadná hrana dielu → zadná stena drážky
+groove_width_clearance = 0.5         # gw = T_back + 0.5
+groove_depth = 8.0                   # gd
+fit_clearance = 1.0                  # vôľa zadnej steny v drážke (na stranu) a hore
+groove_through = true
+
+[dowel]
+diameter = 8.0
+face_depth = 12.0
+edge_depth = 25.0
+end_offset = 32.0
+max_spacing = 128.0
+snap_32 = false
+
+[line_bore]
+diameter = 5.0
+depth = 12.0
+front_offset = 37.0
+rear_offset = 37.0
+pitch = 32.0
+start_above_bottom = 64.0
+end_below_top = 64.0
+
+[[joint_rule]]
+a = "side"
+b = ["bottom", "top", "stretcher_front", "stretcher_rear", "fixed_shelf"]
+connection = "dowel"
+
+[[joint_rule]]
+a = ["side", "bottom", "top"]
+b = "back"
+connection = "back_groove"
+
+[[joint_rule]]
+a = "side"
+b = "adjustable_shelf"
+connection = "line_bore"

@@ -1,0 +1,20 @@
+[package]
+name = "cc-scene"
+description = "CabinetCRAFT: 3D scéna (plochy, hrany, obálky dielov), kamera, výber lúčom a softvérový raster"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-model.workspace = true
+cc-room.workspace = true
+glam.workspace = true
+png = "0.17"
+
+[dev-dependencies]
+cc-config.workspace = true
+cc-pipeline.workspace = true
+
+[lints]
+workspace = true

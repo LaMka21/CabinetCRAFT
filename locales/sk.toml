@@ -1,0 +1,1905 @@
+# CabinetCRAFT – slovenské texty (predvolený jazyk).
+#
+# Kľúče musia byť rovnaké ako v en.toml (referenčný súbor); kontrola: cargo xtask i18n.
+# Parametre {meno} nechaj tak, dosadí ich program. Množné číslo: { one, few, many, other }.
+
+[meta]
+name = "Slovenčina"
+
+# Príkazy (cc-engine): názov pre históriu krokov a ponuky; cesta v ponuke
+
+[commands]
+"export.drawings" = "Tlač výkresov do PDF"
+"export.machine" = "Export pre stroj"
+"cabinet.snap_corner" = "Prisunúť skrinku do rohu"
+"cabinet.add" = "Pridať skrinku"
+"cabinet.remove" = "Odstrániť skrinku"
+"cabinet.duplicate" = "Duplikovať skrinku"
+"cabinet.move" = "Presunúť skrinku v zozname"
+"cabinet.set" = "Upraviť skrinku"
+"catalog.list" = "Katalógy skriniek"
+"catalog.create" = "Nový katalóg"
+"catalog.save_item" = "Uložiť skrinku do katalógu"
+"catalog.remove_item" = "Odstrániť položku katalógu"
+"edit.undo" = "Späť"
+"edit.redo" = "Znova"
+"selection.set" = "Vybrať"
+"front.split" = "Rozdeliť otvor čela"
+"front.set" = "Zmeniť otvor čela"
+"front.remove" = "Zmazať delenie čela"
+"project.inspect" = "Stav projektu"
+"model.inspect" = "Stav modelu"
+"model.hardware" = "Súpis kovania"
+"labels.sheets" = "Tabule a štítky"
+"labels.print" = "Tlač štítkov"
+"project.import_cvj" = "Importovať úlohu CABINET VISION"
+"project.export_cvj" = "Uložiť do CABINET VISION (.cvj)"
+"project.open" = "Otvoriť projekt"
+"project.new" = "Nový projekt"
+"project.save" = "Uložiť"
+"project.save_as" = "Uložiť ako"
+"project.rename" = "Premenovať projekt"
+"project.info" = "Údaje zákazky"
+"project.set" = "Upraviť projekt"
+"defaults.set" = "Zmeniť predvolené materiály"
+"room.corner" = "Predĺžiť skrinku do rohu"
+"room.set" = "Upraviť miestnosť"
+"room.add_rect" = "Pridať obdĺžnikovú miestnosť"
+"wall.add" = "Pridať stenu"
+"wall.set" = "Upraviť stenu"
+"wall.remove" = "Zmazať stenu"
+"opening.add" = "Pridať okno alebo dvere"
+"opening.set" = "Upraviť otvor"
+"opening.remove" = "Zmazať otvor"
+"room.orient" = "Steny miestnosti dovnútra"
+"cabinet.fill" = "Vyplniť stenu skrinkami"
+"standard.set" = "Zmeniť hodnotu štandardu"
+"standard.use" = "Použiť iný štandard"
+"standard.save" = "Uložiť štandard"
+"standard.reload" = "Načítať štandard zo súboru"
+
+[command_menus]
+"export.drawings" = "Súbor/Tlač výkresov do PDF…"
+"export.machine" = "Súbor/Export pre stroj…"
+"cabinet.add" = "Skrinka/Pridať"
+"cabinet.remove" = "Skrinka/Odstrániť"
+"cabinet.duplicate" = "Skrinka/Duplikovať"
+"catalog.create" = "Skrinka/Nový katalóg…"
+"catalog.save_item" = "Skrinka/Uložiť do katalógu…"
+"edit.undo" = "Úpravy/Späť"
+"edit.redo" = "Úpravy/Znova"
+"project.import_cvj" = "Súbor/Importovať .cvj…"
+"project.export_cvj" = "Súbor/Uložiť ako .cvj…"
+"project.open" = "Súbor/Otvoriť…"
+"project.new" = "Súbor/Nový"
+"project.save" = "Súbor/Uložiť"
+"project.save_as" = "Súbor/Uložiť ako…"
+"room.set" = "Miestnosť/Vlastnosti"
+"room.add_rect" = "Miestnosť/Obdĺžniková miestnosť"
+"wall.add" = "Miestnosť/Pridať stenu"
+"wall.remove" = "Miestnosť/Zmazať stenu"
+"opening.add" = "Miestnosť/Pridať otvor"
+"room.orient" = "Miestnosť/Steny dovnútra"
+"cabinet.fill" = "Miestnosť/Vyplniť stenu"
+"standard.use" = "Štandard/Použiť…"
+"standard.save" = "Štandard/Uložiť"
+"standard.reload" = "Štandard/Načítať zo súboru"
+
+[status]
+language_set = "Jazyk: {name}"
+
+[ribbon.language]
+group = "Jazyk"
+hint = "Jazyk okna, výkresov a štítkov. Ďalšie jazyky: súbory <kód>.toml v priečinku jazykov (locales/README.md)."
+folder = "Priečinok jazykov"
+folder_hint = 'Otvorí %APPDATA%\CabinetCRAFT\locales; nový súbor <kód>.toml sa ukáže v zozname bez reštartu.'
+no_folder = "Priečinok jazykov sa nedá vytvoriť"
+
+# ---- shell ----
+# shell: crates/cc-app/src/ribbon.rs, tabs.rs, app.rs, reports.rs (main.rs nemá texty pre používateľa)
+
+# Pás nástrojov: karty
+[ribbon.tabs]
+file = "Súbor"
+main = "Hlavné"
+tools = "Nástroje"
+
+# Ponuka Súbor
+[ribbon.file]
+new = "Nový projekt"
+open = "Otvoriť…"
+save = "Uložiť"
+save_as = "Uložiť ako…"
+import_cvj = "Importovať úlohu .cvj…"
+export_cvj = "Uložiť do CABINET VISION (.cvj)…"
+print = "Tlač výkresov do PDF…"
+quit = "Koniec"
+
+[ribbon.home]
+group = "Domov"
+return = "Návrat"
+return_hint = "Späť na zoznam režimov (alebo z editora skrinky)"
+
+[ribbon.edit]
+group = "Úpravy"
+undo = "Späť"
+undo_hint = "Ctrl+Z: {label}"
+redo = "Znova"
+redo_hint = "Ctrl+Y: {label}"
+
+# Zoom pôdorysu a pohľadu
+[ribbon.zoom]
+group = "Zoom"
+window = "Výrez"
+window_hint = "Potiahni rám okolo miesta, ktoré chceš priblížiť"
+out = "Oddialiť"
+all = "Všetko"
+all_hint = "Celá miestnosť v okne (aj dvojklik pravým tlačidlom)"
+
+# Režim Steny v pôdoryse
+[ribbon.walls]
+select_group = "Výber"
+select = "Vybrať"
+select_hint = "Klik na stenu: vlastnosti v ľavom paneli"
+modify_group = "Upraviť"
+delete = "Odstrániť"
+delete_hint = "Zmazať vybranú stenu; skrinky pri nej ostanú bez steny, otvory sa zmažú"
+orient = "Steny dovnútra"
+orient_hint = "Miestnosť nakreslená proti smeru hodín: otočí steny, aby skrinky stáli vnútri"
+draw_group = "Kreslenie"
+line = "Čiara"
+line_hint = "Steny čiarou: klik = začiatok/koniec steny, steny sa reťazia. Esc ukončí reťaz, pravé tlačidlo kreslenie."
+rect = "Obdĺžnik"
+rect_hint = "Obdĺžniková miestnosť: potiahni rám od rohu k rohu"
+
+# Zostavy: skrinky
+[ribbon.cabinets]
+group = "Skrinky"
+base = "Spodná"
+base_hint = "Pridať spodnú skrinku"
+wall = "Horná"
+wall_hint = "Pridať hornú skrinku"
+tall = "Vysoká"
+tall_hint = "Pridať vysokú skrinku"
+catalog = "Katalóg"
+catalog_empty = "Katalógy skriniek (catalogs/*.toml vedľa projektu) sú prázdne"
+catalog_hint = "Pridať skrinku z katalógu dielne"
+duplicate = "Duplikovať"
+delete = "Odstrániť"
+
+# 3D: kamera a zobrazenie
+[ribbon.camera]
+group = "Kamera"
+hint = "ľavé tlačidlo: otáčať · pravé: posúvať · koliesko: zoom · klik: skrinka · ďalší klik alebo dvojklik: diel"
+perspective = "Perspektíva"
+explode = "Rozložiť"
+
+[ribbon.show]
+group = "Zobraziť"
+backs = "Zadné steny"
+shelves = "Police"
+operations = "Vŕtanie a drážky"
+fronts = "Čelá"
+walls = "Steny a podlaha"
+
+[ribbon.project]
+group = "Projekt"
+standard_hint = "Konštrukčný štandard projektu"
+material_hint = "Materiál korpusu"
+
+# Pohľad na stenu: výber steny
+[ribbon.wall]
+group = "Stena"
+front = "Stena {id} – spredu"
+front_length = "Stena {id} – spredu   {length} mm"
+hint = "V pohľade: ťahaním posunieš skrinku, hranou zmeníš šírku, pravý klik ukáže ponuku"
+
+[ribbon.properties]
+group = "Vlastnosti"
+room = "Miestnosť"
+room_hint = "Parametre miestnosti: výška a hrúbka stien, podhľad, sokel"
+standard = "Štandard"
+standard_hint = "Konštrukčný štandard: korpus, zadná stena, kolíky, rad dier"
+
+[ribbon.drawings]
+group = "Výkresy"
+print = "Tlač PDF"
+print_hint = "Všetky výkresy do PDF: zákazka, skrinky, diely (Ctrl+P)"
+print_wall = "Tlač steny"
+print_wall_hint = "Pohľad na túto stenu do PDF"
+
+[ribbon.production]
+group = "Výroba"
+check = "Kontrola"
+check_errors = { one = "Kontrola našla {count} chybu", few = "Kontrola našla {count} chyby", other = "Kontrola našla {count} chýb" }
+check_hint = "Kontrola zákazky (kap. 8)"
+export = "Export pre stroj"
+export_hint = "Rozpis, model.json, programy .xcs pre CX100 a RUN.bat"
+export_blocked = "Export je možný až keď kontrola nenájde chyby"
+to_folder = "Do priečinka…"
+merge = "Zlúčiť rovnaké diely"
+decimal_comma = "Desatinná čiarka"
+all_cx100 = "Všetko na CX100"
+all_cx100_hint = "Diely z píly, celé obrábanie na CX100"
+nesting = "Nesting SCM + CX100"
+nesting_hint = "Nesting: rezanie a plocha zhora; CX100: hrany, drážky, spodná plocha"
+nesting_missing = "Profil stroja nemá sekciu [nesting]"
+
+# Karta Nástroje
+[ribbon.standard]
+group = "Štandard"
+save = "Uložiť štandard"
+saved = "Štandard uložený"
+reload = "Načítať zo súboru"
+reloaded = "Štandard načítaný zo súboru"
+
+[ribbon.control]
+group = "Riadiaci kanál"
+running = "beží na 127.0.0.1:{port}"
+off = "vypnutý (spusti s --control PORT)"
+
+# Záložky pohľadov (lišta nad plochou a mená záložiek)
+[tabs]
+plan = "Pôdorys"
+elevation = "Pohľad"
+view3d = "3D"
+reports = "Zostavy"
+drawings = "Výkresy"
+production = "Výroba"
+issues = "Kontrola"
+labels = "Štítky"
+cabinet = "Skrinka"
+part_edit = "Doska"
+standard = "Štandard"
+
+# Názvy dielov podľa úlohy (malými písmenami)
+[tabs.role]
+side_left = "bok ľavý"
+side_right = "bok pravý"
+bottom = "dno"
+top = "vrch"
+stretcher_front = "vlys predný"
+stretcher_rear = "vlys zadný"
+back = "zadná stena"
+adjustable_shelf = "polica"
+fixed_shelf = "pevná polica"
+door = "dvierka"
+drawer_front = "čelo zásuvky"
+false_front = "slepé čelo"
+drawer_bottom = "dno zásuvky"
+drawer_back = "zadok zásuvky"
+plinth = "sokel"
+filler_strip = "lišta blendy"
+filler_front = "čelo blendy"
+filler_bottom = "dno blendy"
+finished_back = "pohľadový chrbát"
+led_rail = "LED rampa"
+cover_side = "krycí bok"
+
+# Súbory: stavový riadok a dialógy
+[app.files]
+filter_job_or_project = "Zákazka alebo projekt"
+opened_cvj_project = "Otvorené: {path} (projekt k zákazke {cvj}; .cvj sa odvtedy nezmenila)"
+cvj_not_from_cv = " (bez .cvj: projekt nevznikol zo zákazky CABINET VISION)"
+cvj_not_written = " · .cvj sa nezapísal: {error}"
+cvj_written = " · pre CV: {path}"
+opened = "Otvorené: {path}"
+open_failed = "Projekt sa nedá otvoriť: {error}"
+new_project = "Nový projekt: materiály, štandard a stroj sú z predchádzajúceho projektu"
+filter_cv_job = "Úloha CABINET VISION"
+filter_project = "Projekt CabinetCRAFT"
+import_target_title = "Kam uložiť importovaný projekt"
+filter_cv_order = "Zákazka CABINET VISION"
+export_cvj_title = "Kam uložiť zákazku pre CABINET VISION"
+cvj_saved = "Uložené pre CABINET VISION: {path} (skrinky {cabinets}, poznámky {notes})"
+cvj_save_failed = "Zápis .cvj zlyhal: {error}"
+imported = "Importované z {file}: steny {walls}, skrinky {cabinets}, otvory {openings}, poznámky {notes} (sú na začiatku {project})"
+import_failed = "Import .cvj zlyhal: {error}"
+saved = "Uložené{cvj}"
+saved_as = "Uložené ako {path}{cvj}"
+saved_as_notes = "Uložené ako {path} ({notes}){cvj}"
+
+# Export pre stroj a výkresy (stavový riadok)
+[app.export]
+done = "Exportované do {dir}: diely {parts}, operácie {operations}, programy CX100 .xcs {xcs}, .mpr {mpr}"
+sheets = ", tabule nesting {sheets}"
+labels = ", štítky {labels} (labels/stitky.pdf)"
+notice = " · upozornenie: {notice}"
+drawings_saved = { one = "Výkresy uložené: {path} ({count} strana)", few = "Výkresy uložené: {path} ({count} strany)", other = "Výkresy uložené: {path} ({count} strán)" }
+no_logo = " · bez loga: {warnings}"
+
+# Stavový riadok
+[app.status]
+undone = "Späť: {label}"
+redone = "Znova: {label}"
+open_folder = "Otvoriť priečinok"
+ready = "Pripravené"
+unit = "mm"
+control = "kanál :{port}"
+warnings = "varovania {count}"
+errors = "chyby {count}"
+no_errors = "bez chýb"
+control_failed = "Riadiaci kanál sa nedá spustiť na porte {port}: {error}"
+open_issues = "Otvorí kontrolu"
+summary = "skrinky {cabinets} · diely {parts} · operácie {operations}"
+
+# Neuložené zmeny
+[app.confirm]
+title = "Neuložené zmeny"
+text = "Projekt alebo štandard má neuložené zmeny."
+save = "Uložiť"
+discard = "Zahodiť zmeny"
+cancel = "Zrušiť"
+
+# Zostavy: zoznam skriniek a súpis kovania
+[reports]
+hint = "Klik vyberie skrinku (vlastnosti sú vľavo), dvojklik ju ukáže v 3D. Rozmery v mm."
+
+[reports.col]
+type = "Typ"
+width = "Šírka"
+height = "Výška"
+depth = "Hĺbka"
+shelves = "Police"
+fixed_shelves = "Pevné police"
+wall = "Stena"
+from_left = "Od ľavého konca"
+fronts = "Čelá"
+hinges = "Pánty"
+parts = "Diely"
+operations = "Operácie"
+
+[reports.bill]
+title = "Súpis kovania"
+qty = "Ks"
+hardware = "Kovanie"
+
+# ---- plan ----
+# zdroje: crates/cc-app/src/plan_modes.rs, plan_view.rs, wall_view.rs, catalog_panel.rs
+
+[plan_modes]
+not_available = "Zatiaľ nie je k dispozícii"
+
+[plan_modes.mode]
+home = "Pôdorys"
+walls = "Steny (F2)"
+objects = "Objekty (F3)"
+floors = "Podlahy"
+ceilings = "Stropy"
+tops = "Pracovné dosky (F4)"
+molding = "Lišty (F5)"
+autofill = "Automatické vyplnenie (F6)"
+section = "Rez"
+cad = "CAD (F7)"
+splash = "Zástena"
+grain = "Kresba dreva"
+
+[plan_modes.floors]
+auto = "Podlahy automaticky"
+new = "Nová podlaha"
+note = "Podlaha sa zatiaľ tvorí sama z tvaru miestnosti (vidno ju v 3D)."
+
+[plan_modes.ceilings]
+auto = "Stropy automaticky"
+new = "Nový strop"
+note = "Stropy zatiaľ nie sú k dispozícii; výšku stropu určuje výška stien."
+
+[plan_modes.tops]
+auto = "Pracovné dosky automaticky"
+new = "Nová pracovná doska"
+note = "Pracovné dosky zatiaľ nie sú k dispozícii."
+
+[plan_modes.molding]
+auto = "Lišty automaticky"
+new = "Nová lišta"
+note = "Lišty (korunné, pod skrinky, sokel) zatiaľ nie sú k dispozícii."
+
+[plan_modes.cad]
+note = "Kreslenie čiar, kót a textov do výkresu zatiaľ nie je k dispozícii."
+
+[plan_modes.splash]
+new = "Nová zástena"
+note = "Zástena (obklad medzi pracovnou doskou a hornými skrinkami) zatiaľ nie je k dispozícii."
+
+[plan_modes.grain]
+groups = "Skupiny kresby dreva"
+ungroup = "Zrušiť skupinu"
+note = "Spoločná kresba dreva cez viac čiel zatiaľ nie je k dispozícii."
+
+[plan_modes.room]
+title = "Parametre miestnosti"
+wall_height = "Výška stien"
+wall_thickness = "Hrúbka stien"
+soffit = "Podhľad (od stropu)"
+toe_height = "Výška sokla"
+upper_top = "Vrch horných skriniek"
+
+[plan_modes.walls]
+hint = "Klikni na stenu v pôdoryse, alebo nakresli nové: Čiara (reťaz stien) alebo Obdĺžnik v páse hore."
+new_walls = "Nové steny"
+height = "Výška"
+thickness = "Hrúbka"
+soffit = "Podhľad"
+wall = "Stena {wall}"
+start_x = "Začiatok X"
+start_y = "Začiatok Y"
+length = "Dĺžka"
+angle = "Uhol (°)"
+dimensions = "Rozmery"
+room_soffit = "Podhľad (miestnosť)"
+
+[plan_modes.openings]
+title = "Okná a dvere"
+delete = "Zmazať"
+at = "Od ľavého konca"
+width = "Šírka"
+height = "Výška"
+sill = "Parapet"
+add_window = "+ Okno"
+add_door = "+ Dvere"
+add_opening = "+ Otvor"
+
+[plan_modes.objects]
+select_catalog = "Vybrať katalóg…"
+no_catalogs = "Žiadne katalógy (catalogs/*.toml vedľa projektu)."
+base = "Spodná skrinka"
+wall = "Horná skrinka"
+tall = "Vysoká skrinka"
+back = "◀ Katalógy"
+back_hint = "Späť na zoznam katalógov"
+
+[plan_modes.autofill]
+scope = "Režim"
+selected_wall = "vybraná stena"
+all_walls = "všetky steny"
+rows = "Rady"
+base_row = "spodné skrinky"
+upper_row = "horné skrinky"
+both_rows = "spodné aj horné"
+source = "Zdroj"
+source_last = "posledná skrinka toho typu"
+cabinets = "Skrinky"
+nominal = "Bežná šírka"
+max = "Najväčšia šírka"
+increment = "Krok šírky"
+min = "Najmenšia medzera"
+fill_wall = "Vyplniť stenu {wall}"
+pick_wall = "Vyber stenu v pôdoryse"
+fill_all = "Vyplniť všetky steny"
+fill_hint = "Voľné úseky steny (bez skriniek, dverí, okien a rohov) vyplní skrinkami; zvyšok ostane ako výplň"
+
+[plan_modes.section]
+wall_side = "Strana steny"
+front = "spredu"
+back = "zozadu"
+both = "obe"
+views = "Pohľady"
+view_wall = "stena"
+view_end = "bok"
+hint = "Rez pozdĺž steny: otvorí pohľad na stenu so skrinkami a kótami."
+wall_row = "Stena {wall}   {length} mm"
+open_elevation = "Otvoriť pohľad na stenu"
+
+[plan_view]
+no_walls = "Miestnosť nemá steny.\nV režime Steny (F2) ich nakresli čiarou alebo obdĺžnikom."
+
+[plan_view.notice]
+reversed = "Steny sú nakreslené proti smeru hodín – skrinky sú zvonku."
+walls_inward = "Steny dovnútra"
+walls_inward_hint = "Otočí smer stien (miestnosť napravo od steny ako v CV); skrinky a otvory ostanú na mieste, presunú sa na vnútornú stranu"
+loose = "Skrinka {cabinet} nie je pri stene."
+place_at_wall = "Umiestniť ku stene {wall}"
+
+[plan_view.opening]
+window = "okno"
+door = "dvere"
+opening = "otvor"
+
+[plan_view.hint]
+zoom_window = "Výrez: potiahni rám okolo miesta, ktoré chceš priblížiť. Esc zruší."
+rect_room = "Obdĺžniková miestnosť: potiahni rám od rohu k rohu (najmenej 500 × 500 mm). Esc ukončí."
+draw_wall = "Kreslenie stien: miestnosť je napravo od smeru kreslenia (kresli v smere hodinových ručičiek).\nEsc ukončí reťaz, pravé tlačidlo ukončí kreslenie."
+
+[plan_view.corner]
+title = "Roh {wall} / {next}"
+base = "spodné"
+upper = "horné"
+extend = "Predĺžiť {cabinet} do rohu"
+locked_width = "skrinka má zamknutú šírku"
+has_drawers = "skrinka so zásuvkami: slepý roh má dvierka"
+extend_hint = "predĺži skrinku do rohu, predĺženú časť zakryje slepý panel"
+no_cabinets = "V rohu nie sú skrinky na oboch stenách."
+void = "Prázdny roh"
+miter = "Pokos v rohu"
+shape = "Tvarovať do rohu"
+not_yet = "zatiaľ nie je: koncové typy skriniek a tvarovanie chýbajú"
+
+[wall_view]
+no_walls = "Projekt nemá steny. Nakresli ich v záložke Pôdorys."
+left_end = "{wall} – ľavý koniec"
+
+[wall_view.cabinet]
+title = "Skrinka {cabinet}"
+copy = "Kopírovať"
+delete = "Zmazať"
+section = "Sekcia"
+section_hint = "Vyberie prvý otvor čela; ďalšie otvory klikom"
+lock_width = "Zamknúť šírku"
+left_corner = "Do ľavého rohu"
+right_corner = "Do pravého rohu"
+open = "Otvoriť skrinku"
+properties = "Vlastnosti…"
+front_presets = "Predvoľby čiel"
+hinges_left = "pánty vľavo"
+hinges_right = "pánty vpravo"
+
+[wall_view.opening]
+title = "Otvor {name}"
+split_vertical = "Rozdeliť zvislo"
+split_horizontal = "Rozdeliť vodorovne"
+lock_width = "Zamknúť šírku"
+equal_width = "Rovnaká šírka"
+lock_height = "Zamknúť výšku"
+equal_height = "Rovnaká výška"
+remove_split = "Zmazať delenie"
+
+[catalog]
+title = "Katalóg"
+none = "– žiadny –"
+new = "+ nový"
+new_hint = "Nový katalóg (súbor catalogs/<meno>.toml)"
+name_hint = "meno katalógu"
+create = "Vytvoriť"
+empty = "Katalóg je prázdny. Vyber skrinku a ulož ju sem."
+item_hint = "{id} – potiahni na stenu v pôdoryse alebo pohľade, dvojklik pridá do stredu steny"
+add_to_job = "Pridať do zákazky"
+remove_item = "Odstrániť z katalógu"
+
+[catalog.save]
+title = "Uložiť skrinku {cabinet} do katalógu {catalog}"
+id = "ID"
+id_hint = "napr. S_MOJA_2_SUP"
+name = "Meno"
+name_hint = "meno v ponuke"
+group = "Skupina"
+group_hint = "napr. Spodné"
+overwrite = "Prepísať položku"
+save = "Uložiť do katalógu"
+
+[catalog.status]
+created = "Katalóg vytvorený"
+saved = "Skrinka uložená do katalógu"
+removed = "Položka odstránená z katalógu"
+
+# ---- output_views ----
+# output_views: crates/cc-app/src/drawings.rs, crates/cc-app/src/labels_view.rs, crates/cc-app/src/production.rs, crates/cc-app/src/standard_tab.rs
+
+# Záložka Výkresy: výkres dielu, zákazky a skrinky (drawings.rs)
+[drawings_view]
+cabinet_missing = "Skrinka už neexistuje, vyber iný výkres vľavo."
+program_file = "Program {name}"
+no_machining = "Diel nemá obrábanie, program .xcs sa negeneruje."
+no_xcs = "Profil stroja nemá sekciu [xcs]."
+
+[drawings_view.view]
+iso = "3D"
+front = "Pohľad spredu"
+top = "Pôdorys (zhora)"
+left = "Pohľad zľava"
+
+[drawings_view.sheet]
+job = "Zákazka: 3D, pôdorys, pohľad spredu"
+job_detail = "skrinky {cabinets} · diely {parts}"
+cabinet = "Skrinka {id}: 3D a pohľady"
+cabinet_detail = "{w} × {h} × {d} mm · diely {parts}"
+
+# Popisové pole výkresu
+[drawings_view.title]
+company = "Firma"
+job = "Zákazka"
+customer = "Zákazník"
+designer = "Kreslil"
+drawing = "Výkres"
+content = "Obsah"
+material = "Materiál"
+part = "Diel"
+size = "Rozmer"
+program = "Program"
+no_program = "– (diel bez obrábania)"
+
+# Tabuľka operácií dielu
+[drawings_view.ops]
+operation = "Operácia"
+face = "Plocha"
+size = "Ø / šírka"
+depth = "Hĺbka"
+dowel = "kolík"
+hole = "diera"
+groove = "drážka"
+
+# Výroba → tabule a štítky (labels_view.rs)
+[labels_view]
+error = "Štítky sa nedajú pripraviť: {error}"
+header = "Štítok {width} × {height} mm · poradie {order} ([labels] v machine.toml)"
+a4 = "na A4"
+direct = "tlačiť hneď"
+direct_hint = "Bez otvorenia PDF na tlačiareň {printer} ([labels] printer v machine.toml)"
+direct_default_printer = "predvolenú"
+print_all = "Tlačiť všetky ({count})"
+print_all_hint = "Všetky štítky zákazky: tabule v poradí tlače, potom diely mimo nestingu"
+no_sheets = "Tabule nestingu sú iba pri výrobe „Nesting SCM + CX100“ (pás Hlavné → Výroba). Štítky všetkých dielov sa dajú vytlačiť tlačidlom vyššie."
+
+# Poradie štítkov ([labels] order v machine.toml)
+[labels_view.order]
+machining = "poradie obrábania"
+rows_top_left = "riadky zhora, zľava"
+columns_left_top = "stĺpce zľava, zhora"
+rows_top_right = "riadky zhora, sprava"
+columns_right_top = "stĺpce sprava, zhora"
+rows_bottom_left = "riadky zdola, zľava"
+columns_left_bottom = "stĺpce zľava, zdola"
+rows_bottom_right = "riadky zdola, sprava"
+columns_right_bottom = "stĺpce sprava, zdola"
+
+# Zoznam tabúľ
+[labels_view.sheets]
+parts = { one = "{count} diel", few = "{count} diely", other = "{count} dielov" }
+printed = ", vytlačené {count}"
+other = { one = "Mimo nestingu: {count} diel (v „Tlačiť všetky“)", few = "Mimo nestingu: {count} diely (v „Tlačiť všetky“)", other = "Mimo nestingu: {count} dielov (v „Tlačiť všetky“)" }
+
+# Vybraná tabuľa
+[labels_view.sheet]
+title = "Tabuľa {name} · {material} {thickness} mm · {length} × {width} mm · {index}/{total}"
+print = "Tlačiť tabuľu"
+hint = "Klik na diel vytlačí jeho štítok. Číslo = poradie prerezania (na štítku pred menom dielu)."
+
+[labels_view.part]
+rotated = ", otočený"
+
+# Čo sa tlačí (v stavovom riadku)
+[labels_view.what]
+all = "všetky"
+sheet = "tabuľa {name}"
+part = "diel {id}"
+
+[labels_view.status]
+sent = "Štítky odoslané na tlačiareň {printer} ({what}): {count} ks"
+default_printer = "(predvolená)"
+direct_failed = "Priama tlač zlyhala ({error}); aplikácia pre PDF asi nevie tlačiť bez okna – PDF: {path}"
+ready = "Štítky na tlač ({what}): {count} ks → {path}"
+
+# Výroba: rozpis dielov a Kontrola: zoznam zistení (production.rs)
+[production]
+build_error = "Model sa nedá zostaviť:\n{error}"
+machine_profile = "Profil stroja: {path}"
+no_machine = "Bez profilu stroja: kontroly rozmerov stroja a vrtákov sa vynechali."
+no_issues = "✔ Kontrola nenašla žiadne chyby ani varovania."
+
+[production.status]
+error = "✖ chyba"
+warning = "⚠ varovanie"
+
+# Stĺpce rozpisu dielov
+[production.parts]
+status = "Stav"
+qty = "Ks"
+part = "Diel"
+description = "Popis"
+length = "Dĺžka"
+width = "Šírka"
+thickness = "Hrúbka"
+cabinet = "Skrinka"
+material = "Materiál"
+edging = "Olepenie"
+operations = "Operácie"
+program = "Program"
+
+# Stĺpce zoznamu zistení
+[production.issues]
+status = "Stav"
+rule = "Pravidlo"
+part = "Diel"
+description = "Popis"
+
+# Záložka Štandard (standard_tab.rs); názvy kľúčov štandardu sa neprekladajú
+[standard_tab]
+title = "Štandard {name}"
+unsaved = "neuložené zmeny"
+save = "💾 Uložiť štandard"
+reload = "Načítať zo súboru"
+hint = "Zmeny sa hneď prejavia v modeli. Uložením sa prepíšu iba zmenené hodnoty, komentáre v súbore ostanú."
+
+[standard_tab.carcass]
+title = "Korpus"
+top_style = "Vrch spodnej skrinky"
+stretchers = "dva vlysy"
+panel = "celá doska"
+sink = "drez (vlysy na výšku)"
+stretcher_width = "Šírka vlysu"
+shelf_side_clearance = "Vôľa police na stranu"
+shelf_front_setback = "Polica kratšia spredu"
+
+[standard_tab.back]
+title = "Zadná stena (drážka)"
+groove_offset = "Zadná hrana → drážka (e)"
+groove_width_clearance = "Vôľa šírky drážky"
+groove_depth = "Hĺbka drážky"
+fit_clearance = "Vôľa zadnej steny"
+groove_through = "Drážka cez celý diel"
+
+[standard_tab.dowel]
+title = "Kolíky"
+diameter = "Priemer"
+face_depth = "Hĺbka do plochy"
+edge_depth = "Hĺbka do hrany"
+layout = "Rozmiestnenie"
+cv333 = "vzor 3/3/3 (ako CV)"
+pairs = "dvojice"
+even = "rovnomerne"
+end_offset = "Od konca spoja"
+confirmat_pitch = "Rozteč pri konfirmáte"
+short_end_offset = "Krátky spoj: od konca"
+group_spacing = "Rozstup skupín"
+group_spacing_long = "Rozstup skupín (dlhé)"
+pair_pitch = "Rozteč v dvojici"
+max_pair_spacing = "Max. rozstup dvojíc"
+max_spacing = "Max. rozstup"
+snap_32 = "Mriežka 32 mm"
+stop_at_back = "Končiť pred zadnou stenou"
+
+[standard_tab.line_bore]
+title = "Rad dier pre police"
+diameter = "Priemer"
+depth = "Hĺbka"
+layout = "Rozmiestnenie"
+per_shelf = "skupina pri polici"
+full = "celý rad"
+holes_per_shelf = "Dier pri polici"
+pitch = "Rozteč"
+front_offset = "Predný rad od prednej hrany"
+rear_offset = "Zadný rad pred drážkou"
+start_above_bottom = "Najnižšia diera nad dnom"
+end_below_top = "Najvyššia diera pod vrchom"
+
+[standard_tab.machine]
+title = "Stroj (machine.toml, iba na čítanie)"
+machine = "Stroj"
+drills = "Vrtáky"
+saw = "Pílka LAMA, rez"
+kerf = "{kerf} mm (krok {step} mm)"
+work_area = "Pracovný rozsah"
+
+[standard_tab.status]
+saved = "Štandard uložený"
+reloaded = "Štandard načítaný zo súboru"
+
+# ---- editors ----
+# Zdroj: crates/cc-app/src/cabinet_editor.rs, part_editor.rs, part_view.rs, view3d.rs, props_dialog.rs (grid.rs a gpu3d.rs nemajú vlastné texty)
+
+# Editor skrinky (cabinet_editor.rs)
+
+[cabinet_editor]
+no_cabinet = "Vyber skrinku (alebo na ňu dvojklikni v pôdoryse, pohľade či 3D)."
+title = "Skrinka #{id} {catalog}"
+cannot_build = "Skrinka sa nedá zostaviť (pozri Kontrola)."
+not_available = "Zatiaľ nie je k dispozícii"
+
+[cabinet_editor.tab]
+section = "Rez"
+face = "Čelo"
+plan = "Pôdorys"
+end = "Bok"
+view3d = "3D"
+reports = "Zostavy"
+
+[cabinet_editor.panel]
+view = "Pohľad"
+side = "Strana"
+side_front = "čelo"
+edit_shape = "Upraviť tvar"
+objects = "Objekty"
+new_part = "Nový diel"
+library_part = "Diel z knižnice"
+moldings = "Lišty"
+cad = "CAD (F7)"
+camera = "Kamera"
+camera_hint = "Pôvodný pohľad na skrinku"
+lights = "Svetlá"
+parts_list = "Rozpis dielov"
+cabinet_drawing = "Výkres skrinky"
+part_drawings = "Výkresy dielov"
+validation = "Kontrola"
+display = "Zobrazenie"
+explode = "Rozložiť"
+fronts = "Čelá"
+
+[cabinet_editor.ribbon]
+view_group = "Zobrazenie"
+section_group = "Rez"
+split_horizontal = "Rozdeliť vodorovne"
+split_horizontal_hint = "Vybraný otvor rozdelí na dva nad sebou"
+split_vertical = "Rozdeliť zvislo"
+split_vertical_hint = "Vybraný otvor rozdelí na dva vedľa seba"
+delete_split = "Zmazať delenie"
+cabinet_group = "Skrinka"
+properties = "Vlastnosti"
+properties_hint = "Všeobecné, komentár, nožičky, prepísania, parametre"
+camera_group = "Kamera"
+perspective = "Perspektíva"
+fronts = "Čelá"
+
+[cabinet_editor.front]
+opening = "otvor"
+no_fronts = "skrinka nemá čelá"
+door = "dvierka"
+pair = "dvojité dvierka"
+drawer = "zásuvka"
+false_front = "slepé čelo"
+panel = "panel"
+open = "otvorený"
+
+[cabinet_editor.parts]
+qty = "Ks"
+name = "Názov"
+width = "Šírka"
+length = "Dĺžka"
+thickness = "Hrúbka"
+material = "Materiál"
+parts = "Diely"
+
+[cabinet_editor.lines]
+no_parts = "skrinka nemá diely"
+hover_part = "{id} · klik: vybrať · dvojklik: otvoriť dosku"
+hover = "klik na dosku: vybrať · dvojklik: otvoriť dosku"
+
+# Jedna doska (part_editor.rs)
+
+[part_editor]
+no_part = "Vyber dosku (dvojklik na dosku v editore skrinky)."
+title = "Diel {id} · {name} · {length} × {width} × {thickness} · {material}"
+not_available = "Zatiaľ nie je k dispozícii"
+
+[part_editor.tab]
+cam = "CAM"
+face = "Čelo"
+edge = "Hrana"
+end = "Koniec"
+view3d = "3D"
+reports = "Zostavy"
+
+[part_editor.plane]
+f = "Predná (F)"
+b = "Zadná (B)"
+x0 = "Ľavá (X0)"
+x1 = "Pravá (X1)"
+y1 = "Horná (Y1)"
+y0 = "Spodná (Y0)"
+
+[part_editor.panel]
+plane = "Pracovná rovina"
+edit_shape = "Upraviť tvar"
+edge_joint = "Spoj hrany"
+edge_banding = "Olepenie hrán"
+split = "Delenie"
+cad = "CAD (F7)"
+camera = "Kamera"
+camera_hint = "Pôvodný pohľad na dosku"
+lights = "Svetlá"
+new_operation = "Nová operácia"
+new_operation_hint = "Obrábanie vzniká zo štandardu dielne; ručná operácia zatiaľ nie je"
+
+[part_editor.props]
+section = "Diel"
+id = "ID"
+name = "Názov"
+cabinet = "Skrinka"
+length = "Dĺžka"
+width = "Šírka"
+thickness = "Hrúbka"
+material = "Materiál"
+edge_x0 = "Hrana X0"
+edge_x1 = "Hrana X1"
+edge_y0 = "Hrana Y0 (predná)"
+edge_y1 = "Hrana Y1"
+operations = "Operácie"
+program = "Program"
+
+[part_editor.ribbon]
+view_group = "Zobrazenie"
+machining_group = "Obrábanie"
+hole_row = "Rad dier"
+hole = "Diera"
+groove = "Drážka"
+machining_hint = "Obrábanie vzniká zo štandardu dielne; ručné zatiaľ nie je"
+camera_group = "Kamera"
+part_group = "Diel"
+print_drawing = "Tlač výkresu"
+print_drawing_hint = "Výkres tejto dosky do PDF"
+
+[part_editor.ops]
+operation = "Operácia"
+face = "Plocha"
+diameter_width = "Ø / šírka"
+length = "Dĺžka"
+depth = "Hĺbka"
+dowel = "kolík"
+through_hole = "diera priechodná"
+hole = "diera"
+groove = "drážka"
+no_machining = "Doska nemá obrábanie."
+
+# Výkres dielu (part_view.rs)
+
+[part_view.face]
+f = "F (vnútorná)"
+b = "B (vonkajšia)"
+x0 = "hrana X0"
+x1 = "hrana X1"
+y0 = "hrana Y0 (predná)"
+y1 = "hrana Y1"
+
+[part_view]
+edge_y0 = "Y0 – predná hrana · dĺžka {length}"
+
+[part_view.legend]
+dowel = "kolík do plochy F"
+hole_row = "rad dier (police)"
+edge_drilling = "vŕtanie do hrany"
+back_groove = "drážka zadnej steny"
+edge_band = "olepená hrana"
+
+# Záložka 3D (view3d.rs)
+
+[view3d.view]
+front = "Spredu"
+top = "Zhora"
+iso = "Izo"
+selection = "Na výber"
+default = "Pôvodný"
+
+[view3d]
+nothing_selected = "nič nie je vybrané"
+part_hover = "{id} – {name}\n{length} × {width} × {thickness} · {material}\noperácie: {operations}"
+selected = "Vybraný: {id}"
+part_drawing = "Výkres dielu"
+
+# Vlastnosti skrinky (props_dialog.rs)
+
+[props]
+title = "Vlastnosti skrinky {id}"
+ok = "OK"
+cancel = "Zrušiť"
+
+[props.tab]
+general = "Všeobecné"
+comment = "Komentár"
+legs = "Nožičky"
+overrides = "Prepísania"
+parameters = "Parametre"
+
+[props.general]
+id = "ID"
+type = "Typ"
+base = "spodná"
+wall = "horná"
+tall = "vysoká"
+number = "Číslo"
+width = "Šírka"
+height = "Výška"
+depth = "Hĺbka"
+lock_width = "Zamknúť šírku"
+
+[props.legs]
+legs = "Nožičky"
+plinth = "Sokel"
+by_standard = "podľa štandardu ({value})"
+yes = "áno"
+no = "nie"
+
+[props.overrides]
+reveals = "Škáry čiel"
+front_mount = "Montáž čiel"
+hinge = "Pánt"
+drawer = "Zásuvky"
+drawer_length = "Dĺžka výsuvu"
+top_style = "Vrch"
+back = "Zadná stena"
+carcass = "Korpus"
+elevation = "Výška nad podlahou"
+options = "Atribúty"
+remove = "Odstrániť"
+none = "Skrinka nemá nič prepísané, všetko je podľa štandardu."
+
+[props.params]
+parameter = "Parameter"
+value = "Hodnota"
+invalid_value = "neplatná hodnota: {error}"
+
+# ---- pdf_validate ----
+# pdf_validate: crates/cc-out-pdf/src/lib.rs, crates/cc-out-pdf/src/drawings.rs, crates/cc-validate/src/lib.rs, crates/cc-pipeline/src/lib.rs
+
+# štítky dielov (lib.rs)
+[pdf.labels]
+cabinet = "Skr.c.:"
+barcode_unsupported = "(kód: nepodporované znaky)"
+
+# názov dielu na štítku a na výkrese dielu
+[pdf.role]
+side_left = "bok ľavý"
+side_right = "bok pravý"
+bottom = "dno"
+top = "vrch"
+stretcher_front = "vlys predný"
+stretcher_rear = "vlys zadný"
+back = "zadná stena"
+adjustable_shelf = "polica"
+fixed_shelf = "pevná polica"
+door = "dvierka"
+drawer_front = "čelo zásuvky"
+false_front = "slepé čelo"
+drawer_bottom = "dno zásuvky"
+drawer_back = "zadok zásuvky"
+plinth = "sokel"
+filler_strip = "lišta blendy"
+filler_front = "čelo blendy"
+filler_bottom = "dno blendy"
+finished_back = "pohľadový chrbát"
+led_rail = "LED rampa"
+cover_side = "krycí bok"
+
+# výkresy (drawings.rs)
+[pdf.drawings.view]
+iso = "3D"
+front = "Pohľad spredu"
+top = "Pôdorys (zhora)"
+left = "Pohľad zľava"
+
+[pdf.drawings.cabinet_type]
+base = "spodná"
+wall = "horná"
+tall = "vysoká"
+
+[pdf.drawings.opening]
+window = "okno"
+door = "dvere"
+opening = "otvor"
+
+[pdf.drawings.wall]
+title = "Stena {wall} – pohľad z miestnosti (ľavý koniec vľavo)   M 1:{scale}"
+plan = "Pôdorys"
+cabinets = "Skrinky na stene"
+col_cabinet = "Skrinka"
+col_type = "Typ"
+col_size = "Š × V × H"
+more = "… a ďalšie ({count})"
+none = "žiadne"
+openings = "Otvory"
+opening_row = "{name} {w} × {h}, od ľavého konca {x}"
+sill = ", parapet {sill}"
+
+[pdf.drawings.part]
+face_f_front = "Plocha F (vnútorná strana čela), dĺžka = výška čela"
+face_f = "Plocha F (k interiéru), predná hrana Y0 dole"
+part = "Diel"
+description = "Popis"
+size = "Rozmer"
+material = "Materiál"
+edges = "Olepenie"
+program = "Program"
+no_machining = "– (bez obrábania)"
+col_operation = "Operácia"
+col_face = "Pl."
+col_diameter = "Ø/š"
+col_depth = "Hĺbka"
+op_dowel = "kolík"
+op_hole = "diera"
+op_groove = "drážka"
+more_operations = { one = "… a ďalšia {count} operácia", few = "… a ďalšie {count} operácie", other = "… a ďalších {count} operácií" }
+view_face_b = "pohľad na plochu B"
+
+[pdf.drawings.title_block]
+job = "Zákazka"
+customer = "Zákazník"
+drawing = "Výkres"
+content = "Obsah"
+designer = "Kreslil"
+sheet = "List"
+
+# hlásenia kontroly (cc-validate), zoznam Kontrola
+[validate]
+invalid_size = "neplatný rozmer {l} × {w} × {t}"
+part_too_small = "diel {l} × {w} je menší ako minimum stroja {min_l} × {min_w}"
+part_too_large = "diel {l} × {w} je väčší ako pracovná oblasť stroja {max_l} × {max_w}"
+groove_too_deep = "drážka hĺbky {depth} v diele hrúbky {t} (max {max})"
+tool_missing = "vrták Ø{d} nie je v profile stroja `{machine}` (počet dier: {holes})"
+hole_collision = "diery #{a} a #{b} na strane {face} sú od seba {dist} mm (min {min})"
+hole_in_groove = "diera #{hole} (Ø{d}) zasahuje do drážky (vzdialenosť osí {dist} mm, min {min})"
+hole_outside = "diera Ø{d} na strane {face} v bode ({x}, {y}, {z}) je mimo dielu alebo bližšie k hrane ako {margin} mm"
+face_hole_too_deep = "diera hĺbky {depth} do plochy dielu hrúbky {t} (max {max})"
+edge_hole_too_deep = "diera hĺbky {depth} do hrany {face}, rozmer dielu v smere vŕtania {extent}"
+edge_hole_too_wide = "diera Ø{d} do hrany dielu hrúbky {t}: stena okolo diery < 3 mm"
+shelf_no_rows = "skrinka má polohovateľné police, ale bok nemá rad dier"
+shelf_weak_rows = { one = "{count} rad dier má menej ako 2 diery", few = "{count} rady dier majú menej ako 2 diery", other = "{count} radov dier má menej ako 2 diery" }
+
+# varovania a upozornenia behu (cc-pipeline), zoznam Kontrola a výsledok exportu
+[pipeline]
+shelves_no_opening = { one = "skrinka `{cabinet}` má iba zásuvky a slepé čelá: {count} polica sa nevložila (police sú iba v otvore s dvierkami alebo otvorenom)", few = "skrinka `{cabinet}` má iba zásuvky a slepé čelá: {count} police sa nevložili (police sú iba v otvore s dvierkami alebo otvorenom)", other = "skrinka `{cabinet}` má iba zásuvky a slepé čelá: {count} políc sa nevložilo (police sú iba v otvore s dvierkami alebo otvorenom)" }
+nesting_unverified = "šablóny {templates} majú v profile stroja `verified = false`; pred prvým rezom over programy na nestingu aj na CX100 (findings 08, otázka O1)"
+nesting_unplaced = "diely {parts} sa nezmestia na tabuľu nestingu: obrys treba urobiť inde, ich obrábanie je v programoch CX100"
+nesting_summary = "{material} ({thickness} mm): tabule {sheets} ({names}), využitie {utilisation} %"
+nesting_profile_incomplete = "production.mode = \"nesting\", ale profil nemá sekciu [nesting] alebo [xcs]: programy sa vyrobili ako v režime cx100"
+mpr_unverified = "makrá {macros} majú v profile stroja `verified = false`; pred použitím na stroji over výstup v editore woodWOP (otázka O2)"
+no_machine_output = "profil stroja nemá sekciu [xcs] ani [mpr]: programy pre stroj sa negenerujú"
+xcs_unverified = "šablóny {templates} majú v profile stroja `verified = false`; pred prvým rezom over výstup na stroji (kap. 7.4, otázka O1)"
+
+# ---- side_panel ----
+# crates/cc-app/src/side_panel.rs
+
+[side_panel.general]
+no_project = "Žiadny projekt"
+open_hint = "Otvor súbor project.toml (Súbor → Otvoriť, Ctrl+O)."
+build_error = "Model sa nedá zostaviť:\n{error}"
+standard = "štandard"
+standard_value = "štandard ({value})"
+yes = "áno"
+no = "nie"
+auto = "auto"
+auto_tip = "Podľa štandardu: {value} mm"
+
+[side_panel.task]
+parts_list = "Rozpis dielov"
+check = "Kontrola"
+add_base = "Spodná skrinka"
+add_wall = "Horná skrinka"
+add_tall = "Vysoká skrinka"
+reset_camera = "Pôvodný pohľad"
+explode = "Rozložiť diely"
+print_all = "Tlač všetkých výkresov (PDF)"
+print_sheet = "Tlač tohto výkresu (PDF)"
+prev_part = "Predchádzajúci diel"
+next_part = "Ďalší diel"
+labels = "Tabule a štítky"
+export = "Export pre stroj"
+export_to = "Exportovať do priečinka…"
+open_export = "Otvoriť priečinok exportu"
+save_standard = "Uložiť štandard"
+reload_standard = "Načítať zo súboru"
+
+[side_panel.status]
+standard_saved = "Štandard uložený"
+standard_reloaded = "Štandard načítaný zo súboru"
+
+[side_panel.project]
+title = "Projekt"
+name = "Názov"
+number = "Číslo zákazky"
+customer = "Zákazník"
+designer = "Kreslil"
+company = "Firma"
+logo = "Logo"
+logo_pick_tip = "Vybrať obrázok loga (PNG, JPEG)"
+logo_none_tip = "Bez loga"
+image_filter = "Obrázok"
+panel_material = "Korpus"
+back_material = "Zadná stena"
+standard = "Štandard"
+machine = "Stroj"
+no_machine = "– bez profilu stroja –"
+
+[side_panel.cabinets]
+title = "Skrinky"
+col_id = "ID"
+col_type = "Typ"
+col_size = "Š × V × H"
+move_up = "Posunúť vyššie"
+move_down = "Posunúť nižšie"
+duplicate = "Duplikovať"
+remove = "Odstrániť"
+
+[side_panel.opening]
+title = "Otvor {name}"
+width = "Šírka"
+height = "Výška"
+lock_width = "Zamknúť šírku"
+lock_height = "Zamknúť výšku"
+kind_door = "Dvierka"
+kind_pair = "Dvojité dvierka"
+kind_drawer = "Zásuvka"
+kind_false_front = "Slepé čelo"
+kind_open = "Otvorený"
+kind_panel = "Panel"
+hinge = "Pánt"
+hinge_left = "vľavo"
+hinge_right = "vpravo"
+adjust_left = "Úprava vľavo"
+adjust_right = "Úprava vpravo"
+adjust_top = "Úprava hore"
+adjust_bottom = "Úprava dole"
+
+[side_panel.cabinet]
+title = "Skrinka {id}"
+properties = "Vlastnosti…"
+properties_tip = "Všeobecné, komentár, nožičky, prepísania, parametre"
+open = "Otvoriť skrinku"
+open_tip = "Samotná skrinka v 3D so sekciami čiel a dielmi (aj dvojklik na skrinku)"
+id = "ID"
+type = "Typ"
+wall = "Stena"
+no_wall = "– bez steny –"
+clearance_left = "Medzera vľavo"
+clearance_left_tip = "Clearance Left: voľné miesto po najbližšiu skrinku radu alebo roh"
+clearance_right = "Medzera vpravo"
+clearance_right_tip = "Clearance Right: voľné miesto po najbližšiu skrinku radu alebo roh"
+end_left = "Koniec zľava"
+end_left_tip = "End Position From Left: ľavá hrana od ľavého konca steny (pohľad z miestnosti)"
+end_right = "Koniec sprava"
+end_right_tip = "End Position From Right: pravá hrana od pravého konca steny"
+center_left = "Stred zľava"
+center_left_tip = "Center Position From Left: stred skrinky od ľavého konca steny"
+center_right = "Stred sprava"
+center_right_tip = "Center Position From Right: stred skrinky od pravého konca steny"
+width = "Šírka"
+height = "Výška"
+depth = "Hĺbka"
+lock_width = "Zamknúť šírku"
+lock_width_tip = "Lock Width: šírka sa nemení ťahaním ani vypĺňaním steny, zadať sa dá"
+placement = "Umiestnenie"
+by_type = "podľa typu"
+elevation = "Nad podlahou"
+elevation_tip = "Spodná hrana nad podlahou; zmena pri pravidle nastaví „voľne“"
+outset = "Odsadenie od steny"
+shelves = "Police"
+shelves_tip = "Polohovateľné police (na kolíky v rade dier) v otvore s dvierkami alebo otvorenom"
+shelves_disabled_tip = "Police sú iba v otvore s dvierkami alebo otvorenom – táto skrinka má iba zásuvky"
+top = "Vrch"
+top_stretchers = "2 vlysy"
+top_panel = "celá doska"
+top_sink = "drez (vlysy na výšku)"
+back = "Zadná stena"
+back_tip = "Bez zadnej steny, napr. drezová skrinka"
+carcass = "Korpus"
+carcass_tip = "Bez korpusu sú iba čelá, napr. čelo umývačky riadu"
+fixed_shelf = "Pevná polica {n}"
+fixed_shelf_tip = "Výška hornej plochy od spodku skrinky"
+add_fixed_shelf = "+ pevná polica"
+add_another_shelf = "+ ďalšia"
+
+[side_panel.placement]
+floor = "na podlahe"
+toe_height = "na sokli"
+under_counter = "pod pracovnou doskou"
+counter_top = "na pracovnej doske"
+under_uppers = "pod hornými skrinkami"
+under_soffit = "pod podhľadom"
+ceiling = "pod stropom"
+above_soffit = "nad podhľadom"
+above_elevation = "spodok vo výške"
+below_elevation = "vrch vo výške"
+float = "voľne"
+
+[side_panel.fronts]
+fronts = "Čelá"
+hinges = "Pánty"
+hinges_left = "vľavo"
+hinges_right = "vpravo"
+reveal_top = "Škára hore"
+reveal_bottom = "Škára dole"
+reveal_left = "Škára vľavo"
+reveal_right = "Škára vpravo"
+gap_rows = "Medzi čelami"
+gap_columns = "Medzi vedľa seba"
+adjust = "Úprava čela {n}"
+adjust_left_tip = "Úprava vľavo (mm): kladné = čelo presahuje ďalej, záporné = kratšie"
+adjust_right_tip = "Úprava vpravo (mm): kladné = čelo presahuje ďalej, záporné = kratšie"
+adjust_top_tip = "Úprava hore (mm): kladné = čelo presahuje ďalej, záporné = kratšie"
+adjust_bottom_tip = "Úprava dole (mm): kladné = čelo presahuje ďalej, záporné = kratšie"
+mount_overlay = "na korpus"
+mount_inset = "vložené"
+mount = "Montáž čiel"
+hinge = "Pánt"
+drawers = "Zásuvky"
+
+[side_panel.attributes]
+title = "Atribúty"
+joints = "Spoje skrinky"
+joint_type = "Typ spojov"
+dowels = "kolíky"
+confirmat = "kolíky + konfirmát"
+screw = "kolíky + vrut 3,5×50"
+shelf_support = "Policové kovanie"
+shelf_none = "nič"
+bumpers = "Tlmiace čočky"
+legs = "Nožičky"
+plinth = "Sokel"
+link_left = "Spojiť s ľavou"
+tip_on = "TIP-ON"
+tip_on_off = "vypnutý"
+tip_on_drilled = "závrtný"
+tip_on_adapter = "s adaptérom"
+tip_on_color = "TIP-ON farba"
+white = "biely"
+grey = "šedý"
+black = "čierny"
+tip_on_kind = "TIP-ON typ"
+tip_on_stop = "s dorazom"
+tip_on_magnet = "s magnetom"
+
+[side_panel.machine]
+title = "Stroj"
+machine = "Stroj"
+drills = "Vrtáky"
+saw = "Pílka LAMA"
+saw_value = "rez {kerf} mm, krok {step} mm"
+work_area = "Pracovný rozsah"
+profile = "Profil"
+no_profile = "Bez profilu stroja: kontroly rozmerov stroja a vrtákov sa vynechajú."
+
+[side_panel.parts_list]
+title = "Rozpis"
+merge = "Zlúčiť rovnaké diely"
+decimal_comma = "Desatinná čiarka"
+folder = "Priečinok"
+
+[side_panel.drawings]
+title = "Výkresy"
+col_sheet = "Výkres"
+job = "Zákazka – 3D, pôdorys, spredu"
+cabinet = "Skrinka {id} – 3D a pohľady"
+parts = "Diely"
+col_part = "Diel"
+col_operations = "Operácie"
+
+[side_panel.front_preset]
+none = "bez čiel (otvorená)"
+door = "dvierka"
+door_right = "dvierka, pánty vpravo"
+pair = "dvojité dvierka"
+two_doors = "dvoje dvierka nad sebou"
+drawer_door = "zásuvka + dvierka"
+drawer_pair = "zásuvka + dvojité dvierka"
+sink = "slepé čelo + dvojité dvierka (drez)"
+blind_left = "slepý roh: panel vľavo + dvierka"
+blind_right = "slepý roh: dvierka + panel vpravo"
+drawers_2 = "2 zásuvky"
+drawers_3 = "3 zásuvky"
+drawers_4 = "4 zásuvky"
+
+[side_panel.fronts_text]
+none = "bez čiel"
+door = "dvierka"
+door_right = "dvierka P"
+door_left = "dvierka Ľ"
+pair = "dvojité dvierka"
+drawer = "zásuvka"
+false_front = "slepé čelo"
+open = "otvorené"
+panel = "panel"
+
+[side_panel.cabinet_type]
+base = "spodná"
+wall = "horná"
+tall = "vysoká"
+
+# ---- core ----
+# core: crates/cc-config/src/lib.rs, crates/cc-room/src/lib.rs, crates/cc-joints/src/*.rs, crates/cc-generate/src/*.rs
+
+# Kontrola projektu, materiálov, štandardu, katalógu a profilu stroja (cc-config)
+[config]
+invalid = "{path}: neplatná konfigurácia:\n  - {problems}"
+must_be_positive = "`{name}` musí byť > 0 (je {value})"
+must_be_non_negative = "`{name}` musí byť ≥ 0 (je {value})"
+
+[config.catalog]
+too_many_items = "najviac {max} položiek"
+bad_id = "položka bez `id` alebo s príliš dlhým `id`"
+duplicate = "`{id}` je v katalógu dvakrát"
+bad_size = "`{id}`: `{name}` musí byť kladné do 10 000 mm"
+too_many_fronts = "`{id}`: najviac 12 čiel a 50 políc"
+bad_front_heights = "`{id}`: výšky čiel a `drawer_length` musia byť kladné"
+
+[config.machine]
+min_part_too_big = "`min_part` je väčší ako `work_area`"
+no_drills = "`drills.diameters` je prázdny"
+bad_drill = "`drills.diameters`: priemer musí byť > 0 (je {value})"
+nesting_needs_nesting = "production.mode = \"nesting\" vyžaduje sekciu [nesting] (programy tabúľ)"
+nesting_needs_xcs = "production.mode = \"nesting\" vyžaduje sekciu [xcs] (programy CX100 pre zvyšnú prácu)"
+
+# Šablóny a čísla profilu stroja ([xcs], [mpr], [nesting]); {block} a {name} sú cesty v machine.toml
+[config.template]
+unmatched_open = "{block}: nespárovaná `{{` v šablóne `{template}`"
+unmatched_close = "{block}: nespárovaná `}}` v šablóne `{template}`"
+unknown_variable = "{block}: neznáma premenná `{{{var}}}` (povolené: {allowed})"
+no_variables = "žiadne"
+empty_field_name = "{block}: prázdne meno poľa"
+too_many_decimals = "{name}: max 6 (je {value})"
+not_positive = "{name} musí byť > 0"
+negative = "{name} musí byť ≥ 0"
+empty = "{name} je prázdny"
+step_over_kerf = "xcs.slot.max_step ({step}) je väčší ako saw_kerf ({kerf}): medzi prechodmi by ostal materiál"
+sheet_name_vars = "nesting.sheet_name musí obsahovať `{{sheet}}` a `{{mat}}` alebo `{{material}}` (jedinečné mená tabúľ)"
+sheet_size = "{name}: rozmer tabule musí byť > 0 a ≤ {max} mm"
+sheet_below_margins = "{name}: tabuľa je menšia ako dva okraje"
+spacing_below_tool = "nesting.layout.spacing ({spacing}) musí byť ≥ priemer frézy ({tool}): fréza by zasiahla susedný diel"
+through_extra = "nesting.route.through_extra ({value}) je viac ako 2 mm do podkladovej dosky"
+lead_in_depth = "nesting.route.lead_in_depth musí byť < 0 (nábeh začína nad materiálom)"
+overlap_below_tool = "nesting.route.overlap ({overlap}) musí byť ≥ priemer frézy ({tool})"
+remnant_offset = "nesting.remnant.offset ({offset}) musí byť > polomer frézy ({radius})"
+remnant_overrun = "nesting.remnant.overrun ({overrun}) musí byť ≥ polomer frézy ({radius})"
+drill_order_diameter = "nesting.drill.order: priemer musí byť > 0 (je {value})"
+variant_diameter = "nesting.drill.variant: priemer musí byť > 0 (je {value})"
+variant_max_depth = "nesting.drill.variant Ø{diameter}: max_depth musí byť > 0"
+variant_no_tool = "nesting.drill.variant Ø{diameter}: chýba `tool` aj `kind`"
+
+[config.materials]
+duplicate = "materiál `{id}` je definovaný viackrát"
+bad_thickness = "materiál `{id}`: hrúbka musí byť > 0"
+unknown_band = "materiál `{id}`: neznáma hranová páska `{band}`"
+band_duplicate = "hranová páska `{id}` je definovaná viackrát"
+band_bad_thickness = "hranová páska `{id}`: hrúbka musí byť > 0"
+
+[config.standard]
+bad_panel_dowels = "`blind_corner.panel_bottom_dowels` musia byť > 0 (je {value})"
+unknown_role = "joint_rule #{rule}: neznáma rola `{name}` (povolené: {allowed})"
+conflicting_rule = "joint_rule #{rule}: dvojica `{a}` × `{b}` má už iný spoj ({prev} vs {connection})"
+
+[config.project]
+bad_units = "project.units: podporované sú iba `mm` (je `{units}`)"
+unknown_material = "{field}: neznámy materiál `{id}`"
+empty_cabinet_id = "cabinet: prázdne `id`"
+duplicate_cabinet = "cabinet `{id}`: id je použité viackrát"
+bad_cabinet_size = "cabinet `{id}`: `{name}` musí byť > 0"
+no_cabinets = "projekt neobsahuje žiadnu skrinku (`[[cabinet]]`)"
+
+[config.room]
+bad_size = "`{name}` musí byť > 0 a ≤ {max} mm"
+negative = "`{name}` musí byť ≥ 0"
+bad_upper_top = "`room.upper_top` musí byť > 0"
+too_many_walls = "príliš veľa stien (max. {max})"
+too_many_openings = "príliš veľa otvorov (max. {max})"
+empty_wall_id = "wall: prázdne `id`"
+duplicate_wall = "stena `{id}`: id je použité viackrát"
+bad_wall_length = "stena `{id}`: `length` musí byť > 0 a ≤ {max} mm"
+bad_wall_value = "stena `{id}`: neplatné `{name}`"
+bad_wall_size = "stena `{id}`: `{name}` musí byť > 0"
+unknown_wall = "skrinka `{id}`: neznáma stena `{wall}`"
+bad_at = "skrinka `{id}`: neplatné `at`"
+bad_outset = "skrinka `{id}`: `outset` musí byť ≥ 0"
+bad_elevation = "skrinka `{id}`: `elevation` musí byť ≥ 0"
+bad_placement = "skrinka `{id}`: výška v `placement` musí byť ≥ 0"
+opening_unknown_wall = "otvor č. {n}: neznáma stena `{wall}`"
+opening_bad_size = "otvor č. {n}: `{name}` musí byť > 0"
+opening_negative = "otvor č. {n}: `{name}` musí byť ≥ 0"
+
+# Kontrola umiestnenia a predĺženie skrinky do rohu (cc-room)
+[room.check]
+outside_wall = "skrinka `{id}` presahuje stenu `{wall}` (od {from} do {to} mm, stena {length} mm)"
+above_ceiling = "skrinka `{id}` siaha do výšky {top} mm, stena `{wall}` má {height} mm"
+into_window = "skrinka `{id}` zasahuje do okna na stene `{wall}` ({from}–{to} mm)"
+into_door = "skrinka `{id}` zasahuje do dverí na stene `{wall}` ({from}–{to} mm)"
+into_opening = "skrinka `{id}` zasahuje do otvoru na stene `{wall}` ({from}–{to} mm)"
+overlap = "skrinky `{a}` a `{b}` sa prekrývajú"
+
+[room.corner]
+no_cabinets = "roh na konci steny `{wall}` nemá skrinky na oboch stenách"
+no_wall = "stena `{wall}` neexistuje"
+no_cabinet = "skrinka pri rohu neexistuje"
+locked_width = "skrinka `{id}` má zamknutú šírku"
+has_drawers = "skrinku `{id}` so zásuvkami nejde predĺžiť do rohu (slepý roh má dvierka)"
+
+# Spoje a kovanie → obrábanie (cc-joints)
+[joints]
+error = "skrinka `{cabinet}`: {message}"
+unsupported_axis = "diel `{id}`: nepodporovaná os nástroja {axis}"
+back_groove_without_back = "pravidlo back_groove pre `{a}` × `{b}` bez zadnej steny"
+rule_missing = "skrinka `{cabinet}`: diely `{a}` a `{b}` sa dotýkajú, ale štandard pre ne nemá pravidlo spoja"
+hardware_part_missing = "kovanie: diel `{id}` neexistuje"
+hinge_missing = "pánt `{hinge}` nie je v štandarde"
+drawer_missing = "zásuvka `{drawer}` nie je v štandarde"
+dowel_orientation = "kolíkový spoj `{a}` × `{b}`: nepodporované vzájomné natočenie dielov"
+too_short = "spoj `{a}` × `{b}` je príliš krátky ({length} mm, minimum {min} mm)"
+stopped_groove = "zastavená drážka (`groove_through = false`) zatiaľ nie je podporovaná"
+groove_orientation = "drážka zadnej steny v `{id}`: hrúbka dielu je v smere hĺbky skrinky"
+line_bore_no_bottom = "rad dier: skrinka nemá dno alebo vrch"
+filler_strip_missing = "blenda: lišta `{strip}` neexistuje"
+
+# Súpis kovania (záložka Zostavy, model.hardware)
+[joints.bill]
+drawer = "{name} NL {length} × {height}"
+white = "biely"
+grey = "šedý"
+black = "čierny"
+tip_on = "{kind} {color}"
+tip_on_adapter = "{kind} {color}, s adaptérom"
+
+# Generovanie dielov skrinky – prečo sa skrinka nedá zostaviť (cc-generate)
+[generate]
+error = "skrinka `{cabinet}`: {message}"
+unknown_material = "neznámy materiál `{id}`"
+inner_width = "vnútorná šírka W − 2T = {value} musí byť > 0"
+depth_before_back = "hĺbka pred zadnou stenou D − e − gw = {value} musí byť > 0"
+height = "výška H = {value} musí byť > 2T"
+fixed_shelves_tall_only = "pevné police (`fixed_shelves`) sú povolené iba pri type `tall`"
+bad_inset = "odsadenie dna a vrchu {value} je neplatné"
+side_too_low = "výška boku {value} je príliš malá"
+stretcher_drop = "vlysy znížené o {value} by boli pod dnom"
+stretchers_too_wide = "dve spojky šírky {width} sa nezmestia pred zadnú stenu (hĺbka {depth})"
+sink_stretchers = "zvislé vlysy výšky {value} sa do drezovej skrinky nezmestia"
+bad_back = "zadná stena má neplatný rozmer {width} × {height}"
+fixed_shelf_outside = "pevná polica vo výške {z} je mimo vnútorného priestoru ({min}..{max})"
+fixed_shelves_overlap = "pevné police vo výškach {a} a {b} sa prekrývajú"
+bad_shelf = "polohovateľná polica má neplatný rozmer {length} × {width}"
+shelves_do_not_fit = { one = "{count} polica sa do otvoru výšky {height} mm nezmestí", few = "{count} police sa do otvoru výšky {height} mm nezmestia", other = "{count} políc sa do otvoru výšky {height} mm nezmestí" }
+
+[generate.fronts]
+too_many = "najviac {count} čiel v skrinke"
+bad_standard = "neplatné hodnoty [fronts] v štandarde"
+no_room = "čelá sa nezmestia (plocha {width} × {height})"
+too_low = "výška čela {height} musí byť aspoň {min} mm"
+too_high = "čelá sú spolu vyššie ako skrinka (k dispozícii {available} mm, zadané {fixed} mm)"
+hinge_missing = "pánt `{id}` nie je v knižnici štandardu ([[hinge]])"
+drawer_missing = "zásuvka `{id}` nie je v knižnici štandardu ([[drawer]])"
+drawer_material = "neznámy materiál korpusu zásuvky `{id}`"
+blind_hinge_missing = "slepý pánt `{id}` nie je v knižnici štandardu"
+bad_panel_adjust = "úprava panelu dáva neplatný rozmer {width} × {height}"
+too_many_columns = "najviac {count} stĺpcov čiel v riadku"
+nested_columns = "stĺpec čiel sa nedá ďalej deliť"
+column_too_narrow = "šírka stĺpca {width} musí byť aspoň {min} mm"
+columns_mismatch = "šírky stĺpcov ({fixed}) nesedia so šírkou skrinky {width}"
+column_narrow = "stĺpec čiel šírky {width} je príliš úzky"
+bad_front_adjust = "úprava čela dáva neplatný rozmer {width} × {height}"
+pair_narrow = "dvojité dvierka šírky {width} sú príliš úzke"
+drawer_depth = "zásuvka `{id}` sa nezmestí do hĺbky {depth}"
+drawer_box_height = "korpus zásuvky `{id}` sa nezmestí za čelo výšky {height}"
+drawer_narrow = "zásuvka `{id}` je príliš úzka"
+
+[generate.filler]
+out_of_range = "blenda: `{name}` = {value} je mimo 0 … {max}"
+standalone_narrow = "samostatná blenda: šírka {width} je menšia ako hrúbka lišty {strip}"
+standalone_front_width = "samostatná blenda: šírka čela {width} musí byť od hrúbky lišty {strip} po {max}"
+missing = "blenda: chýba zadanie"
+narrow = "blenda: šírka {width} je menšia ako hrúbka lišty {strip}"
+front_width = "blenda: šírka čela {width} musí byť od hrúbky lišty {strip} po {max}"
+no_side = "blenda: skrinka nemá bok na strane blendy"
+bad_strip = "blenda: lišta má neplatný rozmer {height} × {depth}"
+bad_bottom = "blenda: dno blendy má neplatnú hĺbku {depth}"
+
+[generate.niche]
+no_section = "nika (`niche = true`) potrebuje v štandarde sekciu [niche]"
+wall_only = "nika je iba horná skrinka (`type = \"wall\"`)"
+bad_values = "nika: neplatné rozmery alebo hodnoty [niche]"
+too_small = "nika {w} × {h} × {d} je pre dosku {t} mm a chrbát {rear} od zadu príliš malá"
+too_many_shelves = "nika: najviac {count} políc"
+shelf_does_not_fit = { one = "nika: polica {length} × {width} sa nezmestí ({count} polica)", few = "nika: polica {length} × {width} sa nezmestí ({count} police)", other = "nika: polica {length} × {width} sa nezmestí ({count} políc)" }
+hole_off_face = "diera v diele `{id}` neleží na ploche"
+hole_outside = "diera Ø{diameter} × {depth} je mimo dielu `{id}` ({x}, {y})"
+
+[generate.led]
+no_section = "LED rampa (`led_rail`) potrebuje v štandarde sekciu [led_rail]"
+wall_only = "LED rampa je iba pod hornou skrinkou"
+bad_size = "LED rampa: neplatný rozmer {length} × {depth} (x {x})"
+groove_does_not_fit = "drážka pre LED ({width} × {depth}, {from_rear} od zadu) sa nezmestí do dielu `{id}` hĺbky {part_width}"
+
+[generate.slanted]
+bad_values = "šikmý bok má neplatné hodnoty"
+bad_extend = "presah šikmého boku dozadu {value} musí byť 0 … {max}"
+too_small = "šikmá skrinka {w} × {h} × {d} je príliš malá"
+no_shelves = "police v šikmej skrinke zatiaľ nie sú"
+must_narrow = "šikmý bok sa musí smerom hore zužovať (`top` ≥ `bottom`)"
+too_steep = "šikmý bok je sklonený o {angle}°, najviac {max}°"
+too_shallow = "hĺbka korpusu {depth} šikmej skrinky je príliš malá"
+bottom_too_short = "dno šikmej skrinky by malo iba {length} mm"
+hinges_on_slant = "pánty na šikmom boku nie sú možné, daj pánty na rovný bok"
+no_drawers = "zásuvky v šikmej skrinke zatiaľ nie sú"
+
+# ---- engine ----
+# engine: crates/cc-engine/src/ (error.rs, session.rs, document.rs, logo.rs, export_cvj.rs, import_cvj.rs, cmd/*.rs)
+
+[engine.errors]
+unknown_command = "neznámy príkaz `{command}` (zoznam: engine.commands)"
+disabled = "príkaz `{command}` teraz nie je k dispozícii: {reason}"
+params = "príkaz `{command}`: zlé parametre: {message}"
+panicked = "vnútorná chyba príkazu `{command}`: {message}; projekt ostal v stave pred príkazom"
+no_project = "nie je otvorený žiadny projekt"
+not_positive = "`{name}` musí byť kladné konečné číslo (je {value})"
+not_finite_max = "`{name}` musí byť konečné číslo do {max} mm"
+cabinet_missing = "skrinka `{id}` neexistuje"
+cabinet_exists = "skrinka `{id}` už existuje"
+part_missing = "diel `{id}` neexistuje"
+wall_missing = "stena `{id}` neexistuje"
+wall_exists = "stena `{id}` už existuje"
+model_failed = "model sa nedá zostaviť"
+model_failed_with = "model sa nedá zostaviť: {error}"
+has_issues = "kontrola našla chyby (záložka Kontrola)"
+no_nesting = "profil stroja nemá sekciu [nesting]"
+
+[engine.session]
+too_many_cabinets = "najviac {max} skriniek v projekte"
+change_rejected = "zmena sa nepoužila:\n  - {problems}"
+model_panic = "vnútorná chyba pri stavbe modelu: {message}"
+nothing_to_redo = "nie je čo znova vykonať"
+nothing_to_undo = "nie je čo vrátiť"
+unknown_panic = "neznáma panika"
+
+[engine.document]
+unsaved = "neuložený projekt"
+bad_standard_name = "neplatné meno štandardu `{name}`"
+catalog_missing = "katalóg `{name}` neexistuje"
+catalog_invalid = "katalóg nie je platný:\n{problems}"
+standard_invalid = "štandard nie je platný:\n{problems}"
+no_file = "projekt ešte nemá súbor, použi Uložiť ako"
+already_in_target = "{file} už v cieľovom priečinku je, použije sa ten"
+copied = "skopírované: {file}"
+
+[engine.logo]
+error = "logo {file}: {error}"
+too_big = "logo {file}: súbor je väčší ako 20 MB"
+not_image = "logo {file}: nedá sa prečítať ako PNG/JPEG ({error})"
+empty = "logo {file}: prázdny obrázok"
+
+[engine.export_cvj]
+no_template = "projekt nemá zákazku CABINET VISION ako šablónu (importuj ho z .cvj alebo zadaj template = pôvodná zákazka CV)"
+template_missing = "šablóna `{file}` neexistuje (zákazka CV, z ktorej sa projekt importoval)"
+bad_extension = "výstup `{file}` musí mať príponu .cvj"
+overwrites_template = "výstup nesmie prepísať šablónu (pôvodnú zákazku CV); zvoľ nový súbor"
+write_failed = "zápis `{file}` zlyhal: {error}"
+
+[engine.import_cvj]
+front_counts = "dvierka {doors}, dvojité {pairs}, zásuvky {drawers}, pevné čelá {false_fronts}, panely {panels}, otvorené {open}; skrinky iba s čelom {front_only}"
+template_missing = "vzorový projekt `{file}` neexistuje (zadaj ho cez --template)"
+rest_of_data = "zvyšok dát"
+incomplete = "úloha sa neprečítala celá ({reason}), import môže byť neúplný"
+relax_filler_dowels = "kolíky blendy sa vynechali (vŕtajú sa ručne)"
+relax_box_heights = "výšky korpusov zásuviek z CV sa nezmestia, vyberie ich generátor"
+relax_front_sizes = "výšky a šírky čiel z CV sa nezmestia, čelá si delia skrinku rovnako"
+relax_reveals = "úpravy rozmeru a škáry čiel z CV sa nedajú použiť, čelá podľa štandardu"
+relax_slant = "šikmý bok sa nedá postaviť, skrinka je rovná"
+relax_fronts = "čelá sa vynechali"
+relaxed = "skrinka `{id}`: {changes} (generátor: {error})"
+skipped = "skrinka `{id}` ({w} × {h} × {d} mm) sa vynechala, náš generátor ju odmieta: {error}"
+no_fronts = "žiadne"
+fronts_differ = "skrinka `{id}`: čelá (š × v) sa líšia od CV (CV: {cv}; u nás: {ours})"
+
+[engine.cabinet]
+not_in_catalog = "`{id}` nie je v katalógu"
+type_or_catalog = "chýba `type` alebo `catalog`"
+not_on_wall = "skrinka `{id}` nie je pri stene"
+bad_side = "`side` je left alebo right (je {value})"
+last_cabinet = "projekt musí mať aspoň jednu skrinku"
+by_or_to = "zadaj práve jedno z `by`, `to`"
+empty_id = "`id` nesmie byť prázdne"
+too_large = "`{name}` je príliš veľké ({value} mm)"
+too_many_adjustable = "`adjustable_shelves` najviac {max} (je {value})"
+too_many_fixed = "`fixed_shelves` najviac {max}"
+too_many_fronts = "`fronts` najviac {max} čiel"
+bad_front_height = "výška čela `{value}` musí byť kladné číslo do {max} mm"
+bad_hinge = "`hinge` musí byť ID pántu zo štandardu"
+bad_drawer = "`drawer` musí byť ID zásuvky zo štandardu"
+
+[engine.catalog]
+bad_name = "meno katalógu: písmená, číslice, medzera, _ - . (najviac 60 znakov)"
+exists = "katalóg `{name}` už existuje"
+bad_item_id = "`id` položky: 1 až 100 znakov"
+name_too_long = "meno najviac 200 a skupina 100 znakov"
+too_many_items = "katalóg má najviac {max} položiek"
+item_missing = "`{id}` nie je v katalógu `{name}`"
+
+[engine.drawings]
+unknown_sheet = "neznámy výkres `{sheet}` (job, walls, cabinets, parts, wall:ID, cabinet:ID, part:ID)"
+not_in_job = "`{sheet}` v zákazke neexistuje"
+too_many_sheets = "najviac {max} výkresov v jednom PDF"
+nothing_to_print = "nie je čo tlačiť"
+job_title = "Zákazka – 3D, pôdorys, pohľad spredu"
+job_content = "skrinky {cabinets} · diely {parts} · {material}"
+wall_title = "Stena {id} – pohľad"
+wall_content = "{length} × {height} mm · skrinky {cabinets} · otvory {openings} · M 1:{scale}"
+cabinet_title = "Skrinka {id}"
+cabinet_content = "{w} × {h} × {d} mm · {kind} · diely {parts}"
+part_title = "Diel {id}"
+part_content = "{length} × {width} × {thickness} mm · {material}"
+
+[engine.export]
+failed = "export do {dir} zlyhal: {error}"
+
+[engine.front]
+row_missing_of = { one = "skrinka má {count} riadok čiel, riadok {row} neexistuje", few = "skrinka má {count} riadky čiel, riadok {row} neexistuje", other = "skrinka má {count} riadkov čiel, riadok {row} neexistuje" }
+bad_count = "`count` 2 … {max}"
+row_has_columns_h = "riadok so stĺpcami sa nedá deliť vodorovne"
+column_split_h = "stĺpec sa nedá deliť vodorovne (otvor má riadky alebo stĺpce)"
+row_has_columns_v = "riadok už má stĺpce: vyber stĺpec"
+too_many_columns = "najviac {max} stĺpcov v riadku"
+column_missing = "stĺpec {column} neexistuje"
+bad_size = "`{name}` musí byť kladné číslo do 10 000 mm"
+bad_adjust = "`adjust` musí mať konečné hodnoty do ±1000 mm"
+height_on_row = "výška sa zadáva pri celom riadku"
+width_on_column = "šírka sa zadáva pri stĺpci riadku"
+pair_in_column = "dvojité dvierka v stĺpci: rozdeľ stĺpec zvislo"
+hinge_side_door = "strana pántov je iba pri dvierkach"
+row_missing = "riadok {row} neexistuje"
+
+[engine.labels]
+no_sheet = "tabuľa `{sheet}` v nestingu nie je"
+parts_without_label = "diely bez štítku: {parts}"
+nothing_to_print = "žiadny štítok na tlač"
+mkdir_failed = "priečinok {dir} sa nedá vytvoriť: {error}"
+write_failed = "zápis {file} zlyhal: {error}"
+
+[engine.project]
+empty_name = "názov projektu nesmie byť prázdny"
+too_long = "`{key}` najviac {max} znakov"
+
+[engine.room]
+bad_row = "`row` je base alebo upper (je {value})"
+no_corner = "roh na konci steny `{wall}` nemá skrinky na oboch stenách"
+bad_extend = "`extend` je `{wall}` alebo `{next}`"
+not_finite = "`{name}` musí byť konečné číslo do {max} mm (je {value})"
+negative = "`{name}` nesmie byť záporné (je {value})"
+empty_wall_id = "`id` steny nesmie byť prázdne"
+bad_angle = "`angle` musí byť konečný uhol v stupňoch"
+too_many_walls = "najviac {max} stien v projekte"
+too_many_openings = "najviac {max} otvorov v projekte"
+opening_missing = "otvor č. {index} neexistuje"
+nominal_over_max = "`nominal` nesmie byť väčšie ako `max`"
+bad_increment = "`increment` musí byť aspoň 1 mm"
+
+[engine.standard]
+empty_path = "prázdna cesta"
+no_key = "`{path}`: kľúč `{key}` neexistuje"
+not_index = "`{path}`: `{key}` nie je index zoznamu"
+out_of_range = "`{path}`: index {index} je mimo zoznamu"
+not_container = "`{path}`: `{key}` nie je pod tabuľkou ani zoznamom"
+
+# Import zákazky CABINET VISION (.cvj, cc-import-cvj): poznámky po importe (okno, komentáre
+# v project.toml); {label} je skrinka alebo objekt (label_cabinet, label_object)
+
+[import_cvj]
+default_name = "Import z CABINET VISION"
+room_skipped = "miestnosť `{name}` sa neimportovala (projekt má iba jednu miestnosť)"
+no_room = "úloha neobsahuje miestnosť so stenami ani skrinkami"
+wall_duplicate = "stena č. {wall} je v úlohe dvakrát, druhá sa vynechala"
+class_unsupported = "{label}: neimportuje sa, trieda {class}{kind} nemá v projekte obdobu"
+class_other = "trieda {code}"
+fronts_only = "{label}: neimportuje sa, nemá diely korpusu, iba čelá (spotrebič alebo panel?)"
+too_few_parts = "{label}: neimportuje sa, má iba {count} diel korpusu (výplň alebo panel)"
+no_size = "{label}: neimportuje sa, nemá rozmery korpusu ({w} × {h} × {d} mm)"
+front_only = "{label}: iba čelo bez korpusu (napr. umývačka), rozmery z obálky CV (bez sokla `TOEH`)"
+size_from_box = "{label}: bez dielov, rozmery korpusu sú z obálky CV (bez sokla `TOEH`)"
+slant = "{label}: šikmý bok – rozmery skrinky z CV, šikmé diely a dvierka ako obdĺžniky (obálka)"
+behind_wall = "{label}: zadná strana korpusu je {mm} mm za lícom steny, posunutá na líce"
+below_floor = "{label}: spodok korpusu je {mm} mm pod podlahou, posunutý na podlahu"
+tall_shelves = "{label}: {count} políc sa importovalo ako prestaviteľné (pevné police sa nerozlišujú)"
+countertop = "pracovná doska `{name}` ({l} × {w} × {t} mm{wall}) sa neimportuje"
+countertop_wall = ", stena {wall}"
+floor_outline = "obrys podlahy sa neimportuje"
+label_cabinet = "skrinka č. {number} `{name}`"
+label_object = "objekt `{name}`"
+wall_zero_length = "stena č. {wall} má nulovú dĺžku, vynechala sa"
+wall_not_vertical = "stena č. {wall} nie je zvislá, importuje sa jej pôdorys"
+wall_raised = "stena č. {wall} začína vo výške {mm} mm nad podlahou (ignoruje sa)"
+wall_zero_thickness = "stena č. {wall} má nulovú hrúbku (polostena), použije sa hrúbka miestnosti"
+unplaced = "importuje sa bez steny (náš model nemá voľné umiestnenie)"
+unplaced_back_face = "stojí na zadnej ploche steny č. {wall}, {base}"
+unplaced_wall_skipped = "stena č. {wall} sa neimportovala, {base}"
+unplaced_rotated = "je natočená voči stene ({angle}°), {base}"
+unplaced_free = "nestojí pri stene, {base}"
+too_many_sections = "skrinka `{name}`: strom sekcií má viac ako {max} uzlov, zvyšok sa vynechal"
+bad_param = "objekt `{object}`: neplatná hodnota parametra `{param}` ({value}), použije sa 0"
+
+[import_cvj.fronts]
+tree_cycle = "strom otvorov je zacyklený alebo príliš hlboký"
+empty_opening = "prázdny otvor"
+column_split = "stĺpec čiel je ďalej delený vodorovne (náš model má v stĺpci jedno čelo)"
+no_root = "strom otvorov čela nemá koreň"
+not_imported = "{label}: čelá sa neimportovali, {reason}"
+too_many_rows = "{label}: čelá sa neimportovali, {count} riadkov je viac ako {max}"
+drawer_lengths = "{label}: zásuvky majú rôzne dĺžky výsuvu ({lengths}), náš model má jednu najdlhšiu na skrinku ({longest})"
+reveals_rows = "{label}: škáry medzi čelami nad sebou nie sú v CV rovnaké ({values}), použila sa prvá"
+reveals_columns = "{label}: škáry medzi čelami vedľa seba nie sú v CV rovnaké ({values}), použila sa prvá"
+reveals_invalid = "{label}: škáry čiel z CV sú nezmyselné (čelá mimo korpusu?), ponechané podľa štandardu"
+opening_repeated = "{label}: otvor čela č. {id} je v strome {count}-krát, použil sa prvý"
+unknown_style = "{label}: neznámy typ otvoru čela (STYPE {code}), odvodený z objektu `{object}`"
+door_no_hinges = "{label}: dvierka bez závesov (HNG 4) sú importované ako pevné čelo"
+hinge_side = "{label}: strana závesov HNG {value} (hore/dole) náš model nevie, pánty podľa štandardu"
+hinge_positions = "{label}: ručná poloha závesov ({values}) sa nepreniesla, pánty podľa štandardu"
+hinge_count = "{label}: zadaný počet závesov {count} sa nepreniesol, počet podľa štandardu"
+
+[import_cvj.options]
+joints_reset = "{label}: spoje skrinky sú v CV v režime „Reset“ (APPLY_HW_CAB 2), ponechané podľa štandardu"
+apply_hw_unknown = "{label}: neznáma hodnota APPLY_HW_CAB {value}"
+joints_none = "{label}: typ spojov „0-NIC“ importovaný ako iba kolíky"
+joint_cam15 = "kolík + excenter 15"
+joint_vb35 = "kolík + excenter VB35"
+joint_vb36 = "kolík + excenter VB36"
+joint_blum = "kolík + spojka Blum"
+joint_maxifix = "kolík + MaxiFix"
+joint_unknown = "neznámy"
+joint_type = "{label}: typ spojov {value} ({name}) náš model nemá, spoje podľa štandardu"
+shelf_support = "{label}: policové kovanie {value} náš model nemá, podperky podľa štandardu"
+legs_partial = "{label}: v CV sú zmazané iba nožičky č. {legs}, náš model má nožičky iba všetky alebo žiadne"
+tip_on_unknown = "{label}: neznámy druh TIP-ON {value}"
+back_inset = "{label}: chrbát „VSAZENÁ“ (MAKEDADO 1) náš model pri skrinke nevie, chrbát podľa štandardu"
+back_no_groove = "{label}: chrbát bez drážky (MAKEDADO 2) náš model pri skrinke nevie, chrbát podľa štandardu"
+back_router = "{label}: drážka chrbta frézou (Cab_FRD) náš model nevie, drážka podľa štandardu"
+link_unknown = "{label}: neznámy stav spojovacieho kovania skriniek {value}, ponechané podľa štandardu"
+link_shift = "{label}: posun protikusu spojovacieho kovania {mm} mm sa zatiaľ nepoužije (znamienko nie je overené)"
+
+[import_cvj.filler]
+left = "vľavo"
+right = "vpravo"
+standalone = "samostatná blenda (lišta a slepé čelo s presahom {side}), importovaná ako skrinka bez korpusu s `filler`"
+attached = "blenda {side} (šírka {width}, čelo {front}{bottom}) importovaná ako `filler`, korpus je bez blendy"
+bottom = ", dno blendy"
+
+[import_cvj.led]
+several = "{label}: viac LED ramp, importuje sa iba prvá (`{name}`)"
+bad_size = "{label}: LED rampa má neplatný rozmer, neimportuje sa"
+moved = "{label}: LED rampa nie je pod dnom pri zadnej strane, importuje sa pod dno zadnou hranou k stene"
+
+# Zápis do zákazky CABINET VISION (.cvj, cc-out-cvj): poznámky v stavovom riadku po uložení
+
+[export_cvj]
+cabinet_not_on_wall = "skrinka `{id}` nestojí pri stene, do .cvj sa nezapísala"
+cabinet_wall_skipped = "skrinka `{id}`: stena `{wall}` sa do .cvj nezapísala, skrinka tiež nie"
+cabinet_pattern = "skrinka `{id}`: vzor v šablóne podľa druhu a rozmeru ({pattern})"
+cabinet_no_pattern = "skrinka `{id}`: šablóna nemá vzorovú skrinku tejto triedy, nezapísala sa"
+cabinet_fronts_from_pattern = "skrinka `{id}`: šablóna nemá vzor pre niektorý druh otvoru, delenie čiel je zo vzorovej skrinky"
+opening_wall_skipped = "{kind} na stene `{wall}`: stena sa do .cvj nezapísala, otvor tiež nie"
+opening_no_pattern = "{kind} na stene `{wall}`: šablóna nemá okno ani dvere na kópiu, nezapísal sa"
+opening_envelope = "{kind} na stene `{wall}`: šablóna nemá vzor tohto druhu, zapísaný ako obálka (bez rámu)"
+moved_with_window = "`{name}` na stene č. {wall} sa posunul s oknom (X {x}, Y {y}, šírka {width})"
+wall_no_position = "stena č. {wall}: chýba parameter polohy, ostala zo šablóny"
+wall_removed = "stena č. {wall} v projekte nie je, z .cvj sa vynechala aj s objektmi na nej"
+wall_bad_size = "stena č. {wall}: neplatný rozmer, ostala zo šablóny"
+wall_not_written = "stena `{id}`: šablóna nemá rovnú stenu na kópiu alebo neplatný rozmer, nezapísala sa"
+walls_not_closed = "stena č. {wall}: koniec ({end}) nie je začiatok steny č. {next} ({start}), miestnosť nie je uzavretá"
+walls_formula_mismatch = "{count} hodnôt stien nesedí so vzorcami CV (polohy {positions})"
+
+[export_cvj.opening]
+window = "okno"
+door = "dvere"
+opening = "otvor"
+
+# Príkazový riadok (cc-cli): výpis na konzolu; pomocník --help je pevný (po slovensky)
+
+[cli]
+error = "chyba: {error}"
+note = "poznámka: {note}"
+import_note = "poznámka importu: {note}"
+copied = "skopírované: {file}"
+notice = "upozornenie: {notice}"
+export_cvj_done = "{project} → {out} (šablóna {template}): skrinky {cabinets}, poznámky {notes}"
+import_cvj_done = "{file} → {out}: steny {walls}, skrinky {cabinets}, otvory {openings}, poznámky {notes}"
+import_cvj_fronts = "čelá: {fronts}"
+machine_profile = "profil stroja: {file}"
+no_machine_profile = "bez profilu stroja: kontroly rozmerov stroja a vrtákov sa vynechali"
+validation_failed = { one = "validácia našla {count} chybu, výstupy sa nezapísali", few = "validácia našla {count} chyby, výstupy sa nezapísali", other = "validácia našla {count} chýb, výstupy sa nezapísali" }
+nesting_done = "nesting: programy tabúľ {count} → {dir}"
+labels_done = "štítky: {count} (100 × 80 mm a A4) → {dir}"
+build_done = "{project}: skrinky {cabinets}, diely {parts}, operácie {operations}, programy .xcs {xcs}, .mpr {mpr} → {dir}"
+parity_done = "parita: diely {parts}/{cv_parts} (rozmer {same_size}), diery {holes}/{cv_holes} (navyše {extra}) → {file}"
+
+[cli.render]
+view = "pohľad `{view}` zatiaľ nie je k dispozícii (iba 3d)"
+size = "rozmer obrazu 1…{max} px"
+camera = "neznáma kamera `{camera}` (default, front, top, iso)"
+no_selection = "diel ani skrinka `{id}` neexistuje"
+done = "{project}: diely {parts}, {width} × {height} → {file}"
+
+[cli.script]
+too_long = "riadok {line}: príliš dlhý"
+bad_json = "riadok {line}: zlý JSON: {error}"
+no_command = "riadok {line}: chýba \"command\""
+
+[ribbon.windows]
+group = "Windows"
+register = "Otvárať .cvj v CabinetCRAFT"
+unregister = "Zrušiť .cvj v ponuke"
+hint = "Pridá do ponuky pravého tlačidla pre .cvj položku „Otvoriť v CabinetCRAFT“ a program do zoznamu „Otvoriť pomocou“ (iba pre tvoj účet). Predvolený program (CABINET VISION) sa nemení; ak chceš dvojklik do CabinetCRAFT, zvoľ v „Otvoriť pomocou“ CabinetCRAFT a „Vždy“."
+registered = "Pre .cvj je v ponuke pravého tlačidla „Otvoriť v CabinetCRAFT“ (a v „Otvoriť pomocou“)"
+unregistered = "Položka „Otvoriť v CabinetCRAFT“ pre .cvj je odstránená"
+failed = "Zápis do Windows zlyhal: {error}"
+
+[shell]
+menu_item = "Otvoriť v CabinetCRAFT"
+reg_failed = "reg sa nedá spustiť: {error}"
+exe_path = "cesta k programu: {error}"
+windows_only = "iba vo Windows"

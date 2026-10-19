@@ -1,0 +1,20 @@
+[package]
+name = "cc-nest"
+description = "CabinetCRAFT: rozloženie dielov na tabule (nesting) a delenie obrábania nesting / CX100"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-model.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+cc-config.workspace = true
+cc-generate.workspace = true
+cc-joints.workspace = true
+glam.workspace = true
+
+[lints]
+workspace = true

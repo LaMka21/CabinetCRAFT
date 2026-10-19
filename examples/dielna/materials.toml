@@ -1,0 +1,33 @@
+# Materiály dielne (zo zákazky REF2026).
+
+[[material]]
+id = "DTDL_18_W960_biela"            # „18 DTDL W960 ST7 Biela PE“ – korpus
+thickness = 18.0
+grain = "none"
+edge_band = "ABS_biela"
+
+[[material]]
+id = "MDF_19_W1000_biela"            # „19 MDF W1000 PM/ST9 Prémiovo biela“ – viditeľné diely
+thickness = 19.0
+grain = "none"
+edge_band = "ABS_biela"
+
+[[material]]
+id = "DTDL_16_W960_biela"            # „16 DTDL W960“ – dná a zadky zásuviek (tabuľa 9660401N, findings 09)
+thickness = 16.0
+grain = "none"
+edge_band = "ABS_biela"
+
+[[material]]
+id = "PD_38_H1385_dub"               # „PD H1385 ST40 Dub Casella prírodný“ – pracovná doska, krycí bok (REF skr. 13)
+thickness = 38.0
+grain = "length"
+
+[[material]]
+id = "HDF_3_biela"                   # zadná stena (potvrdené používateľom)
+thickness = 3.0
+grain = "none"
+
+[[edge_band]]
+id = "ABS_biela"
+thickness = 1.0                      # [?] hrúbka ABS – overiť

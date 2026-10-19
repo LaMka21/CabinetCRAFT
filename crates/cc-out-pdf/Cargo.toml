@@ -1,0 +1,19 @@
+[package]
+name = "cc-out-pdf"
+description = "CabinetCRAFT: PDF výstupy – štítky dielov (100 × 80 mm a A4), čiarový kód Code 39"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+cc-i18n.workspace = true
+cc-model.workspace = true
+cc-out-util.workspace = true
+miniz_oxide.workspace = true
+
+[dev-dependencies]
+glam.workspace = true
+
+[lints]
+workspace = true

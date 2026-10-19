@@ -1,0 +1,6 @@
+/target
+/out
+/plan/cv
+
+# výstupy exportu pri skúšaní príkladov
+examples/*/out/

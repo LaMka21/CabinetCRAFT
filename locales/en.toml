@@ -1,0 +1,1908 @@
+# CabinetCRAFT – English texts (reference file for translators).
+#
+# How to translate: copy this file to <language code>.toml (e.g. de.toml, pt-BR.toml),
+# translate the texts in quotes and keep the keys (left of "=") unchanged.
+# Keep {name} parameters as they are; they are replaced by numbers or names.
+# Plural forms: { one = "...", few = "...", many = "...", other = "..." } – see locales/README.md.
+# A key you leave out or leave empty falls back to English.
+
+[meta]
+name = "English"
+
+# Commands (cc-engine): name for the undo history and menus; menu path
+
+[commands]
+"export.drawings" = "Print Drawings to PDF"
+"export.machine" = "Export for Machine"
+"cabinet.snap_corner" = "Snap Cabinet to Corner"
+"cabinet.add" = "Add Cabinet"
+"cabinet.remove" = "Delete Cabinet"
+"cabinet.duplicate" = "Duplicate Cabinet"
+"cabinet.move" = "Move Cabinet in List"
+"cabinet.set" = "Edit Cabinet"
+"catalog.list" = "Cabinet Catalogs"
+"catalog.create" = "New Catalog"
+"catalog.save_item" = "Save Cabinet to Catalog"
+"catalog.remove_item" = "Remove Catalog Item"
+"edit.undo" = "Undo"
+"edit.redo" = "Redo"
+"selection.set" = "Select"
+"front.split" = "Split Face Opening"
+"front.set" = "Change Face Opening"
+"front.remove" = "Remove Face Split"
+"project.inspect" = "Project Status"
+"model.inspect" = "Model Status"
+"model.hardware" = "Hardware List"
+"labels.sheets" = "Sheets and Labels"
+"labels.print" = "Print Labels"
+"project.import_cvj" = "Import CABINET VISION Job"
+"project.export_cvj" = "Save to CABINET VISION (.cvj)"
+"project.open" = "Open Project"
+"project.new" = "New Project"
+"project.save" = "Save"
+"project.save_as" = "Save As"
+"project.rename" = "Rename Project"
+"project.info" = "Job Information"
+"project.set" = "Edit Project"
+"defaults.set" = "Change Default Materials"
+"room.corner" = "Extend Cabinet to Corner"
+"room.set" = "Edit Room"
+"room.add_rect" = "Add Rectangular Room"
+"wall.add" = "Add Wall"
+"wall.set" = "Edit Wall"
+"wall.remove" = "Delete Wall"
+"opening.add" = "Add Window or Door"
+"opening.set" = "Edit Opening"
+"opening.remove" = "Delete Opening"
+"room.orient" = "Room Walls Inward"
+"cabinet.fill" = "Auto Fill Wall"
+"standard.set" = "Change Standard Value"
+"standard.use" = "Use Another Standard"
+"standard.save" = "Save Standard"
+"standard.reload" = "Reload Standard from File"
+
+[command_menus]
+"export.drawings" = "File/Print Drawings to PDF…"
+"export.machine" = "File/Export for Machine…"
+"cabinet.add" = "Cabinet/Add"
+"cabinet.remove" = "Cabinet/Delete"
+"cabinet.duplicate" = "Cabinet/Duplicate"
+"catalog.create" = "Cabinet/New Catalog…"
+"catalog.save_item" = "Cabinet/Save to Catalog…"
+"edit.undo" = "Edit/Undo"
+"edit.redo" = "Edit/Redo"
+"project.import_cvj" = "File/Import .cvj…"
+"project.export_cvj" = "File/Save as .cvj…"
+"project.open" = "File/Open…"
+"project.new" = "File/New"
+"project.save" = "File/Save"
+"project.save_as" = "File/Save As…"
+"room.set" = "Room/Properties"
+"room.add_rect" = "Room/Rectangular Room"
+"wall.add" = "Room/Add Wall"
+"wall.remove" = "Room/Delete Wall"
+"opening.add" = "Room/Add Opening"
+"room.orient" = "Room/Walls Inward"
+"cabinet.fill" = "Room/Auto Fill Wall"
+"standard.use" = "Standard/Use…"
+"standard.save" = "Standard/Save"
+"standard.reload" = "Standard/Reload from File"
+
+[status]
+language_set = "Language: {name}"
+
+[ribbon.language]
+group = "Language"
+hint = "Language of the window, drawings and labels. More languages: <code>.toml files in the languages folder (locales/README.md)."
+folder = "Languages Folder"
+folder_hint = 'Opens %APPDATA%\CabinetCRAFT\locales; a new <code>.toml file appears in the list without a restart.'
+no_folder = "The languages folder cannot be created"
+
+# ---- shell ----
+# shell: crates/cc-app/src/ribbon.rs, tabs.rs, app.rs, reports.rs (main.rs has no user-visible texts)
+
+# Ribbon tabs
+[ribbon.tabs]
+file = "File"
+main = "Home"
+tools = "Tools"
+
+# File menu
+[ribbon.file]
+new = "New Project"
+open = "Open…"
+save = "Save"
+save_as = "Save As…"
+import_cvj = "Import .cvj Job…"
+export_cvj = "Save to CABINET VISION (.cvj)…"
+print = "Print Drawings to PDF…"
+quit = "Exit"
+
+[ribbon.home]
+group = "Navigate"
+return = "Return"
+return_hint = "Back to the mode list (or out of the cabinet editor)"
+
+[ribbon.edit]
+group = "Edit"
+undo = "Undo"
+undo_hint = "Ctrl+Z: {label}"
+redo = "Redo"
+redo_hint = "Ctrl+Y: {label}"
+
+# Zoom in the plan and elevation
+[ribbon.zoom]
+group = "Zoom"
+window = "Zoom Window"
+window_hint = "Drag a frame around the area you want to zoom in on"
+out = "Zoom Out"
+all = "Zoom All"
+all_hint = "Whole room in the window (also double-click with the right button)"
+
+# Walls mode in the plan
+[ribbon.walls]
+select_group = "Select"
+select = "Select"
+select_hint = "Click a wall: its properties are in the left panel"
+modify_group = "Modify"
+delete = "Delete"
+delete_hint = "Delete the selected wall; its cabinets stay without a wall, its openings are deleted"
+orient = "Walls Inward"
+orient_hint = "Room drawn counterclockwise: flips the walls so the cabinets stand inside"
+draw_group = "Draw"
+line = "Line"
+line_hint = "Walls by line: click = start/end of a wall, walls are chained. Esc ends the chain, the right button ends drawing."
+rect = "Rectangle"
+rect_hint = "Rectangular room: drag a frame from corner to corner"
+
+# Reports: cabinets
+[ribbon.cabinets]
+group = "Cabinets"
+base = "Base"
+base_hint = "Add a base cabinet"
+wall = "Wall"
+wall_hint = "Add a wall cabinet"
+tall = "Tall"
+tall_hint = "Add a tall cabinet"
+catalog = "Catalog"
+catalog_empty = "The cabinet catalogs (catalogs/*.toml next to the project) are empty"
+catalog_hint = "Add a cabinet from the shop catalog"
+duplicate = "Duplicate"
+delete = "Delete"
+
+# 3D: camera and display
+[ribbon.camera]
+group = "Camera"
+hint = "left button: orbit · right: pan · wheel: zoom · click: cabinet · another click or double-click: part"
+perspective = "Perspective"
+explode = "Explode"
+
+[ribbon.show]
+group = "Show"
+backs = "Backs"
+shelves = "Shelves"
+operations = "Drilling and Grooves"
+fronts = "Fronts"
+walls = "Walls and Floor"
+
+[ribbon.project]
+group = "Project"
+standard_hint = "Construction standard of the project"
+material_hint = "Carcass material"
+
+# Elevation: wall picker
+[ribbon.wall]
+group = "Wall"
+front = "Wall {id} – Front"
+front_length = "Wall {id} – Front   {length} mm"
+hint = "In the elevation: drag a cabinet to move it, drag its edge to change the width, right-click for a menu"
+
+[ribbon.properties]
+group = "Properties"
+room = "Room"
+room_hint = "Room parameters: wall height and thickness, soffit, toe kick"
+standard = "Standard"
+standard_hint = "Construction standard: carcass, back, dowels, line boring"
+
+[ribbon.drawings]
+group = "Drawings"
+print = "Print PDF"
+print_hint = "All drawings to PDF: job, cabinets, parts (Ctrl+P)"
+print_wall = "Print Wall"
+print_wall_hint = "Elevation of this wall to PDF"
+
+[ribbon.production]
+group = "Production"
+check = "Validation"
+check_errors = { one = "Validation found {count} error", other = "Validation found {count} errors" }
+check_hint = "Check the job for errors (spec ch. 8)"
+export = "Machine Export"
+export_hint = "Cut list, model.json, .xcs programs for the CX100 and RUN.bat"
+export_blocked = "Export is possible only when validation finds no errors"
+to_folder = "To Folder…"
+merge = "Merge Identical Parts"
+decimal_comma = "Decimal Comma"
+all_cx100 = "All on CX100"
+all_cx100_hint = "Parts from the saw, all machining on the CX100"
+nesting = "Nesting SCM + CX100"
+nesting_hint = "Nesting: cutting and the top face; CX100: edges, grooves, bottom face"
+nesting_missing = "The machine profile has no [nesting] section"
+
+# Tools tab
+[ribbon.standard]
+group = "Standard"
+save = "Save Standard"
+saved = "Standard saved"
+reload = "Reload from File"
+reloaded = "Standard reloaded from file"
+
+[ribbon.control]
+group = "Control Channel"
+running = "running on 127.0.0.1:{port}"
+off = "off (start with --control PORT)"
+
+# View tabs (bar above the work area and tab names)
+[tabs]
+plan = "Plan"
+elevation = "Elevation"
+view3d = "3D"
+reports = "Reports"
+drawings = "Drawings"
+production = "Production"
+issues = "Validation"
+labels = "Labels"
+cabinet = "Cabinet"
+part_edit = "Part"
+standard = "Standard"
+
+# Part names by role (lowercase)
+[tabs.role]
+side_left = "left side"
+side_right = "right side"
+bottom = "bottom"
+top = "top"
+stretcher_front = "front stretcher"
+stretcher_rear = "rear stretcher"
+back = "back"
+adjustable_shelf = "adjustable shelf"
+fixed_shelf = "fixed shelf"
+door = "door"
+drawer_front = "drawer front"
+false_front = "false front"
+drawer_bottom = "drawer bottom"
+drawer_back = "drawer back"
+plinth = "toe kick"
+filler_strip = "filler strip"
+filler_front = "filler front"
+filler_bottom = "filler bottom"
+finished_back = "finished back"
+led_rail = "LED rail"
+cover_side = "finished end"
+
+# Files: status bar and dialogs
+[app.files]
+filter_job_or_project = "Job or Project"
+opened_cvj_project = "Opened: {path} (project for job {cvj}; the .cvj has not changed since)"
+cvj_not_from_cv = " (no .cvj: the project was not created from a CABINET VISION job)"
+cvj_not_written = " · .cvj not written: {error}"
+cvj_written = " · for CV: {path}"
+opened = "Opened: {path}"
+open_failed = "The project cannot be opened: {error}"
+new_project = "New project: materials, standard and machine come from the previous project"
+filter_cv_job = "CABINET VISION Job"
+filter_project = "CabinetCRAFT Project"
+import_target_title = "Where to save the imported project"
+filter_cv_order = "CABINET VISION Job"
+export_cvj_title = "Where to save the job for CABINET VISION"
+cvj_saved = "Saved for CABINET VISION: {path} (cabinets {cabinets}, notes {notes})"
+cvj_save_failed = "Writing the .cvj failed: {error}"
+imported = "Imported from {file}: walls {walls}, cabinets {cabinets}, openings {openings}, notes {notes} (at the top of {project})"
+import_failed = "The .cvj import failed: {error}"
+saved = "Saved{cvj}"
+saved_as = "Saved as {path}{cvj}"
+saved_as_notes = "Saved as {path} ({notes}){cvj}"
+
+# Machine export and drawings (status bar)
+[app.export]
+done = "Exported to {dir}: parts {parts}, operations {operations}, CX100 programs .xcs {xcs}, .mpr {mpr}"
+sheets = ", nesting sheets {sheets}"
+labels = ", labels {labels} (labels/stitky.pdf)"
+notice = " · notice: {notice}"
+drawings_saved = { one = "Drawings saved: {path} ({count} page)", other = "Drawings saved: {path} ({count} pages)" }
+no_logo = " · without logo: {warnings}"
+
+# Status bar
+[app.status]
+undone = "Undo: {label}"
+redone = "Redo: {label}"
+open_folder = "Open Folder"
+ready = "Ready"
+unit = "mm"
+control = "channel :{port}"
+warnings = { one = "{count} warning", other = "{count} warnings" }
+errors = { one = "{count} error", other = "{count} errors" }
+no_errors = "no errors"
+control_failed = "The control channel cannot start on port {port}: {error}"
+open_issues = "Opens validation"
+summary = "cabinets {cabinets} · parts {parts} · operations {operations}"
+
+# Unsaved changes
+[app.confirm]
+title = "Unsaved Changes"
+text = "The project or the standard has unsaved changes."
+save = "Save"
+discard = "Discard Changes"
+cancel = "Cancel"
+
+# Reports: cabinet list and hardware list
+[reports]
+hint = "Click selects a cabinet (properties are on the left), double-click shows it in 3D. Dimensions in mm."
+
+[reports.col]
+type = "Type"
+width = "Width"
+height = "Height"
+depth = "Depth"
+shelves = "Shelves"
+fixed_shelves = "Fixed Shelves"
+wall = "Wall"
+from_left = "From Left End"
+fronts = "Fronts"
+hinges = "Hinges"
+parts = "Parts"
+operations = "Operations"
+
+[reports.bill]
+title = "Hardware List"
+qty = "Qty"
+hardware = "Hardware"
+
+# ---- plan ----
+# sources: crates/cc-app/src/plan_modes.rs, plan_view.rs, wall_view.rs, catalog_panel.rs
+
+[plan_modes]
+not_available = "Not available yet"
+
+[plan_modes.mode]
+home = "Floor Plan"
+walls = "Walls (F2)"
+objects = "Objects (F3)"
+floors = "Floors"
+ceilings = "Ceilings"
+tops = "Countertops (F4)"
+molding = "Moldings (F5)"
+autofill = "Auto Fill (F6)"
+section = "Section"
+cad = "CAD (F7)"
+splash = "Backsplash"
+grain = "Wood Grain"
+
+[plan_modes.floors]
+auto = "Auto Floors"
+new = "New Floor"
+note = "For now the floor is created from the room shape automatically (visible in 3D)."
+
+[plan_modes.ceilings]
+auto = "Auto Ceilings"
+new = "New Ceiling"
+note = "Ceilings are not available yet; the ceiling height is given by the wall height."
+
+[plan_modes.tops]
+auto = "Auto Countertops"
+new = "New Countertop"
+note = "Countertops are not available yet."
+
+[plan_modes.molding]
+auto = "Auto Moldings"
+new = "New Molding"
+note = "Moldings (crown, light rail, toe kick) are not available yet."
+
+[plan_modes.cad]
+note = "Drawing lines, dimensions and text into the drawing is not available yet."
+
+[plan_modes.splash]
+new = "New Backsplash"
+note = "Backsplash (the panel between the countertop and the wall cabinets) is not available yet."
+
+[plan_modes.grain]
+groups = "Wood grain groups"
+ungroup = "Remove Group"
+note = "Continuous wood grain across several fronts is not available yet."
+
+[plan_modes.room]
+title = "Room Parameters"
+wall_height = "Wall height"
+wall_thickness = "Wall thickness"
+soffit = "Soffit (from ceiling)"
+toe_height = "Toe kick height"
+upper_top = "Top of wall cabinets"
+
+[plan_modes.walls]
+hint = "Click a wall in the plan, or draw new ones: Line (chain of walls) or Rectangle in the ribbon above."
+new_walls = "New Walls"
+height = "Height"
+thickness = "Thickness"
+soffit = "Soffit"
+wall = "Wall {wall}"
+start_x = "Start X"
+start_y = "Start Y"
+length = "Length"
+angle = "Angle (°)"
+dimensions = "Dimensions"
+room_soffit = "Soffit (room)"
+
+[plan_modes.openings]
+title = "Windows and Doors"
+delete = "Delete"
+at = "From left end"
+width = "Width"
+height = "Height"
+sill = "Sill height"
+add_window = "+ Window"
+add_door = "+ Door"
+add_opening = "+ Opening"
+
+[plan_modes.objects]
+select_catalog = "Select Catalog…"
+no_catalogs = "No catalogs (catalogs/*.toml next to the project)."
+base = "Base Cabinet"
+wall = "Wall Cabinet"
+tall = "Tall Cabinet"
+back = "◀ Catalogs"
+back_hint = "Back to the list of catalogs"
+
+[plan_modes.autofill]
+scope = "Mode"
+selected_wall = "selected wall"
+all_walls = "all walls"
+rows = "Rows"
+base_row = "base cabinets"
+upper_row = "wall cabinets"
+both_rows = "base and wall"
+source = "Source"
+source_last = "last cabinet of that type"
+cabinets = "Cabinets"
+nominal = "Nominal width"
+max = "Maximum width"
+increment = "Width increment"
+min = "Minimum gap"
+fill_wall = "Fill Wall {wall}"
+pick_wall = "Select a wall in the plan"
+fill_all = "Fill All Walls"
+fill_hint = "Fills the free runs of the wall (without cabinets, doors, windows and corners) with cabinets; the rest is left as filler"
+
+[plan_modes.section]
+wall_side = "Wall Side"
+front = "front"
+back = "back"
+both = "both"
+views = "Views"
+view_wall = "wall"
+view_end = "end"
+hint = "Section along a wall: opens the wall elevation with cabinets and dimensions."
+wall_row = "Wall {wall}   {length} mm"
+open_elevation = "Open Elevation"
+
+[plan_view]
+no_walls = "The room has no walls.\nDraw them with a line or a rectangle in Walls mode (F2)."
+
+[plan_view.notice]
+reversed = "The walls are drawn counterclockwise – the cabinets are outside."
+walls_inward = "Walls Inward"
+walls_inward_hint = "Reverses the wall direction (room to the right of the wall, as in CV); cabinets and openings stay in place and move to the inner side"
+loose = "Cabinet {cabinet} is not on a wall."
+place_at_wall = "Place on Wall {wall}"
+
+[plan_view.opening]
+window = "window"
+door = "door"
+opening = "opening"
+
+[plan_view.hint]
+zoom_window = "Zoom Window: drag a frame around the area to zoom in. Esc cancels."
+rect_room = "Rectangular room: drag a frame from corner to corner (at least 500 × 500 mm). Esc exits."
+draw_wall = "Drawing walls: the room is to the right of the drawing direction (draw clockwise).\nEsc ends the chain, right click ends drawing."
+
+[plan_view.corner]
+title = "Corner {wall} / {next}"
+base = "base"
+upper = "wall"
+extend = "Extend {cabinet} into Corner"
+locked_width = "the cabinet width is locked"
+has_drawers = "cabinet with drawers: a blind corner needs doors"
+extend_hint = "extends the cabinet into the corner, a blind panel covers the extended part"
+no_cabinets = "There are no cabinets on both walls of this corner."
+void = "Make Void"
+miter = "Miter Corner"
+shape = "Shape to Corner"
+not_yet = "not available yet: end cabinet types and shaping are missing"
+
+[wall_view]
+no_walls = "The project has no walls. Draw them in the Plan tab."
+left_end = "{wall} – left end"
+
+[wall_view.cabinet]
+title = "Cabinet {cabinet}"
+copy = "Copy"
+delete = "Delete"
+section = "Section"
+section_hint = "Selects the first face opening; click for the other openings"
+lock_width = "Lock Width"
+left_corner = "To Left Corner"
+right_corner = "To Right Corner"
+open = "Open Cabinet"
+properties = "Properties…"
+front_presets = "Face presets"
+hinges_left = "hinges left"
+hinges_right = "hinges right"
+
+[wall_view.opening]
+title = "Opening {name}"
+split_vertical = "Split Vertical"
+split_horizontal = "Split Horizontal"
+lock_width = "Lock Width"
+equal_width = "Equalize Width"
+lock_height = "Lock Height"
+equal_height = "Equalize Height"
+remove_split = "Delete Split"
+
+[catalog]
+title = "Catalog"
+none = "– none –"
+new = "+ new"
+new_hint = "New catalog (file catalogs/<name>.toml)"
+name_hint = "catalog name"
+create = "Create"
+empty = "The catalog is empty. Select a cabinet and save it here."
+item_hint = "{id} – drag onto a wall in the plan or elevation, double-click adds it to the middle of the wall"
+add_to_job = "Add to Job"
+remove_item = "Remove from Catalog"
+
+[catalog.save]
+title = "Save cabinet {cabinet} to catalog {catalog}"
+id = "ID"
+id_hint = "e.g. B_MY_2_DRW"
+name = "Name"
+name_hint = "name in the list"
+group = "Group"
+group_hint = "e.g. Base"
+overwrite = "Overwrite Item"
+save = "Save to Catalog"
+
+[catalog.status]
+created = "Catalog created"
+saved = "Cabinet saved to the catalog"
+removed = "Item removed from the catalog"
+
+# ---- output_views ----
+# output_views: crates/cc-app/src/drawings.rs, crates/cc-app/src/labels_view.rs, crates/cc-app/src/production.rs, crates/cc-app/src/standard_tab.rs
+
+# Drawings tab: part, job and cabinet drawings (drawings.rs)
+[drawings_view]
+cabinet_missing = "The cabinet no longer exists, pick another drawing on the left."
+program_file = "Program {name}"
+no_machining = "The part has no machining, no .xcs program is generated."
+no_xcs = "The machine profile has no [xcs] section."
+
+[drawings_view.view]
+iso = "3D"
+front = "Front view"
+top = "Plan (top)"
+left = "Left view"
+
+[drawings_view.sheet]
+job = "Job: 3D, plan, front view"
+job_detail = "cabinets {cabinets} · parts {parts}"
+cabinet = "Cabinet {id}: 3D and views"
+cabinet_detail = "{w} × {h} × {d} mm · parts {parts}"
+
+# Drawing title block
+[drawings_view.title]
+company = "Company"
+job = "Job"
+customer = "Customer"
+designer = "Drawn by"
+drawing = "Drawing"
+content = "Content"
+material = "Material"
+part = "Part"
+size = "Size"
+program = "Program"
+no_program = "– (part without machining)"
+
+# Part operations table
+[drawings_view.ops]
+operation = "Operation"
+face = "Face"
+size = "Ø / width"
+depth = "Depth"
+dowel = "dowel"
+hole = "hole"
+groove = "groove"
+
+# Production → sheets and labels (labels_view.rs)
+[labels_view]
+error = "Labels cannot be prepared: {error}"
+header = "Label {width} × {height} mm · print order: {order} ([labels] in machine.toml)"
+a4 = "on A4"
+direct = "print directly"
+direct_hint = "Send to printer {printer} without opening the PDF ([labels] printer in machine.toml)"
+direct_default_printer = "default"
+print_all = "Print All ({count})"
+print_all_hint = "All labels of the job: sheets in print order, then parts outside nesting"
+no_sheets = "Nesting sheets exist only with the “Nesting SCM + CX100” production (Home → Production). Labels of all parts can be printed with the button above."
+
+# Label order ([labels] order in machine.toml)
+[labels_view.order]
+machining = "by machining"
+rows_top_left = "rows from top, left to right"
+columns_left_top = "columns from left, top to bottom"
+rows_top_right = "rows from top, right to left"
+columns_right_top = "columns from right, top to bottom"
+rows_bottom_left = "rows from bottom, left to right"
+columns_left_bottom = "columns from left, bottom to top"
+rows_bottom_right = "rows from bottom, right to left"
+columns_right_bottom = "columns from right, bottom to top"
+
+# Sheet list
+[labels_view.sheets]
+parts = { one = "{count} part", other = "{count} parts" }
+printed = ", printed {count}"
+other = { one = "Outside nesting: {count} part (in “Print All”)", other = "Outside nesting: {count} parts (in “Print All”)" }
+
+# Selected sheet
+[labels_view.sheet]
+title = "Sheet {name} · {material} {thickness} mm · {length} × {width} mm · {index}/{total}"
+print = "Print Sheet"
+hint = "Click a part to print its label. Number = cutting order (on the label before the part name)."
+
+[labels_view.part]
+rotated = ", rotated"
+
+# What is being printed (in the status bar)
+[labels_view.what]
+all = "all"
+sheet = "sheet {name}"
+part = "part {id}"
+
+[labels_view.status]
+sent = "Labels sent to printer {printer} ({what}): {count} pcs"
+default_printer = "(default)"
+direct_failed = "Direct printing failed ({error}); the PDF application probably cannot print without a window – PDF: {path}"
+ready = "Labels to print ({what}): {count} pcs → {path}"
+
+# Production: parts list and Validation: issues list (production.rs)
+[production]
+build_error = "The model cannot be built:\n{error}"
+machine_profile = "Machine profile: {path}"
+no_machine = "No machine profile: machine size and drill checks were skipped."
+no_issues = "✔ Validation found no errors or warnings."
+
+[production.status]
+error = "✖ error"
+warning = "⚠ warning"
+
+# Parts list columns
+[production.parts]
+status = "Status"
+qty = "Qty"
+part = "Part"
+description = "Description"
+length = "Length"
+width = "Width"
+thickness = "Thickness"
+cabinet = "Cabinet"
+material = "Material"
+edging = "Edge banding"
+operations = "Operations"
+program = "Program"
+
+# Issues list columns
+[production.issues]
+status = "Status"
+rule = "Rule"
+part = "Part"
+description = "Description"
+
+# Standard tab (standard_tab.rs); key names of the standard are not translated
+[standard_tab]
+title = "Standard {name}"
+unsaved = "unsaved changes"
+save = "💾 Save Standard"
+reload = "Load from File"
+hint = "Changes apply to the model immediately. Saving rewrites only the changed values; comments in the file are kept."
+
+[standard_tab.carcass]
+title = "Carcass"
+top_style = "Base cabinet top"
+stretchers = "two stretchers"
+panel = "full panel"
+sink = "sink (vertical stretchers)"
+stretcher_width = "Stretcher width"
+shelf_side_clearance = "Shelf clearance per side"
+shelf_front_setback = "Shelf front setback"
+
+[standard_tab.back]
+title = "Back (dado)"
+groove_offset = "Rear edge → dado (e)"
+groove_width_clearance = "Dado width clearance"
+groove_depth = "Dado depth"
+fit_clearance = "Back clearance"
+groove_through = "Dado through the whole part"
+
+[standard_tab.dowel]
+title = "Dowels"
+diameter = "Diameter"
+face_depth = "Depth into face"
+edge_depth = "Depth into edge"
+layout = "Layout"
+cv333 = "3/3/3 pattern (as in CV)"
+pairs = "pairs"
+even = "evenly spaced"
+end_offset = "From joint end"
+confirmat_pitch = "Pitch at confirmat"
+short_end_offset = "Short joint: from end"
+group_spacing = "Group spacing"
+group_spacing_long = "Group spacing (long)"
+pair_pitch = "Pitch within pair"
+max_pair_spacing = "Max. pair spacing"
+max_spacing = "Max. spacing"
+snap_32 = "32 mm grid"
+stop_at_back = "Stop before the back"
+
+[standard_tab.line_bore]
+title = "Shelf pin line boring"
+diameter = "Diameter"
+depth = "Depth"
+layout = "Layout"
+per_shelf = "group at shelf"
+full = "full row"
+holes_per_shelf = "Holes per shelf"
+pitch = "Pitch"
+front_offset = "Front row from front edge"
+rear_offset = "Rear row before dado"
+start_above_bottom = "Lowest hole above bottom"
+end_below_top = "Highest hole below top"
+
+[standard_tab.machine]
+title = "Machine (machine.toml, read-only)"
+machine = "Machine"
+drills = "Drills"
+saw = "LAMA saw, kerf"
+kerf = "{kerf} mm (step {step} mm)"
+work_area = "Work area"
+
+[standard_tab.status]
+saved = "Standard saved"
+reloaded = "Standard loaded from file"
+
+# ---- editors ----
+# Source: crates/cc-app/src/cabinet_editor.rs, part_editor.rs, part_view.rs, view3d.rs, props_dialog.rs (grid.rs and gpu3d.rs have no texts of their own)
+
+# Cabinet editor (cabinet_editor.rs)
+
+[cabinet_editor]
+no_cabinet = "Select a cabinet (or double-click it in the plan, elevation or 3D)."
+title = "Cabinet #{id} {catalog}"
+cannot_build = "The cabinet cannot be built (see Validation)."
+not_available = "Not available yet"
+
+[cabinet_editor.tab]
+section = "Section"
+face = "Face"
+plan = "Plan"
+end = "End"
+view3d = "3D"
+reports = "Reports"
+
+[cabinet_editor.panel]
+view = "View"
+side = "Side"
+side_front = "face"
+edit_shape = "Edit Shape"
+objects = "Objects"
+new_part = "New Part"
+library_part = "Part from Library"
+moldings = "Moldings"
+cad = "CAD (F7)"
+camera = "Camera"
+camera_hint = "Default view of the cabinet"
+lights = "Lights"
+parts_list = "Parts List"
+cabinet_drawing = "Cabinet Drawing"
+part_drawings = "Part Drawings"
+validation = "Validation"
+display = "Display"
+explode = "Explode"
+fronts = "Fronts"
+
+[cabinet_editor.ribbon]
+view_group = "Display"
+section_group = "Section"
+split_horizontal = "Split Horizontal"
+split_horizontal_hint = "Splits the selected opening into two, one above the other"
+split_vertical = "Split Vertical"
+split_vertical_hint = "Splits the selected opening into two, side by side"
+delete_split = "Delete Split"
+cabinet_group = "Cabinet"
+properties = "Properties"
+properties_hint = "General, comment, legs, overrides, parameters"
+camera_group = "Camera"
+perspective = "Perspective"
+fronts = "Fronts"
+
+[cabinet_editor.front]
+opening = "opening"
+no_fronts = "the cabinet has no fronts"
+door = "door"
+pair = "double door"
+drawer = "drawer"
+false_front = "false front"
+panel = "panel"
+open = "open"
+
+[cabinet_editor.parts]
+qty = "Qty"
+name = "Name"
+width = "Width"
+length = "Length"
+thickness = "Thickness"
+material = "Material"
+parts = "Parts"
+
+[cabinet_editor.lines]
+no_parts = "the cabinet has no parts"
+hover_part = "{id} · click: select · double-click: open board"
+hover = "click a board: select · double-click: open board"
+
+# Single board (part_editor.rs)
+
+[part_editor]
+no_part = "Select a board (double-click a board in the cabinet editor)."
+title = "Part {id} · {name} · {length} × {width} × {thickness} · {material}"
+not_available = "Not available yet"
+
+[part_editor.tab]
+cam = "CAM"
+face = "Face"
+edge = "Edge"
+end = "End"
+view3d = "3D"
+reports = "Reports"
+
+[part_editor.plane]
+f = "Front (F)"
+b = "Back (B)"
+x0 = "Left (X0)"
+x1 = "Right (X1)"
+y1 = "Top (Y1)"
+y0 = "Bottom (Y0)"
+
+[part_editor.panel]
+plane = "Working plane"
+edit_shape = "Edit Shape"
+edge_joint = "Edge Joint"
+edge_banding = "Edge Banding"
+split = "Split"
+cad = "CAD (F7)"
+camera = "Camera"
+camera_hint = "Default view of the board"
+lights = "Lights"
+new_operation = "New Operation"
+new_operation_hint = "Machining comes from the shop standard; manual operations are not available yet"
+
+[part_editor.props]
+section = "Part"
+id = "ID"
+name = "Name"
+cabinet = "Cabinet"
+length = "Length"
+width = "Width"
+thickness = "Thickness"
+material = "Material"
+edge_x0 = "Edge X0"
+edge_x1 = "Edge X1"
+edge_y0 = "Edge Y0 (front)"
+edge_y1 = "Edge Y1"
+operations = "Operations"
+program = "Program"
+
+[part_editor.ribbon]
+view_group = "Display"
+machining_group = "Machining"
+hole_row = "Hole Row"
+hole = "Hole"
+groove = "Groove"
+machining_hint = "Machining comes from the shop standard; manual machining is not available yet"
+camera_group = "Camera"
+part_group = "Part"
+print_drawing = "Print Drawing"
+print_drawing_hint = "Drawing of this board to PDF"
+
+[part_editor.ops]
+operation = "Operation"
+face = "Face"
+diameter_width = "Ø / width"
+length = "Length"
+depth = "Depth"
+dowel = "dowel"
+through_hole = "through hole"
+hole = "hole"
+groove = "groove"
+no_machining = "The board has no machining."
+
+# Part drawing (part_view.rs)
+
+[part_view.face]
+f = "F (inside)"
+b = "B (outside)"
+x0 = "edge X0"
+x1 = "edge X1"
+y0 = "edge Y0 (front)"
+y1 = "edge Y1"
+
+[part_view]
+edge_y0 = "Y0 – front edge · length {length}"
+
+[part_view.legend]
+dowel = "dowel into face F"
+hole_row = "hole row (shelves)"
+edge_drilling = "edge drilling"
+back_groove = "back panel groove"
+edge_band = "edge banding"
+
+# 3D tab (view3d.rs)
+
+[view3d.view]
+front = "Front"
+top = "Top"
+iso = "Iso"
+selection = "Zoom to Selection"
+default = "Default"
+
+[view3d]
+nothing_selected = "nothing is selected"
+part_hover = "{id} – {name}\n{length} × {width} × {thickness} · {material}\noperations: {operations}"
+selected = "Selected: {id}"
+part_drawing = "Part Drawing"
+
+# Cabinet properties (props_dialog.rs)
+
+[props]
+title = "Cabinet Properties {id}"
+ok = "OK"
+cancel = "Cancel"
+
+[props.tab]
+general = "General"
+comment = "Comment"
+legs = "Legs"
+overrides = "Overrides"
+parameters = "Parameters"
+
+[props.general]
+id = "ID"
+type = "Type"
+base = "base"
+wall = "wall"
+tall = "tall"
+number = "Number"
+width = "Width"
+height = "Height"
+depth = "Depth"
+lock_width = "Lock width"
+
+[props.legs]
+legs = "Legs"
+plinth = "Toe kick"
+by_standard = "by standard ({value})"
+yes = "yes"
+no = "no"
+
+[props.overrides]
+reveals = "Front reveals"
+front_mount = "Front mounting"
+hinge = "Hinge"
+drawer = "Drawers"
+drawer_length = "Drawer slide length"
+top_style = "Top"
+back = "Back panel"
+carcass = "Carcass"
+elevation = "Height above floor"
+options = "Attributes"
+remove = "Remove"
+none = "Nothing is overridden on this cabinet; everything follows the standard."
+
+[props.params]
+parameter = "Parameter"
+value = "Value"
+invalid_value = "invalid value: {error}"
+
+# ---- pdf_validate ----
+# pdf_validate: crates/cc-out-pdf/src/lib.rs, crates/cc-out-pdf/src/drawings.rs, crates/cc-validate/src/lib.rs, crates/cc-pipeline/src/lib.rs
+
+# part labels (lib.rs)
+[pdf.labels]
+cabinet = "Cab.:"
+barcode_unsupported = "(code: unsupported characters)"
+
+# part name on the label and on the part drawing
+[pdf.role]
+side_left = "left side"
+side_right = "right side"
+bottom = "bottom"
+top = "top"
+stretcher_front = "front stretcher"
+stretcher_rear = "rear stretcher"
+back = "back"
+adjustable_shelf = "shelf"
+fixed_shelf = "fixed shelf"
+door = "door"
+drawer_front = "drawer front"
+false_front = "false front"
+drawer_bottom = "drawer bottom"
+drawer_back = "drawer back"
+plinth = "toe kick"
+filler_strip = "filler strip"
+filler_front = "filler front"
+filler_bottom = "filler bottom"
+finished_back = "finished back"
+led_rail = "LED rail"
+cover_side = "end panel"
+
+# drawings (drawings.rs)
+[pdf.drawings.view]
+iso = "3D"
+front = "Front View"
+top = "Plan (Top View)"
+left = "Left View"
+
+[pdf.drawings.cabinet_type]
+base = "base"
+wall = "wall"
+tall = "tall"
+
+[pdf.drawings.opening]
+window = "window"
+door = "door"
+opening = "opening"
+
+[pdf.drawings.wall]
+title = "Wall {wall} – elevation from the room (left end on the left)   Scale 1:{scale}"
+plan = "Plan"
+cabinets = "Cabinets on Wall"
+col_cabinet = "Cabinet"
+col_type = "Type"
+col_size = "W × H × D"
+more = "… and {count} more"
+none = "none"
+openings = "Openings"
+opening_row = "{name} {w} × {h}, {x} from left end"
+sill = ", sill {sill}"
+
+[pdf.drawings.part]
+face_f_front = "Face F (inside of the front), length = front height"
+face_f = "Face F (interior side), front edge Y0 at the bottom"
+part = "Part"
+description = "Description"
+size = "Size"
+material = "Material"
+edges = "Edge banding"
+program = "Program"
+no_machining = "– (no machining)"
+col_operation = "Operation"
+col_face = "Face"
+col_diameter = "Ø/W"
+col_depth = "Depth"
+op_dowel = "dowel"
+op_hole = "hole"
+op_groove = "groove"
+more_operations = { one = "… and {count} more operation", other = "… and {count} more operations" }
+view_face_b = "view of face B"
+
+[pdf.drawings.title_block]
+job = "Job"
+customer = "Customer"
+drawing = "Drawing"
+content = "Content"
+designer = "Drawn by"
+sheet = "Sheet"
+
+# validation issues (cc-validate), Issues list
+[validate]
+invalid_size = "invalid size {l} × {w} × {t}"
+part_too_small = "part {l} × {w} is smaller than the machine minimum {min_l} × {min_w}"
+part_too_large = "part {l} × {w} is larger than the machine work area {max_l} × {max_w}"
+groove_too_deep = "groove depth {depth} in a part {t} thick (max {max})"
+tool_missing = "drill Ø{d} is not in machine profile `{machine}` (holes: {holes})"
+hole_collision = "holes #{a} and #{b} on side {face} are {dist} mm apart (min {min})"
+hole_in_groove = "hole #{hole} (Ø{d}) cuts into a groove (center distance {dist} mm, min {min})"
+hole_outside = "hole Ø{d} on side {face} at ({x}, {y}, {z}) is outside the part or closer than {margin} mm to an edge"
+face_hole_too_deep = "hole depth {depth} into the face of a part {t} thick (max {max})"
+edge_hole_too_deep = "hole depth {depth} into edge {face}, part size in drilling direction {extent}"
+edge_hole_too_wide = "hole Ø{d} into the edge of a part {t} thick: wall around the hole < 3 mm"
+shelf_no_rows = "cabinet has adjustable shelves, but the side has no row of holes"
+shelf_weak_rows = { one = "{count} row of holes has fewer than 2 holes", other = "{count} rows of holes have fewer than 2 holes" }
+
+# build warnings and notices (cc-pipeline), Issues list and export result
+[pipeline]
+shelves_no_opening = { one = "cabinet `{cabinet}` has only drawers and false fronts: {count} shelf was not added (shelves go only in a door or open opening)", other = "cabinet `{cabinet}` has only drawers and false fronts: {count} shelves were not added (shelves go only in a door or open opening)" }
+nesting_unverified = "templates {templates} have `verified = false` in the machine profile; verify the programs on the nesting machine and on the CX100 before the first cut (findings 08, question O1)"
+nesting_unplaced = "parts {parts} do not fit on a nesting sheet: cut the outline elsewhere, their machining is in the CX100 programs"
+nesting_summary = "{material} ({thickness} mm): sheets {sheets} ({names}), yield {utilisation} %"
+nesting_profile_incomplete = "production.mode = \"nesting\", but the profile has no [nesting] or [xcs] section: programs were made as in cx100 mode"
+mpr_unverified = "macros {macros} have `verified = false` in the machine profile; verify the output in the woodWOP editor before using it on the machine (question O2)"
+no_machine_output = "machine profile has no [xcs] or [mpr] section: no machine programs are generated"
+xcs_unverified = "templates {templates} have `verified = false` in the machine profile; verify the output on the machine before the first cut (chapter 7.4, question O1)"
+
+# ---- side_panel ----
+# crates/cc-app/src/side_panel.rs
+
+[side_panel.general]
+no_project = "No project"
+open_hint = "Open a project.toml file (File → Open, Ctrl+O)."
+build_error = "The model cannot be built:\n{error}"
+standard = "standard"
+standard_value = "standard ({value})"
+yes = "yes"
+no = "no"
+auto = "auto"
+auto_tip = "From the standard: {value} mm"
+
+[side_panel.task]
+parts_list = "Part List"
+check = "Validation"
+add_base = "Base Cabinet"
+add_wall = "Wall Cabinet"
+add_tall = "Tall Cabinet"
+reset_camera = "Reset View"
+explode = "Explode Parts"
+print_all = "Print All Drawings (PDF)"
+print_sheet = "Print This Drawing (PDF)"
+prev_part = "Previous Part"
+next_part = "Next Part"
+labels = "Sheets and Labels"
+export = "Export for Machine"
+export_to = "Export to Folder…"
+open_export = "Open Export Folder"
+save_standard = "Save Standard"
+reload_standard = "Reload from File"
+
+[side_panel.status]
+standard_saved = "Standard saved"
+standard_reloaded = "Standard reloaded from file"
+
+[side_panel.project]
+title = "Project"
+name = "Name"
+number = "Job number"
+customer = "Customer"
+designer = "Designer"
+company = "Company"
+logo = "Logo"
+logo_pick_tip = "Choose a logo image (PNG, JPEG)"
+logo_none_tip = "No logo"
+image_filter = "Image"
+panel_material = "Carcass"
+back_material = "Back"
+standard = "Standard"
+machine = "Machine"
+no_machine = "– no machine profile –"
+
+[side_panel.cabinets]
+title = "Cabinets"
+col_id = "ID"
+col_type = "Type"
+col_size = "W × H × D"
+move_up = "Move up"
+move_down = "Move down"
+duplicate = "Duplicate"
+remove = "Delete"
+
+[side_panel.opening]
+title = "Opening {name}"
+width = "Width"
+height = "Height"
+lock_width = "Lock width"
+lock_height = "Lock height"
+kind_door = "Door"
+kind_pair = "Double door"
+kind_drawer = "Drawer"
+kind_false_front = "False front"
+kind_open = "Open"
+kind_panel = "Panel"
+hinge = "Hinge"
+hinge_left = "left"
+hinge_right = "right"
+adjust_left = "Adjust left"
+adjust_right = "Adjust right"
+adjust_top = "Adjust top"
+adjust_bottom = "Adjust bottom"
+
+[side_panel.cabinet]
+title = "Cabinet {id}"
+properties = "Properties…"
+properties_tip = "General, comment, legs, overrides, parameters"
+open = "Open Cabinet"
+open_tip = "The cabinet alone in 3D with its face sections and parts (or double-click the cabinet)"
+id = "ID"
+type = "Type"
+wall = "Wall"
+no_wall = "– no wall –"
+clearance_left = "Clearance left"
+clearance_left_tip = "Clearance Left: free space up to the nearest cabinet in the row or the corner"
+clearance_right = "Clearance right"
+clearance_right_tip = "Clearance Right: free space up to the nearest cabinet in the row or the corner"
+end_left = "End from left"
+end_left_tip = "End Position From Left: left edge from the left end of the wall (seen from the room)"
+end_right = "End from right"
+end_right_tip = "End Position From Right: right edge from the right end of the wall"
+center_left = "Center from left"
+center_left_tip = "Center Position From Left: cabinet center from the left end of the wall"
+center_right = "Center from right"
+center_right_tip = "Center Position From Right: cabinet center from the right end of the wall"
+width = "Width"
+height = "Height"
+depth = "Depth"
+lock_width = "Lock width"
+lock_width_tip = "Lock Width: dragging or filling the wall does not change the width; you can still type it"
+placement = "Placement"
+by_type = "by type"
+elevation = "Above floor"
+elevation_tip = "Bottom edge above the floor; changing it under a rule sets “free”"
+outset = "Offset from wall"
+shelves = "Shelves"
+shelves_tip = "Adjustable shelves (on pins in a row of holes) in a door or open opening"
+shelves_disabled_tip = "Shelves go only in a door or open opening – this cabinet has drawers only"
+top = "Top"
+top_stretchers = "2 stretchers"
+top_panel = "full panel"
+top_sink = "sink (stretchers on edge)"
+back = "Back"
+back_tip = "No back, e.g. a sink cabinet"
+carcass = "Carcass"
+carcass_tip = "Without a carcass there are only fronts, e.g. a dishwasher front"
+fixed_shelf = "Fixed shelf {n}"
+fixed_shelf_tip = "Height of the top face from the cabinet bottom"
+add_fixed_shelf = "+ fixed shelf"
+add_another_shelf = "+ another"
+
+[side_panel.placement]
+floor = "on floor"
+toe_height = "on toe kick"
+under_counter = "under countertop"
+counter_top = "on countertop"
+under_uppers = "under wall cabinets"
+under_soffit = "under soffit"
+ceiling = "under ceiling"
+above_soffit = "above soffit"
+above_elevation = "bottom at height"
+below_elevation = "top at height"
+float = "free"
+
+[side_panel.fronts]
+fronts = "Fronts"
+hinges = "Hinges"
+hinges_left = "left"
+hinges_right = "right"
+reveal_top = "Reveal top"
+reveal_bottom = "Reveal bottom"
+reveal_left = "Reveal left"
+reveal_right = "Reveal right"
+gap_rows = "Between fronts"
+gap_columns = "Side by side"
+adjust = "Front {n} adjustment"
+adjust_left_tip = "Adjust left (mm): positive = front extends further, negative = shorter"
+adjust_right_tip = "Adjust right (mm): positive = front extends further, negative = shorter"
+adjust_top_tip = "Adjust top (mm): positive = front extends further, negative = shorter"
+adjust_bottom_tip = "Adjust bottom (mm): positive = front extends further, negative = shorter"
+mount_overlay = "overlay"
+mount_inset = "inset"
+mount = "Front mounting"
+hinge = "Hinge"
+drawers = "Drawers"
+
+[side_panel.attributes]
+title = "Attributes"
+joints = "Cabinet joints"
+joint_type = "Joint type"
+dowels = "dowels"
+confirmat = "dowels + confirmat"
+screw = "dowels + screw 3.5×50"
+shelf_support = "Shelf supports"
+shelf_none = "none"
+bumpers = "Bumpers"
+legs = "Legs"
+plinth = "Toe kick"
+link_left = "Join with left"
+tip_on = "TIP-ON"
+tip_on_off = "off"
+tip_on_drilled = "drill-in"
+tip_on_adapter = "with adapter"
+tip_on_color = "TIP-ON color"
+white = "white"
+grey = "grey"
+black = "black"
+tip_on_kind = "TIP-ON type"
+tip_on_stop = "with stop"
+tip_on_magnet = "with magnet"
+
+[side_panel.machine]
+title = "Machine"
+machine = "Machine"
+drills = "Drills"
+saw = "Saw blade"
+saw_value = "kerf {kerf} mm, step {step} mm"
+work_area = "Working area"
+profile = "Profile"
+no_profile = "No machine profile: machine size and drill checks are skipped."
+
+[side_panel.parts_list]
+title = "Part List"
+merge = "Merge identical parts"
+decimal_comma = "Decimal comma"
+folder = "Folder"
+
+[side_panel.drawings]
+title = "Drawings"
+col_sheet = "Drawing"
+job = "Job – 3D, plan, front"
+cabinet = "Cabinet {id} – 3D and elevations"
+parts = "Parts"
+col_part = "Part"
+col_operations = "Operations"
+
+[side_panel.front_preset]
+none = "no fronts (open)"
+door = "door"
+door_right = "door, hinges right"
+pair = "double door"
+two_doors = "two doors stacked"
+drawer_door = "drawer + door"
+drawer_pair = "drawer + double door"
+sink = "false front + double door (sink)"
+blind_left = "blind corner: panel left + door"
+blind_right = "blind corner: door + panel right"
+drawers_2 = "2 drawers"
+drawers_3 = "3 drawers"
+drawers_4 = "4 drawers"
+
+[side_panel.fronts_text]
+none = "no fronts"
+door = "door"
+door_right = "door R"
+door_left = "door L"
+pair = "double door"
+drawer = "drawer"
+false_front = "false front"
+open = "open"
+panel = "panel"
+
+[side_panel.cabinet_type]
+base = "base"
+wall = "wall"
+tall = "tall"
+
+# ---- core ----
+# core: crates/cc-config/src/lib.rs, crates/cc-room/src/lib.rs, crates/cc-joints/src/*.rs, crates/cc-generate/src/*.rs
+
+# Validation of the job, materials, standard, catalog and machine profile (cc-config)
+[config]
+invalid = "{path}: invalid configuration:\n  - {problems}"
+must_be_positive = "`{name}` must be > 0 (is {value})"
+must_be_non_negative = "`{name}` must be ≥ 0 (is {value})"
+
+[config.catalog]
+too_many_items = "at most {max} items"
+bad_id = "item without `id` or with a too long `id`"
+duplicate = "`{id}` is in the catalog twice"
+bad_size = "`{id}`: `{name}` must be positive, up to 10,000 mm"
+too_many_fronts = "`{id}`: at most 12 fronts and 50 shelves"
+bad_front_heights = "`{id}`: front heights and `drawer_length` must be positive"
+
+[config.machine]
+min_part_too_big = "`min_part` is larger than `work_area`"
+no_drills = "`drills.diameters` is empty"
+bad_drill = "`drills.diameters`: diameter must be > 0 (is {value})"
+nesting_needs_nesting = "production.mode = \"nesting\" requires the [nesting] section (sheet programs)"
+nesting_needs_xcs = "production.mode = \"nesting\" requires the [xcs] section (CX100 programs for the remaining work)"
+
+# Machine profile templates and numbers ([xcs], [mpr], [nesting]); {block} and {name} are paths in machine.toml
+[config.template]
+unmatched_open = "{block}: unmatched `{{` in template `{template}`"
+unmatched_close = "{block}: unmatched `}}` in template `{template}`"
+unknown_variable = "{block}: unknown variable `{{{var}}}` (allowed: {allowed})"
+no_variables = "none"
+empty_field_name = "{block}: empty field name"
+too_many_decimals = "{name}: max 6 (is {value})"
+not_positive = "{name} must be > 0"
+negative = "{name} must be ≥ 0"
+empty = "{name} is empty"
+step_over_kerf = "xcs.slot.max_step ({step}) is larger than saw_kerf ({kerf}): material would be left between passes"
+sheet_name_vars = "nesting.sheet_name must contain `{{sheet}}` and `{{mat}}` or `{{material}}` (unique sheet names)"
+sheet_size = "{name}: sheet size must be > 0 and ≤ {max} mm"
+sheet_below_margins = "{name}: the sheet is smaller than two margins"
+spacing_below_tool = "nesting.layout.spacing ({spacing}) must be ≥ the router bit diameter ({tool}): the bit would cut into the neighbouring part"
+through_extra = "nesting.route.through_extra ({value}) is more than 2 mm into the spoil board"
+lead_in_depth = "nesting.route.lead_in_depth must be < 0 (the lead-in starts above the material)"
+overlap_below_tool = "nesting.route.overlap ({overlap}) must be ≥ the router bit diameter ({tool})"
+remnant_offset = "nesting.remnant.offset ({offset}) must be > the router bit radius ({radius})"
+remnant_overrun = "nesting.remnant.overrun ({overrun}) must be ≥ the router bit radius ({radius})"
+drill_order_diameter = "nesting.drill.order: diameter must be > 0 (is {value})"
+variant_diameter = "nesting.drill.variant: diameter must be > 0 (is {value})"
+variant_max_depth = "nesting.drill.variant Ø{diameter}: max_depth must be > 0"
+variant_no_tool = "nesting.drill.variant Ø{diameter}: neither `tool` nor `kind` is set"
+
+[config.materials]
+duplicate = "material `{id}` is defined more than once"
+bad_thickness = "material `{id}`: thickness must be > 0"
+unknown_band = "material `{id}`: unknown edge banding `{band}`"
+band_duplicate = "edge banding `{id}` is defined more than once"
+band_bad_thickness = "edge banding `{id}`: thickness must be > 0"
+
+[config.standard]
+bad_panel_dowels = "`blind_corner.panel_bottom_dowels` must be > 0 (is {value})"
+unknown_role = "joint_rule #{rule}: unknown role `{name}` (allowed: {allowed})"
+conflicting_rule = "joint_rule #{rule}: pair `{a}` × `{b}` already has a different joint ({prev} vs {connection})"
+
+[config.project]
+bad_units = "project.units: only `mm` is supported (is `{units}`)"
+unknown_material = "{field}: unknown material `{id}`"
+empty_cabinet_id = "cabinet: empty `id`"
+duplicate_cabinet = "cabinet `{id}`: id is used more than once"
+bad_cabinet_size = "cabinet `{id}`: `{name}` must be > 0"
+no_cabinets = "the job contains no cabinet (`[[cabinet]]`)"
+
+[config.room]
+bad_size = "`{name}` must be > 0 and ≤ {max} mm"
+negative = "`{name}` must be ≥ 0"
+bad_upper_top = "`room.upper_top` must be > 0"
+too_many_walls = "too many walls (max. {max})"
+too_many_openings = "too many openings (max. {max})"
+empty_wall_id = "wall: empty `id`"
+duplicate_wall = "wall `{id}`: id is used more than once"
+bad_wall_length = "wall `{id}`: `length` must be > 0 and ≤ {max} mm"
+bad_wall_value = "wall `{id}`: invalid `{name}`"
+bad_wall_size = "wall `{id}`: `{name}` must be > 0"
+unknown_wall = "cabinet `{id}`: unknown wall `{wall}`"
+bad_at = "cabinet `{id}`: invalid `at`"
+bad_outset = "cabinet `{id}`: `outset` must be ≥ 0"
+bad_elevation = "cabinet `{id}`: `elevation` must be ≥ 0"
+bad_placement = "cabinet `{id}`: height in `placement` must be ≥ 0"
+opening_unknown_wall = "opening no. {n}: unknown wall `{wall}`"
+opening_bad_size = "opening no. {n}: `{name}` must be > 0"
+opening_negative = "opening no. {n}: `{name}` must be ≥ 0"
+
+# Placement check and extending a cabinet into the corner (cc-room)
+[room.check]
+outside_wall = "cabinet `{id}` extends beyond wall `{wall}` (from {from} to {to} mm, wall {length} mm)"
+above_ceiling = "cabinet `{id}` reaches a height of {top} mm, wall `{wall}` is {height} mm"
+into_window = "cabinet `{id}` overlaps the window on wall `{wall}` ({from}–{to} mm)"
+into_door = "cabinet `{id}` overlaps the door on wall `{wall}` ({from}–{to} mm)"
+into_opening = "cabinet `{id}` overlaps the opening on wall `{wall}` ({from}–{to} mm)"
+overlap = "cabinets `{a}` and `{b}` overlap"
+
+[room.corner]
+no_cabinets = "the corner at the end of wall `{wall}` has no cabinets on both walls"
+no_wall = "wall `{wall}` does not exist"
+no_cabinet = "the corner cabinet does not exist"
+locked_width = "cabinet `{id}` has a locked width"
+has_drawers = "cabinet `{id}` has drawers and cannot be extended into the corner (a blind corner needs doors)"
+
+# Joints and hardware → machining (cc-joints)
+[joints]
+error = "cabinet `{cabinet}`: {message}"
+unsupported_axis = "part `{id}`: unsupported tool axis {axis}"
+back_groove_without_back = "back_groove rule for `{a}` × `{b}` without a back"
+rule_missing = "cabinet `{cabinet}`: parts `{a}` and `{b}` touch, but the standard has no joint rule for them"
+hardware_part_missing = "hardware: part `{id}` does not exist"
+hinge_missing = "hinge `{hinge}` is not in the standard"
+drawer_missing = "drawer `{drawer}` is not in the standard"
+dowel_orientation = "dowel joint `{a}` × `{b}`: unsupported relative orientation of the parts"
+too_short = "joint `{a}` × `{b}` is too short ({length} mm, minimum {min} mm)"
+stopped_groove = "stopped groove (`groove_through = false`) is not supported yet"
+groove_orientation = "back groove in `{id}`: the part thickness runs along the cabinet depth"
+line_bore_no_bottom = "line boring: the cabinet has no bottom or top"
+filler_strip_missing = "filler: strip `{strip}` does not exist"
+
+# Hardware list (Reports tab, model.hardware)
+[joints.bill]
+drawer = "{name} NL {length} × {height}"
+white = "white"
+grey = "grey"
+black = "black"
+tip_on = "{kind} {color}"
+tip_on_adapter = "{kind} {color}, with adapter"
+
+# Generating cabinet parts – why a cabinet cannot be built (cc-generate)
+[generate]
+error = "cabinet `{cabinet}`: {message}"
+unknown_material = "unknown material `{id}`"
+inner_width = "inside width W − 2T = {value} must be > 0"
+depth_before_back = "depth in front of the back D − e − gw = {value} must be > 0"
+height = "height H = {value} must be > 2T"
+fixed_shelves_tall_only = "fixed shelves (`fixed_shelves`) are allowed only for type `tall`"
+bad_inset = "bottom and top inset {value} is invalid"
+side_too_low = "side height {value} is too small"
+stretcher_drop = "stretchers lowered by {value} would be below the bottom"
+stretchers_too_wide = "two stretchers of width {width} do not fit in front of the back (depth {depth})"
+sink_stretchers = "vertical stretchers of height {value} do not fit into the sink cabinet"
+bad_back = "the back has an invalid size {width} × {height}"
+fixed_shelf_outside = "fixed shelf at height {z} is outside the interior ({min}..{max})"
+fixed_shelves_overlap = "fixed shelves at heights {a} and {b} overlap"
+bad_shelf = "adjustable shelf has an invalid size {length} × {width}"
+shelves_do_not_fit = { one = "{count} shelf does not fit into an opening {height} mm high", other = "{count} shelves do not fit into an opening {height} mm high" }
+
+[generate.fronts]
+too_many = "at most {count} fronts per cabinet"
+bad_standard = "invalid [fronts] values in the standard"
+no_room = "the fronts do not fit (area {width} × {height})"
+too_low = "front height {height} must be at least {min} mm"
+too_high = "the fronts together are taller than the cabinet (available {available} mm, specified {fixed} mm)"
+hinge_missing = "hinge `{id}` is not in the standard library ([[hinge]])"
+drawer_missing = "drawer `{id}` is not in the standard library ([[drawer]])"
+drawer_material = "unknown drawer box material `{id}`"
+blind_hinge_missing = "blind hinge `{id}` is not in the standard library"
+bad_panel_adjust = "the panel size adjustment gives an invalid size {width} × {height}"
+too_many_columns = "at most {count} front columns per row"
+nested_columns = "a front column cannot be split further"
+column_too_narrow = "column width {width} must be at least {min} mm"
+columns_mismatch = "column widths ({fixed}) do not match the cabinet width {width}"
+column_narrow = "front column of width {width} is too narrow"
+bad_front_adjust = "the front size adjustment gives an invalid size {width} × {height}"
+pair_narrow = "double door of width {width} is too narrow"
+drawer_depth = "drawer `{id}` does not fit into depth {depth}"
+drawer_box_height = "drawer box `{id}` does not fit behind a front {height} high"
+drawer_narrow = "drawer `{id}` is too narrow"
+
+[generate.filler]
+out_of_range = "filler: `{name}` = {value} is outside 0 … {max}"
+standalone_narrow = "standalone filler: width {width} is less than the strip thickness {strip}"
+standalone_front_width = "standalone filler: front width {width} must be from the strip thickness {strip} to {max}"
+missing = "filler: no filler specified"
+narrow = "filler: width {width} is less than the strip thickness {strip}"
+front_width = "filler: front width {width} must be from the strip thickness {strip} to {max}"
+no_side = "filler: the cabinet has no side on the filler side"
+bad_strip = "filler: the strip has an invalid size {height} × {depth}"
+bad_bottom = "filler: the filler bottom has an invalid depth {depth}"
+
+[generate.niche]
+no_section = "niche (`niche = true`) needs the [niche] section in the standard"
+wall_only = "a niche can only be a wall cabinet (`type = \"wall\"`)"
+bad_values = "niche: invalid dimensions or [niche] values"
+too_small = "niche {w} × {h} × {d} is too small for a {t} mm board and a back {rear} from the rear"
+too_many_shelves = "niche: at most {count} shelves"
+shelf_does_not_fit = { one = "niche: shelf {length} × {width} does not fit ({count} shelf)", other = "niche: shelf {length} × {width} does not fit ({count} shelves)" }
+hole_off_face = "hole in part `{id}` does not lie on a face"
+hole_outside = "hole Ø{diameter} × {depth} is outside part `{id}` ({x}, {y})"
+
+[generate.led]
+no_section = "LED rail (`led_rail`) needs the [led_rail] section in the standard"
+wall_only = "an LED rail can only be under a wall cabinet"
+bad_size = "LED rail: invalid size {length} × {depth} (x {x})"
+groove_does_not_fit = "LED groove ({width} × {depth}, {from_rear} from the rear) does not fit into part `{id}` of depth {part_width}"
+
+[generate.slanted]
+bad_values = "the slanted side has invalid values"
+bad_extend = "slanted side extension to the rear {value} must be 0 … {max}"
+too_small = "slanted cabinet {w} × {h} × {d} is too small"
+no_shelves = "shelves in a slanted cabinet are not supported yet"
+must_narrow = "the slanted side must narrow towards the top (`top` ≥ `bottom`)"
+too_steep = "the slanted side is inclined by {angle}°, at most {max}°"
+too_shallow = "carcass depth {depth} of the slanted cabinet is too small"
+bottom_too_short = "the bottom of the slanted cabinet would be only {length} mm"
+hinges_on_slant = "hinges on the slanted side are not possible, put them on the straight side"
+no_drawers = "drawers in a slanted cabinet are not supported yet"
+
+# ---- engine ----
+# engine: crates/cc-engine/src/ (error.rs, session.rs, document.rs, logo.rs, export_cvj.rs, import_cvj.rs, cmd/*.rs)
+
+[engine.errors]
+unknown_command = "unknown command `{command}` (list: engine.commands)"
+disabled = "command `{command}` is not available now: {reason}"
+params = "command `{command}`: invalid parameters: {message}"
+panicked = "internal error in command `{command}`: {message}; the project was left as it was before the command"
+no_project = "no project is open"
+not_positive = "`{name}` must be a positive finite number (it is {value})"
+not_finite_max = "`{name}` must be a finite number up to {max} mm"
+cabinet_missing = "cabinet `{id}` does not exist"
+cabinet_exists = "cabinet `{id}` already exists"
+part_missing = "part `{id}` does not exist"
+wall_missing = "wall `{id}` does not exist"
+wall_exists = "wall `{id}` already exists"
+model_failed = "the model cannot be built"
+model_failed_with = "the model cannot be built: {error}"
+has_issues = "validation found errors (Validation tab)"
+no_nesting = "the machine profile has no [nesting] section"
+
+[engine.session]
+too_many_cabinets = "at most {max} cabinets per project"
+change_rejected = "the change was not applied:\n  - {problems}"
+model_panic = "internal error while building the model: {message}"
+nothing_to_redo = "nothing to redo"
+nothing_to_undo = "nothing to undo"
+unknown_panic = "unknown panic"
+
+[engine.document]
+unsaved = "unsaved project"
+bad_standard_name = "invalid standard name `{name}`"
+catalog_missing = "catalog `{name}` does not exist"
+catalog_invalid = "the catalog is not valid:\n{problems}"
+standard_invalid = "the standard is not valid:\n{problems}"
+no_file = "the project has no file yet, use Save As"
+already_in_target = "{file} is already in the target folder, that one will be used"
+copied = "copied: {file}"
+
+[engine.logo]
+error = "logo {file}: {error}"
+too_big = "logo {file}: the file is larger than 20 MB"
+not_image = "logo {file}: cannot be read as PNG/JPEG ({error})"
+empty = "logo {file}: empty image"
+
+[engine.export_cvj]
+no_template = "the project has no CABINET VISION job as a template (import it from .cvj or set template = the original CV job)"
+template_missing = "template `{file}` does not exist (the CV job the project was imported from)"
+bad_extension = "output `{file}` must have the .cvj extension"
+overwrites_template = "the output must not overwrite the template (the original CV job); choose a new file"
+write_failed = "writing `{file}` failed: {error}"
+
+[engine.import_cvj]
+front_counts = "doors {doors}, double doors {pairs}, drawers {drawers}, false fronts {false_fronts}, panels {panels}, open {open}; front-only cabinets {front_only}"
+template_missing = "template project `{file}` does not exist (set it with --template)"
+rest_of_data = "rest of the data"
+incomplete = "the job was not read completely ({reason}), the import may be incomplete"
+relax_filler_dowels = "filler dowels were left out (drill them by hand)"
+relax_box_heights = "drawer box heights from CV do not fit, the generator picks them"
+relax_front_sizes = "face heights and widths from CV do not fit, the faces split the cabinet evenly"
+relax_reveals = "face size adjustments and reveals from CV cannot be used, faces follow the standard"
+relax_slant = "the angled side cannot be built, the cabinet is square"
+relax_fronts = "the faces were left out"
+relaxed = "cabinet `{id}`: {changes} (generator: {error})"
+skipped = "cabinet `{id}` ({w} × {h} × {d} mm) was skipped, our generator rejects it: {error}"
+no_fronts = "none"
+fronts_differ = "cabinet `{id}`: faces (W × H) differ from CV (CV: {cv}; ours: {ours})"
+
+[engine.cabinet]
+not_in_catalog = "`{id}` is not in the catalog"
+type_or_catalog = "`type` or `catalog` is missing"
+not_on_wall = "cabinet `{id}` is not on a wall"
+bad_side = "`side` is left or right (it is {value})"
+last_cabinet = "the project must have at least one cabinet"
+by_or_to = "give exactly one of `by`, `to`"
+empty_id = "`id` must not be empty"
+too_large = "`{name}` is too large ({value} mm)"
+too_many_adjustable = "`adjustable_shelves` at most {max} (it is {value})"
+too_many_fixed = "`fixed_shelves` at most {max}"
+too_many_fronts = "`fronts` at most {max} faces"
+bad_front_height = "face height `{value}` must be a positive number up to {max} mm"
+bad_hinge = "`hinge` must be a hinge ID from the standard"
+bad_drawer = "`drawer` must be a drawer ID from the standard"
+
+[engine.catalog]
+bad_name = "catalog name: letters, digits, space, _ - . (at most 60 characters)"
+exists = "catalog `{name}` already exists"
+bad_item_id = "item `id`: 1 to 100 characters"
+name_too_long = "name at most 200 and group at most 100 characters"
+too_many_items = "a catalog has at most {max} items"
+item_missing = "`{id}` is not in catalog `{name}`"
+
+[engine.drawings]
+unknown_sheet = "unknown drawing `{sheet}` (job, walls, cabinets, parts, wall:ID, cabinet:ID, part:ID)"
+not_in_job = "`{sheet}` does not exist in the job"
+too_many_sheets = "at most {max} drawings in one PDF"
+nothing_to_print = "nothing to print"
+job_title = "Job – 3D, Plan, Front Elevation"
+job_content = "cabinets {cabinets} · parts {parts} · {material}"
+wall_title = "Wall {id} – Elevation"
+wall_content = "{length} × {height} mm · cabinets {cabinets} · openings {openings} · scale 1:{scale}"
+cabinet_title = "Cabinet {id}"
+cabinet_content = "{w} × {h} × {d} mm · {kind} · parts {parts}"
+part_title = "Part {id}"
+part_content = "{length} × {width} × {thickness} mm · {material}"
+
+[engine.export]
+failed = "export to {dir} failed: {error}"
+
+[engine.front]
+row_missing_of = { one = "the cabinet has {count} row of faces, row {row} does not exist", other = "the cabinet has {count} rows of faces, row {row} does not exist" }
+bad_count = "`count` 2 … {max}"
+row_has_columns_h = "a row with columns cannot be split horizontally"
+column_split_h = "a column cannot be split horizontally (an opening has rows or columns)"
+row_has_columns_v = "the row already has columns: select a column"
+too_many_columns = "at most {max} columns in a row"
+column_missing = "column {column} does not exist"
+bad_size = "`{name}` must be a positive number up to 10 000 mm"
+bad_adjust = "`adjust` must have finite values up to ±1000 mm"
+height_on_row = "height is set on the whole row"
+width_on_column = "width is set on a column of the row"
+pair_in_column = "double door in a column: split the column vertically"
+hinge_side_door = "hinge side applies to doors only"
+row_missing = "row {row} does not exist"
+
+[engine.labels]
+no_sheet = "sheet `{sheet}` is not in the nesting"
+parts_without_label = "parts without a label: {parts}"
+nothing_to_print = "no label to print"
+mkdir_failed = "folder {dir} cannot be created: {error}"
+write_failed = "writing {file} failed: {error}"
+
+[engine.project]
+empty_name = "the project name must not be empty"
+too_long = "`{key}` at most {max} characters"
+
+[engine.room]
+bad_row = "`row` is base or upper (it is {value})"
+no_corner = "the corner at the end of wall `{wall}` does not have cabinets on both walls"
+bad_extend = "`extend` is `{wall}` or `{next}`"
+not_finite = "`{name}` must be a finite number up to {max} mm (it is {value})"
+negative = "`{name}` must not be negative (it is {value})"
+empty_wall_id = "wall `id` must not be empty"
+bad_angle = "`angle` must be a finite angle in degrees"
+too_many_walls = "at most {max} walls per project"
+too_many_openings = "at most {max} openings per project"
+opening_missing = "opening no. {index} does not exist"
+nominal_over_max = "`nominal` must not be greater than `max`"
+bad_increment = "`increment` must be at least 1 mm"
+
+[engine.standard]
+empty_path = "empty path"
+no_key = "`{path}`: key `{key}` does not exist"
+not_index = "`{path}`: `{key}` is not a list index"
+out_of_range = "`{path}`: index {index} is out of the list"
+not_container = "`{path}`: `{key}` is not under a table or a list"
+
+# CABINET VISION job import (.cvj, cc-import-cvj): notes after the import (window, comments
+# in project.toml); {label} is a cabinet or an object (label_cabinet, label_object)
+
+[import_cvj]
+default_name = "Import from CABINET VISION"
+room_skipped = "room `{name}` was not imported (a project has only one room)"
+no_room = "the job contains no room with walls or cabinets"
+wall_duplicate = "wall no. {wall} is in the job twice, the second one was skipped"
+class_unsupported = "{label}: not imported, class {class}{kind} has no counterpart in the project"
+class_other = "class {code}"
+fronts_only = "{label}: not imported, it has no carcass parts, only fronts (appliance or panel?)"
+too_few_parts = { one = "{label}: not imported, it has only {count} carcass part (filler or panel)", other = "{label}: not imported, it has only {count} carcass parts (filler or panel)" }
+no_size = "{label}: not imported, it has no carcass size ({w} × {h} × {d} mm)"
+front_only = "{label}: front only without a carcass (e.g. dishwasher), size from the CV envelope (without toe kick `TOEH`)"
+size_from_box = "{label}: no parts, carcass size is from the CV envelope (without toe kick `TOEH`)"
+slant = "{label}: slanted side – cabinet size from CV, slanted parts and doors as rectangles (envelope)"
+behind_wall = "{label}: carcass back is {mm} mm behind the wall face, moved to the face"
+below_floor = "{label}: carcass bottom is {mm} mm below the floor, moved to the floor"
+tall_shelves = { one = "{label}: {count} shelf was imported as adjustable (fixed shelves are not distinguished)", other = "{label}: {count} shelves were imported as adjustable (fixed shelves are not distinguished)" }
+countertop = "countertop `{name}` ({l} × {w} × {t} mm{wall}) is not imported"
+countertop_wall = ", wall {wall}"
+floor_outline = "the floor outline is not imported"
+label_cabinet = "cabinet no. {number} `{name}`"
+label_object = "object `{name}`"
+wall_zero_length = "wall no. {wall} has zero length, skipped"
+wall_not_vertical = "wall no. {wall} is not vertical, its floor plan is imported"
+wall_raised = "wall no. {wall} starts {mm} mm above the floor (ignored)"
+wall_zero_thickness = "wall no. {wall} has zero thickness (half wall), the room thickness is used"
+unplaced = "imported without a wall (our model has no free placement)"
+unplaced_back_face = "stands on the back face of wall no. {wall}, {base}"
+unplaced_wall_skipped = "wall no. {wall} was not imported, {base}"
+unplaced_rotated = "is rotated against the wall ({angle}°), {base}"
+unplaced_free = "does not stand at a wall, {base}"
+too_many_sections = "cabinet `{name}`: the section tree has more than {max} nodes, the rest was skipped"
+bad_param = "object `{object}`: invalid value of parameter `{param}` ({value}), 0 is used"
+
+[import_cvj.fronts]
+tree_cycle = "the opening tree is cyclic or too deep"
+empty_opening = "empty opening"
+column_split = "a column of fronts is further split horizontally (our model has one front per column)"
+no_root = "the front opening tree has no root"
+not_imported = "{label}: fronts were not imported, {reason}"
+too_many_rows = "{label}: fronts were not imported, {count} rows is more than {max}"
+drawer_lengths = "{label}: drawers have different runner lengths ({lengths}), our model has one, the longest, per cabinet ({longest})"
+reveals_rows = "{label}: reveals between fronts above each other differ in CV ({values}), the first one was used"
+reveals_columns = "{label}: reveals between fronts side by side differ in CV ({values}), the first one was used"
+reveals_invalid = "{label}: front reveals from CV make no sense (fronts outside the carcass?), kept from the standard"
+opening_repeated = "{label}: front opening no. {id} is in the tree {count} times, the first one was used"
+unknown_style = "{label}: unknown front opening type (STYPE {code}), derived from object `{object}`"
+door_no_hinges = "{label}: door without hinges (HNG 4) imported as a false front"
+hinge_side = "{label}: hinge side HNG {value} (top/bottom) is not supported by our model, hinges from the standard"
+hinge_positions = "{label}: manual hinge positions ({values}) were not carried over, hinges from the standard"
+hinge_count = "{label}: the given hinge count {count} was not carried over, count from the standard"
+
+[import_cvj.options]
+joints_reset = "{label}: cabinet joints are in “Reset” mode in CV (APPLY_HW_CAB 2), kept from the standard"
+apply_hw_unknown = "{label}: unknown value APPLY_HW_CAB {value}"
+joints_none = "{label}: joint type “0-NIC” imported as dowels only"
+joint_cam15 = "dowel + cam 15"
+joint_vb35 = "dowel + cam VB35"
+joint_vb36 = "dowel + cam VB36"
+joint_blum = "dowel + Blum connector"
+joint_maxifix = "dowel + MaxiFix"
+joint_unknown = "unknown"
+joint_type = "{label}: joint type {value} ({name}) is not in our model, joints from the standard"
+shelf_support = "{label}: shelf hardware {value} is not in our model, shelf pins from the standard"
+legs_partial = "{label}: only legs no. {legs} are deleted in CV, our model has either all legs or none"
+tip_on_unknown = "{label}: unknown TIP-ON kind {value}"
+back_inset = "{label}: back “VSAZENÁ” (MAKEDADO 1) is not supported per cabinet, back from the standard"
+back_no_groove = "{label}: back without a groove (MAKEDADO 2) is not supported per cabinet, back from the standard"
+back_router = "{label}: back groove by router (Cab_FRD) is not supported, groove from the standard"
+link_unknown = "{label}: unknown state of cabinet connector hardware {value}, kept from the standard"
+link_shift = "{label}: connector counterpart shift {mm} mm is not used yet (its sign is not verified)"
+
+[import_cvj.filler]
+left = "on the left"
+right = "on the right"
+standalone = "standalone filler (strip and blind front overlapping {side}), imported as a cabinet without carcass with `filler`"
+attached = "filler {side} (width {width}, front {front}{bottom}) imported as `filler`, the carcass is without the filler"
+bottom = ", filler bottom"
+
+[import_cvj.led]
+several = "{label}: several LED rails, only the first one is imported (`{name}`)"
+bad_size = "{label}: the LED rail has an invalid size, not imported"
+moved = "{label}: the LED rail is not under the bottom at the back, imported under the bottom with its back edge to the wall"
+
+# Writing into a CABINET VISION job (.cvj, cc-out-cvj): notes in the status bar after saving
+
+[export_cvj]
+cabinet_not_on_wall = "cabinet `{id}` does not stand at a wall, not written to .cvj"
+cabinet_wall_skipped = "cabinet `{id}`: wall `{wall}` was not written to .cvj, neither was the cabinet"
+cabinet_pattern = "cabinet `{id}`: template pattern chosen by kind and size ({pattern})"
+cabinet_no_pattern = "cabinet `{id}`: the template has no pattern cabinet of this class, not written"
+cabinet_fronts_from_pattern = "cabinet `{id}`: the template has no pattern for some opening kind, the front layout is from the pattern cabinet"
+opening_wall_skipped = "{kind} on wall `{wall}`: the wall was not written to .cvj, neither was the opening"
+opening_no_pattern = "{kind} on wall `{wall}`: the template has no window or door to copy, not written"
+opening_envelope = "{kind} on wall `{wall}`: the template has no pattern of this kind, written as an envelope (without frame)"
+moved_with_window = "`{name}` on wall no. {wall} moved with the window (X {x}, Y {y}, width {width})"
+wall_no_position = "wall no. {wall}: a position parameter is missing, kept from the template"
+wall_removed = "wall no. {wall} is not in the project, it was left out of .cvj together with its objects"
+wall_bad_size = "wall no. {wall}: invalid size, kept from the template"
+wall_not_written = "wall `{id}`: the template has no straight wall to copy or the size is invalid, not written"
+walls_not_closed = "wall no. {wall}: end ({end}) is not the start of wall no. {next} ({start}), the room is not closed"
+walls_formula_mismatch = { one = "{count} wall value does not match the CV formulas (positions {positions})", other = "{count} wall values do not match the CV formulas (positions {positions})" }
+
+[export_cvj.opening]
+window = "window"
+door = "door"
+opening = "opening"
+
+# Command line (cc-cli): console output; --help is fixed (in Slovak)
+
+[cli]
+error = "error: {error}"
+note = "note: {note}"
+import_note = "import note: {note}"
+copied = "copied: {file}"
+notice = "notice: {notice}"
+export_cvj_done = "{project} → {out} (template {template}): cabinets {cabinets}, notes {notes}"
+import_cvj_done = "{file} → {out}: walls {walls}, cabinets {cabinets}, openings {openings}, notes {notes}"
+import_cvj_fronts = "fronts: {fronts}"
+machine_profile = "machine profile: {file}"
+no_machine_profile = "no machine profile: machine size and drill checks were skipped"
+validation_failed = { one = "validation found {count} error, outputs were not written", other = "validation found {count} errors, outputs were not written" }
+nesting_done = "nesting: sheet programs {count} → {dir}"
+labels_done = "labels: {count} (100 × 80 mm and A4) → {dir}"
+build_done = "{project}: cabinets {cabinets}, parts {parts}, operations {operations}, programs .xcs {xcs}, .mpr {mpr} → {dir}"
+parity_done = "parity: parts {parts}/{cv_parts} (size {same_size}), holes {holes}/{cv_holes} (extra {extra}) → {file}"
+
+[cli.render]
+view = "view `{view}` is not available yet (3d only)"
+size = "image size 1…{max} px"
+camera = "unknown camera `{camera}` (default, front, top, iso)"
+no_selection = "no part or cabinet `{id}`"
+done = "{project}: parts {parts}, {width} × {height} → {file}"
+
+[cli.script]
+too_long = "line {line}: too long"
+bad_json = "line {line}: bad JSON: {error}"
+no_command = "line {line}: \"command\" is missing"
+
+[ribbon.windows]
+group = "Windows"
+register = "Open .cvj in CabinetCRAFT"
+unregister = "Remove .cvj from Menu"
+hint = "Adds “Open in CabinetCRAFT” to the right-click menu of .cvj files and the program to the “Open with” list (your account only). The default program (CABINET VISION) does not change; to open .cvj files by double-click, choose CabinetCRAFT and “Always” in “Open with”."
+registered = "“Open in CabinetCRAFT” is now in the right-click menu of .cvj files (and in “Open with”)"
+unregistered = "The “Open in CabinetCRAFT” item for .cvj files was removed"
+failed = "Writing to Windows failed: {error}"
+
+[shell]
+menu_item = "Open in CabinetCRAFT"
+reg_failed = "reg cannot be started: {error}"
+exe_path = "program path: {error}"
+windows_only = "only on Windows"

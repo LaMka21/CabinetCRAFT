@@ -1,0 +1,17 @@
+SetMachiningParameters("J",1,70,84869121,false);
+CreateFinishedWorkpieceBox("Dilec",762,391,18);
+SetWorkpieceSetupPosition(0,0, 0, 0);
+SetPreserveWorkingSequence(true);
+CreateWorkplane("Plan1",0,1,18,1,1,18,0,1,19);
+SelectWorkplane("Front");
+ CreateDrill("Vrtani Spodni 1   DIA=8 Z=26",32,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+SelectWorkplane("Front");
+ CreateDrill("Vrtani Spodni 2   DIA=8 Z=26",96,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+SelectWorkplane("Front");
+ CreateDrill("Vrtani Spodni 3   DIA=8 Z=26",349,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+SelectWorkplane("Front");
+ CreateDrill("Vrtani Spodni 4   DIA=8 Z=26",413,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+SelectWorkplane("Front");
+ CreateDrill("Vrtani Spodni 5   DIA=8 Z=26",666,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);
+SelectWorkplane("Front");
+ CreateDrill("Vrtani Spodni 6   DIA=8 Z=26",730,9,26,8,"",TypeOfProcess.Drilling,"-1","-1",0,"-1","-1","P",0,0.5);

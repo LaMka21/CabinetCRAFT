@@ -1,0 +1,12 @@
+//--PROJEKT: Dielna - kuchyna s miestnostou
+//--DIEL: VY1-SIDE-L  SKRINKA: VY1
+//--Generovane z CabinetCRAFT
+SetMachiningParameters("J",1,70,84869121,false);
+CreateFinishedWorkpieceBox("Dilec",2100,510,18);
+SetWorkpieceSetupPosition(0,0, 0, 0);
+SetPreserveWorkingSequence(true);
+SelectWorkplane("Top");
+CreateSegment("",-60,491.5,2160,491.5);
+ResetPneumaticHood();
+ResetAuxiliaryHood();
+CreateSlot("Pilka 1001",9,"", TypeOfProcess.GeneralRouting ,"LAMA","-1",3,4,0,0,0,90);
